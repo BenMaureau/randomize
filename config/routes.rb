@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :activities, except: [:index]
   resources :bookings
 
-  get '/profile', only: [:my_bookings, :show] do
-    resources :reviews
-  end
+  # get '/profile', only: [:my_bookings, :show] do
+   # resources :reviews
+  #end
 end
