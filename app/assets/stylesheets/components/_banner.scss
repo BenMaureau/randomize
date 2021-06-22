@@ -5,6 +5,13 @@
   background-size: cover;
 }
 
+.banner-content {
+  padding: 30vh 0;
+  h1, h3 {
+    color: $light-gray;
+  }
+}
+
 .container {
   margin: 0 auto;
   width:90vw;
