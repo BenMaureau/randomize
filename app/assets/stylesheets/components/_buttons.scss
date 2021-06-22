@@ -1,0 +1,26 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  font-family: $body-font;
+  text-decoration: none;
+  color: $black;
+  border-radius: 5px;
+}
+
+.btn-primary {
+  background-color: $yellow;
+  height: 66px;
+  font-size: 26px;
+  padding: 0 25px;
+}
+
+.btn-tap {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  border-radius: 5px 5px 0 0;
+  padding: 0;  
+}
