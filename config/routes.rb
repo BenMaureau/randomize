@@ -3,4 +3,10 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get '/components', to: 'pages#components'
+  resources :activities, except: [:index]
+  resources :bookings
+
+  # get '/profile', only: [:my_bookings, :show] do
+  #   resources :reviews
+  # end
 end
