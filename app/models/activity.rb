@@ -1,5 +1,5 @@
 class Activity < ApplicationRecord
-  has_many :slots
+  has_many :slots, dependent: :destroy
   has_many :bookings, through: :slots
   has_many_attached :photos
 
