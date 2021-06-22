@@ -19,23 +19,34 @@ Notification.destroy_all
 puts "=== Database clean! ==="
 
 puts "=== Adding users... ==="
-user1 = User.create(first_name: 'Benjamin', last_name: 'Maureau', email: 'benjamin@com', password: 'azerty')
-# user1.photo.attach(io: URI.open('https://avatars.githubusercontent.com/u/80259966?v=4'), filename: 'ben.jpeg', content_type: 'image/jpeg')
+user1 = User.create(first_name: 'Benjamin', last_name: 'Maureau', email: 'benjamin@com', password: 'azerty', phone_number: "0608450544", birth_date: "1997-11-15")
+#user1.photo.attach(io: URI.open('https://avatars.githubusercontent.com/u/80259966?v=4'), filename: 'ben.jpeg', content_type: 'image/jpeg')
 user1.save
-user2 = User.create(first_name: 'Tania', last_name: 'Hajjar', email: 'tania@com', password: 'azerty')
+user2 = User.create(first_name: 'Tania', last_name: 'Hajjar', email: 'tania@com', password: 'azerty', phone_number: "0675727589", birth_date: "1997-09-21")
 # user2.photo.attach(io: URI.open('https://avatars.githubusercontent.com/u/81690176?v=4'), filename: 'tania.jpeg', content_type: 'image/png')
 user2.save
-user3 = User.create(first_name: 'Robin', last_name: 'Dahan', email: 'robin@com', password: 'azerty')
+user3 = User.create(first_name: 'Robin', last_name: 'Dahan', email: 'robin@com', password: 'azerty', phone_number: "0661681428", birth_date: "1997-10-17")
 # user3.photo.attach(io: URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1619972134/kjwymhuj4vddmefrsxrx.jpg'), filename: 'robin.jpeg', content_type: 'image/jpeg')
 user3.save
-user4 = User.create(first_name: 'Louis', last_name: 'Hocquet', email: 'louis@com', password: 'azerty')
+user4 = User.create(first_name: 'Louis', last_name: 'Hocquet', email: 'louis@com', password: 'azerty', phone_number: "0786423455", birth_date: "1996-06-04")
 # user4.photo.attach(io: URI.open('https://avatars.githubusercontent.com/u/50288549?v=4'), filename: 'louis.jpeg', content_type: 'image/jpeg')
 user4.save
 puts "=== #{User.count} users added! ==="
 
 
-# puts "=== Adding boats... ==="
-# boat1 = Boat.create(title: "Amazing boat to sail",category:"⛵ sailboat",brand:"X",location:"Ajaccio", length:25,price_per_day:200,capacity:14, building_year:2010, user_id: user1.id)
+puts "=== Adding Activity... ==="
+activity1 = Activity.create(
+  name: "Padel tennis",
+  address: "6 Rue Abel Gance 78390 Bois-d’Arcy",
+  type: "indoor",
+  category:"sport",
+  price_per_head:"X",
+  contact_email:25,
+  contact_phone_number:200,
+  activity_url:"http://le-padel-club.com/",
+  longitude: 2.3646578788757324,
+  latitude: 48.86328125,
+  user_id: user1.id)
 # boat1.photo.attach(io: URI.open('https://images.unsplash.com/photo-1586364312368-3d61a0ec826d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHNhaWxib2F0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60'), filename: 'X.jpg', content_type: 'image/jpg')
 # boat1.save
 # boat2 = Boat.create(title: "Best boat ever had",category:"🚤 motorboat",brand:"Beneteau",location:"Martigues", length:12,price_per_day:100,capacity:5, building_year:2012, user_id: user2.id)
