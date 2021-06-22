@@ -11,16 +11,34 @@
 
 .btn-primary {
   background-color: $yellow;
-  height: 66px;
   font-size: 26px;
   padding: 0 25px;
+  height: 66px;
 }
 
-.btn-tap {
+.btn-secondary {
+  padding: 0 25px;
+  font-size: 26px;
+  border: solid 1px $black;
+  height: 64px;
+}
+
+.tap-container {
+  display: flex;
+  justify-content: center;
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100vw;
-  border-radius: 5px 5px 0 0;
-  padding: 0;  
+  .btn {
+    border-radius: 5px 5px 0 0;
+    padding: 0;
+    flex: 1 0 0;
+  }
+  .btn-top-left-radius {
+    border-radius: 5px 0 0 0;
+  }
+  .btn-top-right-radius {
+    border-radius: 0 5px 0 0;
+  }
 }
