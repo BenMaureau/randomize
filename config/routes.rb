@@ -6,7 +6,13 @@ Rails.application.routes.draw do
   resources :activities, except: [:index]
   resources :bookings
 
-  # get '/profile', only: [:my_bookings, :show] do
-  #   resources :reviews
-  # end
+  get '/profile/my_bookings', to: 'bookings#my_bookings'
+  get '/profile/my_bookings/:id', to: 'bookings#show' do
+    resources :reviews
+  end
+  get '/random', to: 'pages#random'
+  get '/activity/:id', to: 'activities#show' do
+    resources :bookings, only: [:new, :create]
+  end
+  delete '/profile/my_bookings', to: 'bookings#destroy'
 end
