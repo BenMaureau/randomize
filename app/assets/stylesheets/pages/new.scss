@@ -6,21 +6,27 @@ body {
   margin-top: 80px;
 }
 
-#user_email, #user_password {
+#user_email,
+#user_password,
+#user_first_name,
+#user_last_name,
+#user_password_confirmation,
+#user_phone_number,
+#user_birth_date_1i,
+#user_birth_date_2i,
+#user_birth_date_3i {
   border: 3px solid $gray;
-  box-shadow: 410px 5px 5px black;
   &:focus{
     border: 3px solid $yellow;
   }
 }
 
-/* Change the white to any color */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
 input:-webkit-autofill:active
 {
  -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
-input:-webkit-autofill:focus {
-  -webkit-box-shadow: 0 0 0 30px white inset !important;
-}
+
+
