@@ -5,6 +5,10 @@ before_action :authenticate_user!, only: :new
     @my_bookings = Booking.where(user_id: current_user.id)
   end
 
+  def show
+    @booking = Booking.find(params[:id])
+  end
+
   private
 
   def booking_params
