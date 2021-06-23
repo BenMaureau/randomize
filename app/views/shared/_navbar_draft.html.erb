@@ -1,0 +1,25 @@
+<div class="navbar">
+  <div>
+    <%= link_to "#home", class: "navbar-logo" do %>
+      <%= image_tag "Logo.png" %>
+      <% end %>
+  </div>
+
+  <div class="flex-icons">
+    <% if user_signed_in? %>
+      <i class="fas fa-bell bell"></i>
+      <i class="fas fa-circle circle"></i>
+    <div class="stick-icons">
+      <% if current_user.photo.present? %>
+        <%= cl_image_tag current_user.photo.key %>
+      <% else %>
+        <%= image_tag "Profile", class: "avatar"%>
+      <% end %>
+    </div>
+    <% else %>
+      <div class="nav-item">
+        <%= link_to "Login", new_user_session_path %>
+      </div>
+    <% end %>
+  </div>
+</div>
