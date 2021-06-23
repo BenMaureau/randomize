@@ -1,20 +1,37 @@
-.navbar {
-  width: 100vw;
-  height: 40px;
-  padding: 8px;
-  display: flex;
+.navbar-randomize {
   justify-content: space-between;
   background: $blue;
 }
 
-.navbar .navbar-collapse {
+.navbar-randomize .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar .navbar-logo img {
-  height: 100% ;
-  margin-left: 5px;
+.navbar-randomize .navbar-brand img {
+  width: 40px;
 }
+
+#navbar-light {
+  color: $light-gray;
+}
+
+// .navbar {
+//   width: 100vw;
+//   height: 40px;
+//   padding: 8px;
+//   display: flex;
+//   justify-content: space-between;
+//   background: $blue;
+// }
+
+// .navbar .navbar-collapse {
+//   flex-grow: 0;
+// }
+
+// .navbar .navbar-logo img {
+//   height: 100% ;
+//   margin-left: 5px;
+// }
 
 .navbar .bell{
   color: $light-gray;
@@ -23,17 +40,30 @@
 }
 
 .navbar .circle{
+  position: absolute;
+  bottom: 23px;
+  left: 20px;
   color: $yellow;
 }
 
-.navbar .flex-icons{
-  display: flex;
+.navbar .notifications{
+  position: relative;
 }
 
-.navbar .stick-icons{
-  justify-content: flex-end;
+.navbar .notification-number{
+  position: absolute;
+  bottom: 18px;
+  left: 25px;
+  color: $red;
 }
+// .navbar .flex-icons{
+//   display: flex;
+// }
 
-.navbar .avatar {
-  height: 100%;
-}
+// .navbar .stick-icons{
+//   justify-content: flex-end;
+// }
+
+// .navbar .avatar {
+//   height: 100%;
+// }
