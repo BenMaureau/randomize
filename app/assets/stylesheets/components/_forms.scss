@@ -1,14 +1,5 @@
-body {
-  background-color: white;
-}
-
-.container {
-  margin-top: 80px;
-}
-
-#user_email, #user_password {
+.input-field {
   border: 3px solid $gray;
-  box-shadow: 410px 5px 5px black;
   &:focus{
     border: 3px solid $yellow;
   }
