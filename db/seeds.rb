@@ -47,6 +47,9 @@ activity1 = Activity.create(
   longitude: 2.3646578788757324,
   latitude: 48.86328125)
 
+activity1.photos.attach(io: URI.open('https://www.sportweek.fr/wp-content/uploads/2018/01/padel-1.jpg'), filename: 'X.jpg', content_type: 'image/jpg')
+activity1.save
+
 activity2 = Activity.create(
   name: "Paddle",
   address: "9 avenue de la tranquillité 78000 Versailles",
@@ -58,6 +61,9 @@ activity2 = Activity.create(
   activity_url:"http://le-padel-club.com/",
   longitude: 2.3646578788757324,
   latitude: 48.86328125)
+
+activity2.photos.attach(io: URI.open('https://www.sportweek.fr/wp-content/uploads/2018/01/padel-1.jpg'), filename: 'X.jpg', content_type: 'image/jpg')
+activity2.save
 
 activity3 = Activity.create(
   name: "Cinéma",
@@ -71,6 +77,9 @@ activity3 = Activity.create(
   longitude: 2.3646578788757324,
   latitude: 48.86328125)
 
+activity3.photos.attach(io: URI.open('https://www.sportweek.fr/wp-content/uploads/2018/01/padel-1.jpg'), filename: 'X.jpg', content_type: 'image/jpg')
+activity3.save
+
 activity4 = Activity.create(
   name: "Randonnée",
   address: "72 rue des martyrs de la resistance, 59000 Lille",
@@ -82,6 +91,9 @@ activity4 = Activity.create(
   activity_url:"http://le-padel-club.com/",
   longitude: 2.3646578788757324,
   latitude: 48.86328125)
+
+activity4.photos.attach(io: URI.open('https://www.sportweek.fr/wp-content/uploads/2018/01/padel-1.jpg'), filename: 'X.jpg', content_type: 'image/jpg')
+activity4.save
 
 puts "=== #{Activity.count} activities added! ==="
 
@@ -154,7 +166,6 @@ puts "=== #{Booking.count} bookings added! ==="
 #     t.index ["slot_id"], name: "index_bookings_on_slot_id"
 #     t.index ["user_id"], name: "index_bookings_on_user_id"
 #   end
-
 
 
 # boat1.photo.attach(io: URI.open('https://images.unsplash.com/photo-1586364312368-3d61a0ec826d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHNhaWxib2F0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60'), filename: 'X.jpg', content_type: 'image/jpg')
