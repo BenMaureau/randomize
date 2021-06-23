@@ -10,4 +10,7 @@ before_action :authenticate_user!, only: :new
   def booking_params
     params.require(:booking).permit(:slot_id)
   end
+
+  def my_bookings
+  end
 end
