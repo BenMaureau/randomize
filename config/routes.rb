@@ -6,9 +6,8 @@ Rails.application.routes.draw do
   resources :bookings
 
   get '/profile/my_bookings', to: 'bookings#my_bookings'
-  get '/profile/my_bookings/:id', to: 'bookings#show', as: :my_booking do
-    resources :reviews
-  end
+  get '/profile/my_bookings/:id', to: 'bookings#show', as: :my_booking
+  get '/profile/my_bookings/:booking_id/reviews/new', to: 'reviews#new'
 
   get '/random', to: 'pages#random'
   get '/activity/:id', to: 'activities#show' do

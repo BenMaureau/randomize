@@ -5,12 +5,13 @@ before_action :authenticate_user!, only: :new
     @my_bookings = Booking.where(user_id: current_user.id)
   end
 
+  def show
+    @review = Review.new
+  end
+
   private
 
   def booking_params
     params.require(:booking).permit(:slot_id)
-  end
-
-  def my_bookings
   end
 end
