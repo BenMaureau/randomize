@@ -1,1 +1,10 @@
 <h1>Mes réservations</h1>
+
+<% @my_bookings.each do |booking| %>
+
+  <%= render '/bookings/booking_card'%>
+<% end %>
+
+
+
+<h2><%= @my_bookings %></h2>

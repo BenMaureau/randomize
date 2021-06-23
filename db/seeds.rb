@@ -42,10 +42,105 @@ activity1 = Activity.create(
   category:"sport",
   price_per_head:"X",
   contact_email:25,
+  contact_phone_number:100,
+  activity_url:"http://le-padel-club.com/",
+  longitude: 2.3646578788757324,
+  latitude: 48.86328125)
+
+activity2 = Activity.create(
+  name: "Paddle",
+  address: "9 avenue de la tranquillité 78000 Versailles",
+  indoor: true,
+  category:"sport",
+  price_per_head:"30",
+  contact_email:25,
   contact_phone_number:200,
   activity_url:"http://le-padel-club.com/",
   longitude: 2.3646578788757324,
   latitude: 48.86328125)
+
+activity3 = Activity.create(
+  name: "Cinéma",
+  address: "45 rue de Douai 59000 Lille",
+  indoor: true,
+  category:"sport",
+  price_per_head:"X",
+  contact_email:25,
+  contact_phone_number:300,
+  activity_url:"http://le-padel-club.com/",
+  longitude: 2.3646578788757324,
+  latitude: 48.86328125)
+
+activity4 = Activity.create(
+  name: "Randonnée",
+  address: "72 rue des martyrs de la resistance, 59000 Lille",
+  indoor: true,
+  category:"sport",
+  price_per_head:"X",
+  contact_email:25,
+  contact_phone_number:400,
+  activity_url:"http://le-padel-club.com/",
+  longitude: 2.3646578788757324,
+  latitude: 48.86328125)
+
+booking1 = Booking.create (
+  number_of_people: 2,
+  slot_id: 1,
+  user_id: 1
+  )
+
+booking2 = Booking.create (
+  number_of_people: 2,
+  slot_id: 2,
+  user_id: 2
+  )
+
+booking3 = Booking.create (
+  number_of_people: 2,
+  slot_id: 3,
+  user_id: 3
+  )
+
+booking4 = Booking.create (
+  number_of_people: 2,
+  slot_id: 4,
+  user_id: 4
+  )
+
+slot1 = Slot.create (
+  start_date: "2021-09-21",
+  end_date: "2022-09-21",
+  max_number_of_people: 4,
+  activity_id: 1)
+
+slot2 = Slot.create (
+  start_date: "2021-09-21",
+  end_date: "2023-09-21",
+  max_number_of_people: 4,
+  activity_id: 2)
+
+slot3 = Slot.create (
+  start_date: "2021-09-21",
+  end_date: "2024-09-21",
+  max_number_of_people: 4,
+  activity_id: 3)
+
+slot4 = Slot.create (
+  start_date: "2021-09-21",
+  end_date: "2022-04-21",
+  max_number_of_people: 4,
+  activity_id: 4)
+# create_table "bookings", force: :cascade do |t|
+#     t.integer "number_of_people"
+#     t.bigint "slot_id", null: false
+#     t.bigint "user_id", null: false
+#     t.datetime "created_at", precision: 6, null: false
+#     t.datetime "updated_at", precision: 6, null: false
+#     t.index ["slot_id"], name: "index_bookings_on_slot_id"
+#     t.index ["user_id"], name: "index_bookings_on_user_id"
+#   end
+
+
 
 # boat1.photo.attach(io: URI.open('https://images.unsplash.com/photo-1586364312368-3d61a0ec826d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHNhaWxib2F0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60'), filename: 'X.jpg', content_type: 'image/jpg')
 # boat1.save
