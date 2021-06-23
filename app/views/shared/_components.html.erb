@@ -24,3 +24,74 @@
   <a href="#" class="my-btn my-btn-secondary my-btn-top-left-radius">Secondary</a>
   <a href="#" class="my-btn my-btn-primary my-btn-tap my-btn-top-right-radius">Primary</a>
 </div>
+
+<h2>Activity card</h2>
+
+<h3>Revealed</h3>
+
+<div class="my-card my-activity-card">
+  <div class="my-card-div-image">
+    <%= cl_image_tag Activity.last.photos[0].key, height: 220, crop: :fill %>
+    <div class="icon-info"><p>i</p></div>
+  </div>
+  <div class="my-card-div-details">
+    <h3>Padel (niveau loisir)</h3>
+    <div>
+      <div class="icon-info">
+        <i class="fas fa-euro-sign"></i>
+        <p>10 (par personne)</p>
+      </div>
+      <div class="icon-info">
+        <i class="fas fa-hourglass-start"></i>
+        <p>environ 2h</p>
+      </div>
+    </div>
+      <div class="icon-info">
+        <i class="fas fa-map-marker-alt"></i>
+        <p>à 7km</p>
+      </div>
+      <div class="icon-info">
+        <i class="fas fa-clock"></i>
+        <p>rdv à 19h30</p>
+      </div>
+    <div>
+    
+    </div>
+  </div>
+</div>
+
+<h3>Hidden</h3>
+
+<div class="my-card my-activity-card">
+  <div class="my-card-div-image">
+    <%= cl_image_tag Activity.last.photos[0].key, height: 220, crop: :fill %>
+    <div class="my-activity-overlay">
+      <a href="#" class="my-btn my-third-button">Révéler</a>
+      <p>?</p>
+    </div>
+  </div>
+  <div class="my-card-div-details">
+    <h3>Padel (niveau loisir)</h3>
+    <div>
+      <div class="icon-info">
+        <i class="fas fa-euro-sign"></i>
+        <p>10 (par personne)</p>
+      </div>
+      <div class="icon-info">
+        <i class="fas fa-hourglass-start"></i>
+        <p>environ 2h</p>
+      </div>
+    </div>
+      <div class="icon-info">
+        <i class="fas fa-map-marker-alt"></i>
+        <p>à 7km</p>
+      </div>
+      <div class="icon-info">
+        <i class="fas fa-clock"></i>
+        <p>rdv à 19h30</p>
+      </div>
+    <div>
+    
+    </div>
+  </div>
+</div>
