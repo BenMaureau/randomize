@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   resources :activities, except: [:index]
   resources :bookings
 
-  # get '/profile', only: [:my_bookings, :show] do
-  #   resources :reviews
-  # end
+  get '/profile/my_bookings', to: 'bookings#my_bookings'
+  get '/profile/my_bookings/:id', to: 'bookings#show' do
+    resources :reviews
+  end
 end
