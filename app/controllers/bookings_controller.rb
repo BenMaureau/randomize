@@ -9,4 +9,7 @@ before_action :authenticate_user!, only: :new
     @booking = Booking.new
     @activity = Activity.find(params[:activity_id])
   end
+
+  def my_bookings
+  end
 end
