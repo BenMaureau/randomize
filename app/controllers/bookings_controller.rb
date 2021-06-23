@@ -1,12 +1,13 @@
 class BookingsController < ApplicationController
 before_action :authenticate_user!, only: :new
 
-  def show
-    @booking = Booking.find(params[:id])
+  def my_bookings
+    @my_bookings = Booking.where(user_id: current_user.id)
   end
 
-  def new
-    @booking = Booking.new
-    @activity = Activity.find(params[:activity_id])
+  private
+
+  def booking_params
+    params.require(:booking).permit(:slot_id)
   end
 end
