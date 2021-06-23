@@ -83,53 +83,68 @@ activity4 = Activity.create(
   longitude: 2.3646578788757324,
   latitude: 48.86328125)
 
-booking1 = Booking.create (
-  number_of_people: 2,
-  slot_id: 1,
-  user_id: 1
-  )
+puts "=== #{Activity.count} activities added! ==="
 
-booking2 = Booking.create (
-  number_of_people: 2,
-  slot_id: 2,
-  user_id: 2
-  )
 
-booking3 = Booking.create (
-  number_of_people: 2,
-  slot_id: 3,
-  user_id: 3
-  )
+puts "=== Adding slots... ==="
 
-booking4 = Booking.create (
-  number_of_people: 2,
-  slot_id: 4,
-  user_id: 4
-  )
-
-slot1 = Slot.create (
+slot1 = Slot.create!(
   start_date: "2021-09-21",
   end_date: "2022-09-21",
   max_number_of_people: 4,
-  activity_id: 1)
+  activity_id: activity1.id)
 
-slot2 = Slot.create (
+slot2 = Slot.create!(
   start_date: "2021-09-21",
-  end_date: "2023-09-21",
+  end_date: "2022-09-21",
   max_number_of_people: 4,
-  activity_id: 2)
+  activity_id: activity2.id)
 
-slot3 = Slot.create (
-  start_date: "2021-09-21",
-  end_date: "2024-09-21",
-  max_number_of_people: 4,
-  activity_id: 3)
 
-slot4 = Slot.create (
+slot3 = Slot.create!(
   start_date: "2021-09-21",
-  end_date: "2022-04-21",
+  end_date: "2022-09-21",
   max_number_of_people: 4,
-  activity_id: 4)
+  activity_id: activity3.id)
+
+slot4 = Slot.create!(
+  start_date: "2021-09-21",
+  end_date: "2022-09-21",
+  max_number_of_people: 4,
+  activity_id: activity4.id)
+
+puts "=== #{Slot.count} slots added! ==="
+
+
+puts "=== Adding bookings... ==="
+
+booking1 = Booking.create!(
+  number_of_people: 2,
+  slot_id: slot1.id,
+  user_id: user1.id
+  )
+
+booking2 = Booking.create!(
+  number_of_people: 2,
+  slot_id: slot2.id,
+  user_id: user2.id
+  )
+
+booking3 = Booking.create!(
+  number_of_people: 2,
+  slot_id: slot3.id,
+  user_id: user3.id
+  )
+
+booking4 = Booking.create!(
+  number_of_people: 2,
+  slot_id: slot4.id,
+  user_id: user4.id
+  )
+
+puts "=== #{Booking.count} bookings added! ==="
+
+
 # create_table "bookings", force: :cascade do |t|
 #     t.integer "number_of_people"
 #     t.bigint "slot_id", null: false
