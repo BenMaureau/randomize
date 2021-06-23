@@ -83,6 +83,17 @@ activity4 = Activity.create(
   longitude: 2.3646578788757324,
   latitude: 48.86328125)
 
+activity5 = Activity.create(
+  name: "Pizza",
+  address: "113 Rue Abel Gance 78390 Bois-d’Arcy",
+  indoor: true,
+  category:"social",
+  price_per_head:"X",
+  contact_email:25,
+  contact_phone_number:100,
+  activity_url:"http://le-padel-club.com/",
+  longitude: 2.3646578788757324,
+  latitude: 48.86328125)
 puts "=== #{Activity.count} activities added! ==="
 
 
@@ -113,6 +124,12 @@ slot4 = Slot.create!(
   max_number_of_people: 4,
   activity_id: activity4.id)
 
+slot5 = Slot.create!(
+  start_date: "2021-09-21",
+  end_date: "2022-09-21",
+  max_number_of_people: 4,
+  activity_id: activity5.id)
+
 puts "=== #{Slot.count} slots added! ==="
 
 
@@ -140,6 +157,12 @@ booking4 = Booking.create!(
   number_of_people: 2,
   slot_id: slot4.id,
   user_id: user4.id
+  )
+
+booking5 = Booking.create!(
+  number_of_people: 2,
+  slot_id: slot5.id,
+  user_id: user2.id
   )
 
 puts "=== #{Booking.count} bookings added! ==="

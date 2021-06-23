@@ -1,6 +1,12 @@
 <h1>Mes réservations</h1>
+<h2>Mes réservations</h2>
 
+
+<h1>Mes réservations</h1>
 <% @my_bookings.each do |booking| %>
 
-  <%= render '/bookings/booking_cards'%>
+  <p><%= link_to 'Activity', activity_path(booking.slot.activity)%></p>
 <% end %>
+
+
+

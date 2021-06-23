@@ -4,8 +4,7 @@ class ActivitiesController < ApplicationController
   end
 
   def show
-    @activities = Activity.all
-    @activity = @activities.sample
+    @activity = Activity.find(params[:id])
   end
 
   # def create
