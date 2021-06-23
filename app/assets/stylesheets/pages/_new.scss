@@ -1,21 +1,55 @@
-// .container {
-//   margin-top: 80px;
-// }
+.container {
+  margin-top: 40px;
+}
 
-// #user_email, #user_password {
-//   border: 3px solid $gray;
-//   &:focus{
-//     border: 3px solid $yellow;
-//   }
-// }
+#user_email,
+#user_password,
+#user_first_name,
+#user_last_name,
+#user_password_confirmation,
+#user_phone_number,
+#user_birth_date_1i,
+#user_birth_date_2i,
+#user_birth_date_3i {
+  border: 3px solid $gray;
+  &:focus{
+    border: 3px solid $yellow;
+  }
+}
 
-// /* Change the white to any color */
-// input:-webkit-autofill,
-// input:-webkit-autofill:hover,
-// input:-webkit-autofill:active
-// {
-//  -webkit-box-shadow: 0 0 0 30px white inset !important;
-// }
-// input:-webkit-autofill:focus {
-//   -webkit-box-shadow: 0 0 0 30px white inset !important;
-// }
+/* Change the white to any color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:active
+{
+ -webkit-box-shadow: 0 0 0 30px white inset !important;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0 ,0.2) !important;
+}
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+input:focus, select:focus{
+    outline:0px !important;
+    -webkit-appearance:none;
+    box-shadow: none !important;
+}
+
+.margin-bottom {
+  margin-bottom: 90px;
+}
+
+.titles {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.remove-text-deco{
+  color: $black;
+}
+
+.remove-text-deco:hover {
+  color: $black;
+  text-decoration: none;
+}
