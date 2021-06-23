@@ -5,5 +5,13 @@ class PagesController < ApplicationController
   end
 
   def random
+    @activities = Activity.all
+    @markers = @activities.geocoded.map do |activity|
+      {
+        lat: activity.latitude,
+        lng: activity.longitude,
+        image_url: helpers.asset_url('Ellipse.png')
+      }
+    end
   end
 end
