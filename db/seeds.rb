@@ -11,9 +11,13 @@ require 'open-uri'
 
 puts "=== Cleaning database... ==="
 User.destroy_all
+puts "=== User clean! ==="
 Activity.destroy_all
+puts "=== Activity clean! ==="
 Booking.destroy_all
+puts "=== Booking clean! ==="
 Review.destroy_all
+puts "=== Review clean! ==="
 Notification.destroy_all
 
 puts "=== Database clean! ==="

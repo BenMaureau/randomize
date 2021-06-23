@@ -11,8 +11,11 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @rating = params[:rating]
-    raise
+    @rating = params[:review][:rating]
+    if @rating.split(" ").length != 1
+      @rating = @rating.split(" ").first + ".5"
+      params[:review][:rating] = @rating
+    end
     @review = Review.new(review_params)
     @booking = Booking.find(params[:booking_id])
     @review.booking = @booking
@@ -33,9 +36,10 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
+    @booking = @review.booking
     @review.destroy
 
-    redirect_to my_booking_path, notice: "Your review has been deleted successfully."
+    redirect_to my_booking_path(@booking), notice: "Your review has been deleted successfully."
   end
 
   private

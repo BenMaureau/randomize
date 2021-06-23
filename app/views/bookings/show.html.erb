@@ -6,15 +6,22 @@
 
 
   <div>
-      <% if @booking.review.rating.to_s.last == 5 %>
-          <% @booking.review.rating.truncate.times do %>
+      <% if [1, 2, 3, 4, 5].include?(@booking.review.rating) %>
+          <% @booking.review.rating.to_i.times do %>
             <i class="fas fa-star"></i>
           <% end %>
-          <i class="fas fa-star-half-alt"></i>
       <% else %>
-          <% @booking.review.rating.truncate.times do %>
-            <i class="fas fa-star"></i>
-          <% end %>
+        <% @booking.review.rating.to_f.truncate.times do %>
+          <i class="fas fa-star"></i>
+        <% end %>
+        <i class="fas fa-star-half-alt"></i>
       <% end %>
+      <%= link_to "Supprimer", destroy_review_path(@booking.review), method: :delete,
+              class: "btn btn-danger", data: { confirm: "Are you sure?" } %>
   </div>
+  <% else %>
+  <div>
+    <p> Tu n'as pas encore donner ton avis, c'est le moment ! </p>
+    <%= link_to 'Ajouter un avis', new_review_path(@booking), class: "my-btn my-btn-primary" %>
   <% end %>
+</div>
