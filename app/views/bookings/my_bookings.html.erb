@@ -1,1 +1,6 @@
-<h1> My bookings </h1>
+<h1>Mes réservations</h1>
+
+<% @my_bookings.each do |booking| %>
+
+  <%= render '/bookings/booking_cards'%>
+<% end %>
