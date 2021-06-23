@@ -4,15 +4,20 @@ class ReviewsController < ApplicationController
   def new
     @review = Review.new
     @booking = Booking.find(params[:booking_id])
+    @review.booking = @booking
   end
 
   def show
   end
 
   def create
+    @rating = params[:rating]
+    raise
     @review = Review.new(review_params)
+    @booking = Booking.find(params[:booking_id])
+    @review.booking = @booking
     if @review.save
-      redirect_to my_booking_path, notice: "Your review has been added successfully."
+      redirect_to my_booking_path(@booking), notice: "Your review has been added successfully."
     else
       render 'new'
     end

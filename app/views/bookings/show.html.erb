@@ -1,4 +1,20 @@
-<div><%= link_to "Précédent", profile_my_bookings_path, class: 'my-btn my-btn-primary' %> </div>
+<div><%= link_to "Précédent", profile_my_bookings_path, class: 'my-btn my-btn-secondary' %> </div>
+
+  <% if @booking.review %>
+  <h1> <%= @booking.review.content %> </h1>
+  <h1> <%= @booking.review.rating %> </h1>
 
 
-
+  <div>
+      <% if @booking.review.rating.to_s.last == 5 %>
+          <% @booking.review.rating.truncate.times do %>
+            <i class="fas fa-star"></i>
+          <% end %>
+          <i class="fas fa-star-half-alt"></i>
+      <% else %>
+          <% @booking.review.rating.truncate.times do %>
+            <i class="fas fa-star"></i>
+          <% end %>
+      <% end %>
+  </div>
+  <% end %>
