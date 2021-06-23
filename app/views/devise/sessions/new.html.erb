@@ -1,22 +1,25 @@
-<div class="container">
-  <h2>Log in</h2>
+<div class="my-body">
+  <div class="container">
+    <h2 class="margin-top">CONNEXION</h2>
 
-  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="form-inputs">
-      <%= f.input :email,
-                  required: false,
-                  autofocus: true,
-                  input_html: { autocomplete: "email" } %>
-      <%= f.input :password,
-                  required: false,
-                  input_html: { autocomplete: "current-password" } %>
-      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-    </div>
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { autocomplete: "off" } ) do |f| %>
+      <div class="form-inputs">
 
-    <div class="form-actions">
-      <%= f.button :submit, "Log in" %>
-    </div>
-  <% end %>
+        <%= f.input :email,
+                      required: false,
+                      autofocus: true,
+                      input_html: { autocomplete: "off", class: "input-field box-shadow" }
+                      %>
 
-  <%= render "devise/shared/links" %>
+        <%= f.input :password,
+                    required: false,
+                    input_html: { autocomplete: "off", class: "input-field box-shadow" } %>
+        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+      </div>
+
+      <div class="form-actions my-tap-container">
+        <%= f.button :submit, "Se connecter", class: "my-btn my-btn-primary" %>
+      </div>
+    <% end %>
+  </div>
 </div>
