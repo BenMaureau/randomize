@@ -34,27 +34,34 @@
     <%= cl_image_tag Activity.last.photos[0].key, height: 220, crop: :fill %>
     <div class="icon-info"><p>i</p></div>
   </div>
-  <div class="my-card-div-details">
+  <div class="my-card-div-details display-flex-column">
     <h3>Padel (niveau loisir)</h3>
-    <div>
-      <div class="icon-info">
-        <i class="fas fa-euro-sign"></i>
-        <p>10 (par personne)</p>
+    <div class="display-flex">
+
+      <div class="display-flex-column">
+        <div class="card-detail">
+          <i class="fas fa-euro-sign"></i>
+          <p>10 (par personne)</p>
+        </div>
+        <div class="card-detail">
+          <i class="fas fa-hourglass-start"></i>
+          <p>environ 2h</p>
+        </div>
       </div>
-      <div class="icon-info">
-        <i class="fas fa-hourglass-start"></i>
-        <p>environ 2h</p>
+      
+      <div class="display-flex-column">
+        <div class="card-detail">
+          <i class="fas fa-map-marker-alt"></i>
+          <p>à 7km</p>
+        </div>
+        <div class="card-detail">
+          <i class="fas fa-clock"></i>
+          <p>rdv à 19h30</p>
+        </div>
       </div>
+
     </div>
-      <div class="icon-info">
-        <i class="fas fa-map-marker-alt"></i>
-        <p>à 7km</p>
-      </div>
-      <div class="icon-info">
-        <i class="fas fa-clock"></i>
-        <p>rdv à 19h30</p>
-      </div>
-    <div>
+
     
     </div>
   </div>
