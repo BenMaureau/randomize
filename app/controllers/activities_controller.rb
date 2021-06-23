@@ -7,31 +7,31 @@ class ActivitiesController < ApplicationController
     @activity = Activity.find(params[:id])
   end
 
-  # def create
-  #   @activity = Activity.new(activity_params)
+  def create
+    @activity = Activity.new(activity_params)
 
-  #   if @activity.save
-  #     redirect_to activity_path, notice: "Your activity has been added successfully."
-  #   else
-  #     render 'new'
-  #   end
-  # end
+    if @activity.save
+      redirect_to activity_path, notice: "Your activity has been added successfully."
+    else
+      render 'new'
+    end
+  end
 
-  # def edit
-  # end
+  def edit
+  end
 
-  # def update
-  #   @activity.update(boat_params)
-  #   if @activity.save
-  #     redirect_to activity_path(@activity), notice: "Your activity has been updated successfully."
-  #   else
-  #     render 'new'
-  #   end
-  # end
+  def update
+    @activity.update(boat_params)
+    if @activity.save
+      redirect_to activity_path(@activity), notice: "Your activity has been updated successfully."
+    else
+      render 'new'
+    end
+  end
 
-  # def destroy
-  #   @activity.destroy
+  def destroy
+    @activity.destroy
 
-  #   redirect_to my_activities_path, notice: "Your activity has been deleted successfully."
-  # end
+    redirect_to my_activities_path, notice: "Your activity has been deleted successfully."
+  end
 end
