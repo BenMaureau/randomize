@@ -4,7 +4,6 @@
   flex-direction: column;
   width: 344px;
   height: 380px;
-  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 }
 
@@ -73,6 +72,7 @@
 }
 
 .div-image-overlay {
+  display: none;
   height: 100%;
   width: 100%;
   position: absolute;
@@ -82,6 +82,7 @@
   text-align: center;
   line-height: 45% ;
   padding-top: 110px;
+  border-radius: 4px 4px 0 0;
   p {
     color: $light-gray;
     font-size: 64px !important;
@@ -94,11 +95,11 @@
   }
 }
 
-.activity-revealed {
-  .div-image-overlay {
-    display: none;
-  }
-}
+// .activity-revealed {
+//   .div-image-overlay {
+//     display: none;
+//   }
+// }
 
 .display-flex {
   display: flex;
