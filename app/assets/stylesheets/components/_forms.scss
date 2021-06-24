@@ -16,6 +16,20 @@ input:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
 
+.my-form-budget {
+  display: flex;
+  justify-content: center;
+  height: 40px;
+  input {
+    width: 80px;
+    border-radius: 3px;
+  }
+}
+
+.form-budget-ext-int{
+  margin-top: 120px;
+}
+
 .category-checkbox {
   display: flex;
   flex-direction: column;

@@ -35,13 +35,13 @@
 <div class="mood-form d-none" id="scrolling-action">
   <h1>ON SE LA JOUE COMMENT ?</h1>
   <div class="mood-images">
-    <div class="img-adventure" id="adventure">
+    <div class="img-adventure active-mood-card" id="adventure">
       <%= image_tag "moodadventure.jpg" %>
       <h3>Aventurier</h3>
     </div>
     <div class="img-shy">
       <%= image_tag "moodshy.jpg" %>
-      <h3>Prudent</h3>
+      <h3>Prudent!</h3>
     </div>
   </div>
 
@@ -67,13 +67,38 @@
   </div>
 </div>
 
-  <div class="form-budget-ext-int">
-    <h1>Quel est ton budget maximum par personne ?</h1>
-    <div class="form-budget">
-      <form action="#" method="post">
-        <input type="number" id="max-price" name="max-price" min="0" max="100">
+<div class="form-budget-ext-int mood-form">
+  <h2>Quel est ton budget maximal par personne ?</h2>
+
+  <form action="#" method="post">
+    <div class="my-form-budget">
+      <input type="number" id="max-price" class="input-field" name="max-price" min="0" max="100">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Euro_symbol_black.svg/430px-Euro_symbol_black.svg.png" alt="">
+    </div>
 
 
+
+    <h2>Plutôt intérieur, extérieur ou les deux ?</h2>
+    <div class="mood-images">
+      <div class="img-ext">
+        <%= image_tag "ext.png" %>
+        <input type="checkbox" id="ext" name="exterieur">
+        <h3><label for="ext">Extérieur</label></h3>
+      </div>
+      <div class="img-int">
+        <%= image_tag "int.png" %>
+        <input type="checkbox" id="int" class="class_checkbox" name="interieur">
+        <h3><label for="int">Intérieur</label></h3>
+      </div>
+    </div>
+
+
+    <div class="button-next">
+      <div class="my-tap-container" id="remove-fixed">
+        <a href="#" class="my-btn my-btn-primary">SUIVANT</a>
+      </div>
+    </div>
+  </form>
 
 <div class="my-container">
   <div class="category-form">
@@ -98,7 +123,7 @@
               </div>
             </div>
             <p>Social</p>
-          </div>  
+          </div>
         </div>
 
         <div>
@@ -120,7 +145,7 @@
             <p>Nature</p>
           </div>
         </div>
-      
+
 
         <div>
           <div class="category-checkbox category-checkbox-checked">
@@ -139,7 +164,7 @@
               </div>
             </div>
             <p>Sensation</p>
-          </div>      
+          </div>
         </div>
 
       </div>
