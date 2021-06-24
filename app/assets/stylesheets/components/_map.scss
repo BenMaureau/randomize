@@ -1,6 +1,5 @@
 .map-filters{
   padding: 10px;
-  position: fixed;
   bottom: 0;
   background-color: $light-gray;
   width: 100%;
@@ -11,3 +10,70 @@
     display: flex
   }
 }
+
+.number-participants{
+  display: flex;
+  justify-content: space-between;
+  height: 10vh;
+}
+
+.one-participant{
+  position: absolute;
+  left: 45%;
+  #person{
+    position: absolute;
+    left: -12px;
+    top: -10px;
+    z-index: 7;
+  }
+}
+
+.two-participants{
+  position: absolute;
+  left: 55%;
+  #people{
+    position: absolute;
+    left: -10px;
+    top: -10px;
+    z-index: 7;
+  }
+}
+// input:checked {
+//   display: none;
+// }
+
+// #people{
+//   display: none;
+// }
+
+input[name='participants']{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: none;
+   &:after {
+      // font-family: 'FontAwesome';
+      display: inline-block;
+      text-align: center;
+      font-size: 80px;
+      content: attr(person);
+      padding: 20px 20px;
+      border-radius: 15px;
+      color: rgba(0,0,0,.4);
+      transition: box-shadow 1s, color 1s;
+    }
+
+    &:checked {
+        &:after {
+            box-shadow: 2px 2px 14px rgba(0,0,0,.4);
+            color: rgba(255,255,255,.6);
+        }
+    }
+}
+
+.btn-extend{
+  width: 100%;
+}
+

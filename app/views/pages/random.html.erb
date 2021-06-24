@@ -2,18 +2,36 @@
 
 <div><%= link_to "Randomize!", class: 'my-btn my-btn-primary' %> </div>
 
-<div id="map"
-     style="width: 100%; height: 400px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+<div class="mapstorize">
+  <div id="map"
+       style="width: 100%; height: 400px;"
+       data-markers="<%= @markers.to_json %>"
+       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
-<form>
-  <div class="form-group map-filters">
-    <h2><label for="formControlRange">Jusqu'où irais-tu pour randomize?</label></h2>
-    <div class="align">
-      <p>Je suis mobile 🥾</p>
-      <input type="range" class="form-control-range" id="formControlRange">
-      <p>+ proche de chez moi 🙏🏼!</p>
+  <form action="random" href="#scrolling-action">
+    <div class="form-group map-filters">
+      <h2><label for="formControlRange">Jusqu'où irais-tu pour randomize?</label></h2>
+      <div class="align">
+        <p>10 km</p>
+        <input type="range" class="form-control-range" id="formControlRange">
+        <p> 1 km</p>
+      </div>
     </div>
-  </div>
-</form>
+    <div class="number-participants">
+      <div class="one-participant">
+        <input type="radio" id="person" name="participants" value="person" class= "one-participant"
+               checked>
+        <i for="person" class="fas fa-user-circle"></i>
+      </div>
+      <div class="two-participants">
+        <input type="radio" id="people" name="participants" value="people">
+        <i for= "people" class="fas fa-user-friends"></i>
+      </div>
+    </div>
+    <input type="submit" value="Suivant" class="my-btn-primary btn-extend">
+  </form>
+
+</div>
+
+<div class="mood-form", id="scrolling-action">
+</div>
