@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :reviews, through: :bookings
   has_many :notifications, through: :bookings
   has_many :slots, through: :bookings
+  # has_many :activities, through: :slots
 
   has_one_attached :photo
 
