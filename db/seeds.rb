@@ -11,6 +11,7 @@ require 'open-uri'
 require_relative 'scrapping/scrap_lechti'
 
 puts "=== Cleaning database... ==="
+
 Review.destroy_all
 puts "=== Review clean! ==="
 Notification.destroy_all
