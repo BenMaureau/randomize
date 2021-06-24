@@ -30,4 +30,61 @@ input:-webkit-autofill:focus {
   margin-top: 120px;
 }
 
+.category-checkbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  cursor: pointer;
+  .sport-background {background-image: image-url("sport.png");}
+  .social-background {background-image: image-url("social.png");}
+  .culture-background {background-image: image-url("culture.png");}
+  .nature-background {background-image: image-url("nature.png");}
+  .bien_etre-background {background-image: image-url("bien_etre.png");}
+  .sensation-background {background-image: image-url("sensation.png");}
+  &>div {
+    display: block;
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    border: solid 1px $gray;
+    background-position: center;
+    background-size: contain;
+    position: relative;
+    margin-bottom: 8px;
+    .check {
+      display: none !important;
+      top: 0px;
+      right: 0px;
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: #f4f4f4;
+      text-align: center;
+      i {
+        font-size: 1.4rem;
+        line-height: 30px;
+      }
+    }
+  }
+}
 
+.category-checkbox-checked {
+  &>div {
+    border: solid 1px $yellow;
+    .check {
+      display: block !important;
+    }
+  }
+}
+
+.category-checkboxes {
+  display: flex;
+  flex-direction: column;
+  &>div {
+    display: flex;
+    justify-content: space-around;
+  }
+}
