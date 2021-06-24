@@ -22,7 +22,7 @@
 <div class="mood-form" id="scrolling-action">
   <h1>ON SE LA JOUE COMMENT ?</h1>
   <div class="mood-images">
-    <div class="img-adventure" id="adventure">
+    <div class="img-adventure active-mood-card" id="adventure">
       <%= image_tag "moodadventure.jpg" %>
       <h3>Aventurier</h3>
     </div>
@@ -55,7 +55,7 @@
 </div>
 
 <div class="form-budget-ext-int mood-form">
-  <h2>Quel est ton budget maximum par personne ?</h2>
+  <h2>Quel est ton budget maximal par personne ?</h2>
 
   <form action="#" method="post">
     <div class="my-form-budget">
@@ -67,16 +67,17 @@
     <h2>Plutôt intérieur, extérieur ou les deux ?</h2>
     <div class="mood-images">
       <div class="img-ext">
-        <%= image_tag "moodadventure.jpg" %>
+        <%= image_tag "ext.png" %>
         <input type="checkbox" id="ext" name="exterieur">
         <h3><label for="ext">Extérieur</label></h3>
       </div>
       <div class="img-int">
-        <%= image_tag "moodshy.jpg" %>
-        <input type="checkbox" id="int" name="interieur">
+        <%= image_tag "int.png" %>
+        <input type="checkbox" id="int" class="class_checkbox" name="interieur">
         <h3><label for="int">Intérieur</label></h3>
       </div>
     </div>
+
 
     <div class="button-next">
       <div class="my-tap-container" id="remove-fixed">
