@@ -1,4 +1,22 @@
 const initMoodSelector = () => {
+  // const moodCards = document.querySelectorAll('.mood-card');
+  // const moodSentence = document.querySelector('.mood-sentence p');
+  // moodCards.forEach((card) => {
+  //   card.addEventListener("click", (event) => {
+  //     moodCards.forEach((card) => {
+  //       card.classList.toggle("active-mood-card");
+  //       // console.log(moodSentence.innerText === "J'y vais totalement au hasard");
+  //       console.log(moodSentence.innerText)
+  //       // if (moodSentence.innerText.strip === "J'y vais totalement au hasard") {
+  //       //   moodSentence.innerText = "Je choisis quand même un peu";
+  //       // }
+  //       // if (moodSentence.innerText.strip === "Je choisis quand même un peu") {
+  //       //   moodSentence.innerText = "J'y vais totalement au hasard";
+  //       // } 
+  //     })
+  //   })
+  // })
+
   const divRandom = document.querySelector(".completely-random");
   const divCustom = document.querySelector(".choose-a-little");
   const divSentence = document.getElementById("mood-sentence");
