@@ -1,3 +1,19 @@
 <h1> MAP </h1>
 
 <div><%= link_to "Randomize!", class: 'my-btn my-btn-primary' %> </div>
+
+<div id="map"
+     style="width: 100%; height: 400px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
+<form>
+  <div class="form-group map-filters">
+    <h2><label for="formControlRange">Jusqu'où irais-tu pour randomize?</label></h2>
+    <div class="align">
+      <p>Je suis mobile 🥾</p>
+      <input type="range" class="form-control-range" id="formControlRange">
+      <p>+ proche de chez moi 🙏🏼!</p>
+    </div>
+  </div>
+</form>

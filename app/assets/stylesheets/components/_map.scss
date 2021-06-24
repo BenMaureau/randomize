@@ -1,0 +1,13 @@
+.map-filters{
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  background-color: $light-gray;
+  width: 100%;
+}
+
+.map-filters {
+  .align{
+    display: flex
+  }
+}

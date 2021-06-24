@@ -5,7 +5,7 @@
 <h1>Mes réservations</h1>
 <% @my_bookings.each do |booking| %>
 
-  <p><%= link_to 'Activity', activity_path(booking.slot.activity)%></p>
+  <p><%= link_to 'Booking', my_booking_path(booking)%></p>
 <% end %>
 
 
