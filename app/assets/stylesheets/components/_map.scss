@@ -10,3 +10,32 @@
     display: flex
   }
 }
+
+.number-participants{
+  display: flex;
+  justify-content: space-between;
+  height: 10vh;
+}
+
+.one-participant{
+  position: absolute;
+  left: 45%;
+  #person{
+    position: absolute;
+    left: -12px;
+    top: -10px;
+    z-index: 7;
+  }
+}
+
+.two-participants{
+  position: absolute;
+  left: 55%;
+  #people{
+    position: absolute;
+    left: -10px;
+    top: -10px;
+    z-index: 7;
+  }
+}
+
