@@ -26,7 +26,7 @@ require("channels")
 import "bootstrap";
 import { initMapbox } from '../plugins/init_mapbox';
 import { initReveal } from '../plugins/init_reveal';
-import { initMoodSelector } from '../plugins/initMoodSelector';
+import { initMoodSelector } from '../plugins/init_moodSelector';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
