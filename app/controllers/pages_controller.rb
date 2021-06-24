@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home ]
+  skip_before_action :authenticate_user!, only: [:home]
 
   def home
   end
@@ -13,5 +13,11 @@ class PagesController < ApplicationController
         image_url: helpers.asset_url('Ellipse.png')
       }
     end
+  end
+
+  def select
+    @activities = Activity.all
+    @activity = @activities.sample
+    redirect_to activity_path(@activity)
   end
 end
