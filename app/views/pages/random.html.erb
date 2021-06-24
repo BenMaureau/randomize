@@ -19,10 +19,10 @@
 </div>
 
 
-<div class="mood-form">
+<div class="mood-form" id="scrolling-action">
   <h1>ON SE LA JOUE COMMENT ?</h1>
   <div class="mood-images">
-    <div class="img-adventure">
+    <div class="img-adventure" id="adventure">
       <%= image_tag "moodadventure.jpg" %>
       <h3>Aventurier</h3>
     </div>
@@ -53,7 +53,18 @@
     </div>
   </div>
 
+  <div class="form-budget-ext-int">
+    <h1>Quel est ton budget maximum par personne ?</h1>
+    <div class="form-budget">
+      <form action="#" method="post">
+        <input type="number" id="max-price" name="max-price" min="0" max="100">
+
+
+
+
+      </form>
+    </div>
+  </div>
 </div>
 
-<div> <%= link_to 'Randomize!', select_path, :class => 'my-btn my-btn-primary' %> </div>
 
