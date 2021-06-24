@@ -11,6 +11,7 @@ require 'open-uri'
 require_relative 'scrapping/scrap_lechti'
 
 puts "=== Cleaning database... ==="
+
 Activity.destroy_all
 puts "=== Activity clean! ==="
 Slot.destroy_all

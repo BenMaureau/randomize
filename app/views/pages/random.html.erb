@@ -7,7 +7,7 @@
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
-<form>
+<form id='randomize-form'>
   <div class="form-group map-filters">
     <h2><label for="formControlRange">Jusqu'où irais-tu pour randomize?</label></h2>
     <div class="align">
@@ -17,3 +17,6 @@
     </div>
   </div>
 </form>
+
+<div> <%= link_to 'Randomize!', select_path, :class => 'btn btn-success' %> </div>
+

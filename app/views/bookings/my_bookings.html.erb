@@ -1,14 +1,11 @@
 <div class="placholder-navbar" style="height:66px"></div>
 
-<h1>Mes réservations</h1>
-<h2>Mes réservations</h2>
-
-
-<h1>Mes réservations</h1>
-<% @my_bookings.each do |booking| %>
-
-  <p><%= link_to 'Booking', my_booking_path(booking)%></p>
-<% end %>
+<div class="container">
+  <h1>Mes réservations</h1>
+  <% @my_bookings.each do |booking| %>
+    <p><%= link_to 'Booking', my_booking_path(booking)%></p>
+  <% end %>
+</div>
 
 
 
