@@ -1,6 +1,46 @@
 <div class="placholder-navbar" style="height:66px"></div>
 
 <div class="container">
-  <h1> <%= @activity.name %> </h1>
-  <%= link_to "Retour à mes réservations", profile_my_bookings_path %>
+  <div class="my-card my-activity-card box-shadow activity-secret">
+    <div class="my-card-div-image">
+      <div class="div-image-overlay">
+        <p>?</p>
+        <a href="#" class="my-btn my-btn-reveal">Révéler</a>
+      </div>
+      <%= cl_image_tag @activity.photos[0].key, crop: :fill %>
+      <div class="icon-info"></div>
+    </div>
+    <div class="my-card-div-details display-flex-column">
+      <h3> <%= @activity.name %> </h3>
+      <div class="display-flex">
+
+        <div class="display-flex-column">
+          <div class="card-detail">
+            <i class="fas fa-euro-sign"></i>
+            <p> <%= @activity.price_per_head %> (par personne)</p>
+          </div>
+          <div class="card-detail">
+            <i class="fas fa-hourglass-start"></i>
+            <p>environ 2h</p>
+          </div>
+        </div>
+
+        <div class="display-flex-column">
+          <div class="card-detail">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>à 7km</p>
+          </div>
+          <div class="card-detail">
+            <i class="fas fa-clock"></i>
+            <p>rdv à 19h30</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-actions my-tap-container">
+    <%= link_to 'Rerandomize', random_path, class: "btn my-btn my-btn-secondary" %>
+    <%= link_to 'Réserver', profile_my_bookings_path, class: "btn my-btn my-btn-primary" %>
+  </div>
 </div>

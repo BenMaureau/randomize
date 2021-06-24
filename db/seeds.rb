@@ -116,7 +116,9 @@ activity5 = Activity.create(
   activity_url:"http://le-padel-club.com/",
   longitude: 2.3646578788757324,
   latitude: 48.86328125)
-#activity5.save
+
+activity5.photos.attach(io: URI.open('https://images.unsplash.com/photo-1513104890138-7c749659a591?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'), filename: 'X.jpg', content_type: 'image/jpg')
+activity5.save
 puts "=== #{Activity.count} activities added! ==="
 
 
