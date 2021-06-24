@@ -1,7 +1,7 @@
 .map-filters{
   padding: 10px;
   bottom: 0;
-  background-color: $light-gray;
+  background-color: rgba(0, 53, 102, 0.7);
   width: 100%;
 }
 
@@ -76,4 +76,9 @@ input[name='participants']{
 .btn-extend{
   width: 100%;
 }
+
+// .mapboxgl-ctrl-geocoder--input{
+//   position: absolute !important;
+//   bottom:100px !important;
+// }
 

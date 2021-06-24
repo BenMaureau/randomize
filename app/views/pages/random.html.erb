@@ -1,32 +1,15 @@
 <h1> MAP </h1>
 
-<div class="mapstorize">
+<div class="mapstorize" id="map-diplayed">
   <div id="map"
        style="width: 100%; height: 400px;"
        data-markers="<%= @markers.to_json %>"
        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
-  <form>
+  <form action="random">
     <div class="form-group map-filters">
       <h2><label for="formControlRange">Jusqu'où irais-tu pour randomize?</label></h2>
-      <div class="align">
-        <p>Je suis mobile 🥾</p>
-        <input type="range" class="form-control-range" id="formControlRange">
-        <p>+ proche de chez moi 🙏🏼!</p>
-      </div>
-    </div>
-  </form>
-</div>
-
-<div class="mapstorize">
-  <div id="map"
-       style="width: 100%; height: 400px;"
-       data-markers="<%= @markers.to_json %>"
-       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-
-  <form action="random" href="#scrolling-action">
-    <div class="form-group map-filters">
-      <h2><label for="formControlRange">Jusqu'où irais-tu pour randomize?</label></h2>
+      <input type="text" class = "hiddenAddress">
       <div class="align">
         <p>10 km</p>
         <input type="range" class="form-control-range" id="formControlRange">
@@ -44,16 +27,12 @@
         <i for= "people" class="fas fa-user-friends"></i>
       </div>
     </div>
-    <input type="submit" value="Suivant" class="my-btn-primary btn-extend">
+    <input value="Suivant" class="my-btn-primary btn-extend" id="next-scroll">
   </form>
 
 </div>
 
-<div class="mood-form", id="scrolling-action">
-</div>
-=======
-
-<div class="mood-form" id="scrolling-action">
+<div class="mood-form d-none" id="scrolling-action">
   <h1>ON SE LA JOUE COMMENT ?</h1>
   <div class="mood-images">
     <div class="img-adventure" id="adventure">
@@ -86,6 +65,7 @@
     <a href="#" class="my-btn my-btn-primary">SUIVANT</a>
     </div>
   </div>
+</div>
 
   <div class="form-budget-ext-int">
     <h1>Quel est ton budget maximum par personne ?</h1>
@@ -99,4 +79,4 @@
       </form>
     </div>
   </div>
-</div>
+
