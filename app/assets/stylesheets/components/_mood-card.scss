@@ -15,12 +15,20 @@
   }
 }
 
-.completely-random, .choose-a-little {
+.img-adventure {
+  border: "3px solid #ffc300";
+}
+
+.completely-random {
+  margin: 50px auto;
+}
+
+.choose-a-little {
   display: none;
   margin: 50px auto;
 }
 
-.button-randomize, .button-suivant {
+.button-suivant {
   display: none;
 }
 
