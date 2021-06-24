@@ -33,6 +33,7 @@
 //   margin-left: 5px;
 // }
 
+
 .navbar .bell{
   color: $light-gray;
   font-size: 30px;
@@ -67,3 +68,8 @@
 // .navbar .avatar {
 //   height: 100%;
 // }
+
+.navbar-toggler {
+  font-size: 1.75rem !important;
+  color: $light-gray !important;
+}
