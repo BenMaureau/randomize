@@ -1,0 +1,24 @@
+.mood-form {
+  text-align: center;
+  h2 {
+    margin: 100px auto;
+  }
+}
+
+.mood-images{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 30px auto;
+  img{
+    height: 150px;
+    width: 150px;
+  }
+}
+
+.completely-random {
+  display: none;
+}
+
+.choose-a-little {
+  display: none;
+}

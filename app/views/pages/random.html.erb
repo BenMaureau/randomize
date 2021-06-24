@@ -2,18 +2,42 @@
 
 <div><%= link_to "Randomize!", class: 'my-btn my-btn-primary' %> </div>
 
-<div id="map"
-     style="width: 100%; height: 400px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+<div class="mapstorize">
+  <div id="map"
+       style="width: 100%; height: 400px;"
+       data-markers="<%= @markers.to_json %>"
+       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
-<form>
-  <div class="form-group map-filters">
-    <h2><label for="formControlRange">Jusqu'où irais-tu pour randomize?</label></h2>
-    <div class="align">
-      <p>Je suis mobile 🥾</p>
-      <input type="range" class="form-control-range" id="formControlRange">
-      <p>+ proche de chez moi 🙏🏼!</p>
+  <form>
+    <div class="form-group map-filters">
+      <h2><label for="formControlRange">Jusqu'où irais-tu pour randomize?</label></h2>
+      <div class="align">
+        <p>Je suis mobile 🥾</p>
+        <input type="range" class="form-control-range" id="formControlRange">
+        <p>+ proche de chez moi 🙏🏼!</p>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+<div class="mood-form">
+  <h2>ON SE LA JOUE COMMENT ?</h2>
+  <div class="mood-images">
+    <div class="img-adventure">
+      <%= image_tag "moodadventure.jpg" %>
+    </div>
+    <div class="img-shy">
+      <%= image_tag "moodshy.jpg" %>
     </div>
   </div>
-</form>
+
+  <div id="mood-sentence">
+    <div class="completely-random">
+      <p>J'y vais totalement au hasard</p>
+    </div>
+    <div class="choose-a-little">
+      <p>Je choisis quand même un peu</p>
+    </div>
+  </div>
+</div>
