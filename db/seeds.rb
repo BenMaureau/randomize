@@ -16,16 +16,12 @@ Review.destroy_all
 puts "=== Review clean! ==="
 Notification.destroy_all
 puts "=== Notification clean! ==="
-
 Booking.destroy_all
 puts "=== Booking clean! ==="
-
 Slot.destroy_all
 puts "=== Slot clean! ==="
-
 Activity.destroy_all
 puts "=== Activity clean! ==="
-
 User.destroy_all
 puts "=== User clean! ==="
 
