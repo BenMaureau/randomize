@@ -1,7 +1,8 @@
 <div class="placholder-navbar" style="height:66px"></div>
 
 <div class="container" id='bookings-container'>
-  <h1>Mes réservations (<%= @my_bookings.count %> dont <%= @my_bookings_to_review.count %> à noter) </h1>
+  <h2>Mes réservations </h2>
+  <p class="text-center">(<%= @my_bookings.count %> dont <%= @my_bookings_to_review.count %> à noter)</p> 
   <% @my_bookings.each do |booking| %>
       <div class="my-card my-activity-card box-shadow">
         <div class="my-card-div-image">
