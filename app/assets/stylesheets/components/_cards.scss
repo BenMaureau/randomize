@@ -74,10 +74,10 @@
 
 .div-image-overlay {
   display: none;
-  height: 10%;
+  height: 100%;
   width: 100%;
   position: absolute;
-  background: transparent;
+  background: $blue;
   opacity: 0.95;
   z-index: 2;
   text-align: center;
@@ -87,6 +87,7 @@
   p {
     color: $light-gray;
     font-size: 64px !important;
+    margin-top: 35% !important;
   }
 }
 
@@ -111,3 +112,8 @@
   flex-direction: column;
 }
 
+.cover {
+  height: 215px;
+  width: 375px;
+
+}

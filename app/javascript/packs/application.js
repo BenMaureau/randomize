@@ -31,11 +31,14 @@ import { searchMap } from '../plugins/search_map';
 import { initRandomScroll } from '../plugins/init_random_scroll';
 import { initCategoryCheckbox } from '../plugins/init_category_checkbox';
 import { initLoader } from '../plugins/init_loader';
+import { loadDynamicBannerText } from '../plugins/banner';
+import { initIndoorSelector } from '../plugins/init_indoorSelector';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
 
 document.addEventListener('turbolinks:load', () => {
+  loadDynamicBannerText();
   initMapbox();
   initReveal();
   initMoodSelector();
@@ -43,6 +46,7 @@ document.addEventListener('turbolinks:load', () => {
   initRandomScroll();
   initCategoryCheckbox();
   initLoader();
+  initIndoorSelector();
 })
 
 

@@ -43,9 +43,9 @@ const initMapbox = () => {
     map.setZoom(8);
     const rangeInput = document.getElementById("formControlRange");
 
-    rangeInput.addEventListener("change", function() {
-      map.setZoom(parseInt(rangeInput.value,10)/6);
-    }, false);
+    // rangeInput.addEventListener("change", function() {
+    //   map.setZoom(parseInt(rangeInput.value,10)/6);
+    // }, false);
   }
 };
 

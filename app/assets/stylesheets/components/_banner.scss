@@ -9,6 +9,7 @@
   padding: 30vh 0;
   h1, h3 {
     color: $light-gray;
+    text-align: start;
   }
 }
 
@@ -22,4 +23,8 @@
 .my-container {
   margin: 0 auto;
   width:90vw;
+}
+
+.space-button{
+  height: 80px;
 }
