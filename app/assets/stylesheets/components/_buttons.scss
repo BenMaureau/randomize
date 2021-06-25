@@ -20,7 +20,7 @@
   padding: 0 25px;
 }
 
-.my-btn-review {
+.my-btn-review, .my-btn-review-submit {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,6 +28,7 @@
   font-family: $body-font;
   text-decoration: none;
   color: $black;
+  z-index: 2;
   border-radius: 5px;
   background-color: $yellow;
   font-size: 16px;
