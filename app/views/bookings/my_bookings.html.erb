@@ -5,7 +5,7 @@
   <% @my_bookings.each do |booking| %>
       <div class="my-card my-activity-card box-shadow">
         <div class="my-card-div-image">
-          <div class="div-image-overlay d-flex justify-content-between">
+          <div class="display-over d-flex justify-content-between">
             <% if booking.review %>
               <div>
                 <% if [1, 2, 3, 4, 5].include?(booking.review.rating) %>
@@ -24,15 +24,18 @@
                 <button class = "my-btn-review" href='#myModal<%=booking.id%>'> Donne ton avis </button>
               </div>
               <!-- The Modal -->
-              <div class="modal myModal" id='myModal<%=booking.id%>'>
+              <div class="modal" id='myModal<%=booking.id%>'>
                 <!-- Modal content -->
                 <div class="modal-content">
-                  <span class="close">&times;</span>
+                  <div class = "d-flex justify-content-between">
+                    <h4> <%= booking.slot.activity.name %> </h4>
+                    <span class="close">&times;</span>
+                    </div>
                   <%= render '/reviews/new', booking: booking %>
                 </div>
               </div>
             <% end %>
-              <div class="icon-info"></div>
+              <div class="icon-info popover-test" title="Popover title" data-content="Popover body content is set in this attribute."></div>
           </div>
           <%= cl_image_tag booking.slot.activity.photos[0].key, crop: :fill %>
         </div>

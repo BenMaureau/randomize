@@ -119,3 +119,21 @@
   height: 300px;
   border-radius: 5px;
 }
+
+.display-over {
+  display: none;
+  height: 10%;
+  width: 100%;
+  position: absolute;
+  background: transparent;
+  opacity: 0.95;
+  z-index: 2;
+  text-align: center;
+  line-height: 45% ;
+  padding: 15px 15px 0px 15px;
+  border-radius: 4px 4px 0 0;
+  p {
+    color: $light-gray;
+    font-size: 64px !important;
+  }
+}
