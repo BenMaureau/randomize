@@ -1,6 +1,18 @@
-<h1> MAP </h1>
+<div class="button-randomize">
+  <div class="my-tap-container" id="remove-fixed">
+  <%= link_to 'Randomize!', select_path, class: 'my-btn my-btn-primary display-none', id: 'rdm-btn' %>
+  <a href="" class="my-btn my-btn-primary", id="next-btn">SUIVANT</a>
+  </div>
+</div>
 
-<div class="mapstorize" id="map-diplayed">
+<div class="button-suivant">
+  <div class="my-tap-container" id="remove-fixed">
+
+  </div>
+</div>
+
+<div class="random-section" id="section-map">
+  <div class="navbar-placeholder" style="height: 66px;"></div>
   <div id="map"
        style="width: 100%; height: 400px;"
        data-markers="<%= @markers.to_json %>"
@@ -28,11 +40,10 @@
         <i for= "people" class="fas fa-user-friends"></i>
       </div>
     </div>
-    <input value="Suivant" class="my-btn-primary btn-extend" id="next-scroll">
-
+    <%# <input value="Suivant" class="my-btn-primary btn-extend" id="next-scroll"> %>
 </div>
 
-<div class="mood-form d-none" id="scrolling-action">
+<div class="mood-form random-section display-none " id="mood-section">
   <h1>ON SE LA JOUE COMMENT ?</h1>
   <div class="mood-images">
     <div class="mood-card img-adventure active-mood-card" id="adventure">
@@ -60,20 +71,9 @@
     </div>
   </div>
 
-  <div class="button-randomize">
-    <div class="my-tap-container" id="remove-fixed">
-    <%= link_to 'Randomize!', select_path, :class => 'my-btn my-btn-primary' %>
-    </div>
-  </div>
-
-  <div class="button-suivant">
-    <div class="my-tap-container" id="remove-fixed">
-    <a href="#" class="my-btn my-btn-primary">SUIVANT</a>
-    </div>
-  </div>
 </div>
 
-<div class="form-budget-ext-int mood-form">
+<div class="random-section  display-none form-budget-ext-int mood-form" id="section-custom-1">
   <h2>Quel est ton budget maximal par personne ?</h2>
 
   <form action="#" method="post">
@@ -97,15 +97,15 @@
     </div>
 
 
-    <div class="button-next">
+    <%# <div class="button-next">
       <div class="my-tap-container" id="remove-fixed">
         <a href="#" class="my-btn my-btn-primary">SUIVANT</a>
       </div>
-    </div>
+    </div> %>
   </form>
 
 <div class="my-container">
-  <div class="category-form">
+  <div class="random-section  display-none category-form" id="section-custom-2">
     <h2>Quel serait ton type d'activité ?</h2>
     <form action="#">
 
