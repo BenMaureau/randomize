@@ -1,0 +1,45 @@
+<div class="myModal">
+  <h4> <%= booking.slot.activity.name %> </h4>
+  <h1> Alors, qu'en as-tu pensé ? </h1>
+
+
+  <form method = "POST" action = <%= create_review_path(booking) %>>
+    <div class="d-flex justify-content-center align-items-center">
+      <fieldset class="rating">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+          <input type="radio" id="star5" name=review[rating] value="5" />
+          <label class = "full" for="star5" title="Awesome - 5 stars"></label>
+
+          <input type="radio" id="star4half" name="review[rating]" value="4 and a half" />
+          <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+
+          <input type="radio" id="star4" name="review[rating]" value="4" />
+          <label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+
+          <input type="radio" id="star3half" name="review[rating]" value="3 and a half" />
+          <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+
+          <input type="radio" id="star3" name="review[rating]" value="3" />
+          <label class = "full" for="star3" title="Meh - 3 stars"></label>
+
+          <input type="radio" id="star2half" name="review[rating]" value="2 and a half" />
+          <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+
+          <input type="radio" id="star2" name="review[rating]" value="2" />
+          <label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+
+          <input type="radio" id="star1half" name="review[rating]" value="1 and a half" />
+          <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+
+          <input type="radio" id="star1" name="review[rating]" value="1" />
+          <label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+
+          <input type="radio" id="starhalf" name="review[rating]" value="half" />
+          <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+      </fieldset>
+
+      <input type='text' id="content" name="review[content]" />
+      <input type='submit' value="Ajouter mon commentaire" class = "my-btn-review" />
+    </div>
+  </form>
+</div>
