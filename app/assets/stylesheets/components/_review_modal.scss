@@ -13,6 +13,15 @@
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
+.form-review {
+  &>div {
+    flex-direction: column;
+    textarea, fieldset {
+      margin-bottom: 8px;
+    }
+  }
+}
+
 textarea {
   height: 50px;
 }
@@ -22,7 +31,8 @@ textarea {
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
-  width: 60%; /* Could be more or less, depending on screen size */
+  width: 90%; /* Could be more or less, depending on screen size */
+  max-width: 500px;
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;

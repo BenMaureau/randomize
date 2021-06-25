@@ -6,13 +6,22 @@
 </div>
 
 <div class="random-section" id="section-map">
-  <div id="map"
-       style="width: 100%; height: 400px;"
+  <div class="map-container-flex">
+    <div id="map"
        data-markers="<%= @markers.to_json %>"
        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
+    <div class="map-controls">
+      <div class="my-container">
+        <input type="text" class="input-field form-control" placeholder="Entre une adresse">
+      </div>
+      
+    </div>
+  </div>
 
-    <div class="form-group map-filters">
+
+
+    <%# <div class="form-group map-filters">
       <h2><label for="formControlRange">Jusqu'où irais-tu pour randomize?</label></h2>
       <input type="text" class = "hiddenAddress">
       <div class="align">
@@ -32,7 +41,7 @@
         <input type="radio" id="people" name="participants" value="people">
         <i for= "people" class="fas fa-user-friends"></i>
       </div>
-    </div>
+    </div> %>
     <%# <input value="Suivant" class="my-btn-primary btn-extend" id="next-scroll"> %>
 </div>
 
