@@ -20,7 +20,7 @@ class ReviewsController < ApplicationController
     @booking = Booking.find(params[:booking_id])
     @review.booking = @booking
     if @review.save
-      redirect_to my_booking_path(@booking), notice: "Your review has been added successfully."
+      redirect_to profile_my_bookings_path, notice: "Your review has been added successfully."
     else
       render 'new'
     end

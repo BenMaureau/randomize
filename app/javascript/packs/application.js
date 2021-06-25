@@ -31,6 +31,7 @@ import { searchMap } from '../plugins/search_map';
 import { initRandomScroll } from '../plugins/init_random_scroll';
 import { initCategoryCheckbox } from '../plugins/init_category_checkbox';
 import { initLoader } from '../plugins/init_loader';
+import { initReviewModal} from '../plugins/init_reviewModal';
 import { loadDynamicBannerText } from '../plugins/banner';
 import { initIndoorSelector } from '../plugins/init_indoorSelector';
 // Internal imports, e.g:
@@ -46,6 +47,7 @@ document.addEventListener('turbolinks:load', () => {
   initRandomScroll();
   initCategoryCheckbox();
   initLoader();
+  initReviewModal();
   initIndoorSelector();
 })
 
