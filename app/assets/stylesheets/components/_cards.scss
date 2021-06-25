@@ -5,6 +5,7 @@
   width: 344px;
   height: 380px;
   border-radius: 4px;
+  margin: 20px auto;
 }
 
 .icon-info {
@@ -81,11 +82,12 @@
   z-index: 2;
   text-align: center;
   line-height: 45% ;
-  padding-top: 110px;
+  padding: 15px 15px 0px 15px;
   border-radius: 4px 4px 0 0;
   p {
     color: $light-gray;
     font-size: 64px !important;
+    margin-top: 35% !important;
   }
 }
 

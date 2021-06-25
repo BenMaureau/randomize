@@ -3,7 +3,15 @@ before_action :authenticate_user!, only: :new
 
   def my_bookings
     @my_bookings = Booking.where(user_id: current_user.id).order(created_at: :desc)
-    @icon = "🎲"
+    @my_bookings_reviewed = []
+    @my_bookings_to_review = []
+    @my_bookings.each do |booking|
+      if booking.review.nil?
+        @my_bookings_to_review << booking
+      else
+        @my_bookings_reviewed << booking
+      end
+    end
   end
 
   def show
