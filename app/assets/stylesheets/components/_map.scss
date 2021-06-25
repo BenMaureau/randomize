@@ -32,6 +32,10 @@
   }
 }
 
+.mapboxgl-ctrl-geocoder--input {
+  display: none;
+}
+
 .map-container-flex {
   display: flex;
   flex-direction: column;
