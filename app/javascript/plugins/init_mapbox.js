@@ -19,6 +19,46 @@ const initMapbox = () => {
       center: [3.066667,50.633333],
       zoom: 12
     });
+    const current = document.querySelector('#geolocate');
+    current.addEventListener('click', (event) => {
+      console.log(event);
+      navigator.geolocation.getCurrentPosition((data) => {
+        const lat = data.coords.latitude;
+        const lon = data.coords.longitude;
+        console.log(lat);
+        const map = new mapboxgl.Map({
+          container: 'map',
+          style: 'mapbox://styles/mapbox/streets-v10',
+          center: [lon,lat],
+          zoom: 13
+        });
+        const element = document.createElement('div');
+        element.className = 'marker';
+        element.style.backgroundImage = `url('Ellipse.png')`;
+        element.style.backgroundSize = 'contain';
+        element.style.width = '50px';
+        element.style.height = '50px';
+        element.style.backgroundColor = "#ffc300";
+        element.style.opacity = "50%";
+        element.style.borderRadius = "50px";
+        element.style.border = "1px solid #003566"
+        new mapboxgl.Marker(element)
+          .setLngLat([lon, lat])
+          .addTo(map);
+        const markers = JSON.parse(mapElement.dataset.markers);
+        markers.forEach((marker) => {
+          new mapboxgl.Marker()
+          .setLngLat([marker.lng, marker.lat])
+          .addTo(map);
+        });
+        // fitMapToMarkers(map, markers);
+        map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
+                                      mapboxgl: mapboxgl }));
+        // map.setZoom(8);
+        const rangeInput = document.getElementById("formControlRange");
+      });
+    });
+
 
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
