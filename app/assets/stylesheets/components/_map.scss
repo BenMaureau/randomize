@@ -1,8 +1,29 @@
-.section-map {
+#section-map {
+  #map {
+    width: 100%;
+    min-height: 300px;
+    flex-grow: 1;
+  }
   display: flex;
   flex-direction: column;
   .map-controls {
     background-color: $blue;
+    height: 246px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .input-field {
+      margin-top: 8px;
+    }
+  }
+}
+
+.map-container-flex {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  .mapboxgl-canvas {
+    height: 100%;
   }
 }
 
