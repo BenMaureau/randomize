@@ -15,32 +15,76 @@ const initMapbox = () => {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v10'
+      style: 'mapbox://styles/mapbox/streets-v10',
+      center: [3.066667,50.633333],
+      zoom: 12
     });
+    const current = document.querySelector('#geolocate');
+    current.addEventListener('click', (event) => {
+      console.log(event);
+      navigator.geolocation.getCurrentPosition((data) => {
+        const lat = data.coords.latitude;
+        const lon = data.coords.longitude;
+        console.log(lat);
+        const map = new mapboxgl.Map({
+          container: 'map',
+          style: 'mapbox://styles/mapbox/streets-v10',
+          center: [lon,lat],
+          zoom: 13
+        });
+        const element = document.createElement('div');
+        element.className = 'marker';
+        element.style.backgroundImage = `url('Ellipse.png')`;
+        element.style.backgroundSize = 'contain';
+        element.style.width = '50px';
+        element.style.height = '50px';
+        element.style.backgroundColor = "#ffc300";
+        element.style.opacity = "50%";
+        element.style.borderRadius = "50px";
+        element.style.border = "1px solid #003566"
+        new mapboxgl.Marker(element)
+          .setLngLat([lon, lat])
+          .addTo(map);
+        const markers = JSON.parse(mapElement.dataset.markers);
+        markers.forEach((marker) => {
+          new mapboxgl.Marker()
+          .setLngLat([marker.lng, marker.lat])
+          .addTo(map);
+        });
+        // fitMapToMarkers(map, markers);
+        map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
+                                      mapboxgl: mapboxgl }));
+        // map.setZoom(8);
+        const rangeInput = document.getElementById("formControlRange");
+      });
+    });
+
+
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
 
       // Create a HTML element for your custom marker
-      const element = document.createElement('div');
-      element.className = 'marker';
+      // const element = document.createElement('div');
+      // element.className = 'marker';
       // element.style.backgroundImage = `url('${marker.image_url}')`;
-      element.style.backgroundSize = 'contain';
-      element.style.width = '50px';
-      element.style.height = '50px';
-      element.style.backgroundColor = "#ffc300";
-      element.style.opacity = "20%";
-      element.style.borderRadius = "50px";
-      element.style.border = "1px solid #003566"
+      // element.style.backgroundSize = 'contain';
+      // element.style.width = '50px';
+      // element.style.height = '50px';
+      // element.style.backgroundColor = "#ffc300";
+      // element.style.opacity = "20%";
+      // element.style.borderRadius = "50px";
+      // element.style.border = "1px solid #003566"
 
       // Pass the element as an argument to the new marker
-      new mapboxgl.Marker(element)
+      // new mapboxgl.Marker(element)
+      new mapboxgl.Marker()
         .setLngLat([marker.lng, marker.lat])
         .addTo(map);
     });
-    fitMapToMarkers(map, markers);
+    // fitMapToMarkers(map, markers);
     map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
                                       mapboxgl: mapboxgl }));
-    map.setZoom(8);
+    // map.setZoom(8);
     const rangeInput = document.getElementById("formControlRange");
 
     // rangeInput.addEventListener("change", function() {
