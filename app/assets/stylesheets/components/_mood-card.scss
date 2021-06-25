@@ -3,6 +3,9 @@
   h1 {
     margin: 100px auto;
   }
+  h2 {
+    margin: 50px auto;
+  }
 }
 
 .mood-images{
@@ -12,11 +15,9 @@
   img{
     height: 150px;
     width: 150px;
+    background-position: center;
+    background-size: cover;
   }
-}
-
-.img-adventure {
-  border: "3px solid #ffc300";
 }
 
 .completely-random {
@@ -32,12 +33,36 @@
   display: none;
 }
 
-#remove-fixed {
-  position: relative;
-}
+// #remove-fixed {
+//   position: relative;
+// }
 
 .mood-sentence {
+  margin: 50px 0;
   p {
     margin: 50px auto;
+  }
+}
+
+.active-mood-card {
+  border: 3px solid #ffc300;
+  border-radius: 3px;
+  .check {
+    display: block !important;
+  }
+}
+
+.mood-card {
+  position: relative;
+  .check {
+    display: none;
+    top: -8px;
+    right: -8px;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #f4f4f4;
+    text-align: center;
   }
 }

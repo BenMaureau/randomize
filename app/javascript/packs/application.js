@@ -28,7 +28,9 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { initReveal } from '../plugins/init_reveal';
 import { initMoodSelector } from '../plugins/init_moodSelector';
 import { searchMap } from '../plugins/search_map';
-import { initDisplayScroll } from '../plugins/init_display_scroll';
+import { initRandomScroll } from '../plugins/init_random_scroll';
+import { initCategoryCheckbox } from '../plugins/init_category_checkbox';
+import { initLoader } from '../plugins/init_loader';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -38,7 +40,9 @@ document.addEventListener('turbolinks:load', () => {
   initReveal();
   initMoodSelector();
   searchMap();
-  initDisplayScroll();
+  initRandomScroll();
+  initCategoryCheckbox();
+  initLoader();
 })
 
 
