@@ -1,7 +1,7 @@
 <div class="myModal">
-  <h1 class="mb-3"> Alors, qu'en as-tu pensé ? </h1>
+  <h2 class="mb-3"> Alors, qu'en as-tu pensé ? </h2>
 
-  <form method = "POST" action = <%= create_review_path(booking) %>>
+  <form method = "POST" action = <%= create_review_path(booking) %> class="form-review">
     <div class="d-flex justify-content-center align-items-center">
       <textarea id="content" name="review[content]" class = "ml-2 pt-2"> </textarea>
 
