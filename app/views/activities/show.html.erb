@@ -6,14 +6,14 @@
     <%= image_tag "dice.gif", class: "dice-gif" %>
 </div>
 
-<script>
+<%# <script>
     setTimeout(function(){
         document.getElementById('loader').style.display = 'none';
         document.getElementById('activity-revealed').style.display = 'block';
     }, 3000); // 10000ms = 10s
-</script>
+</script> %>
 
-<div class="container" id="activity-revealed">
+<div class="my-container" id="activity-revealed">
   <div class="my-card my-activity-card box-shadow activity-secret">
     <div class="my-card-div-image">
       <div class="div-image-overlay">
@@ -24,6 +24,7 @@
       <div class="icon-info"></div>
     </div>
     <div class="my-card-div-details display-flex-column">
+      <div class="hide-name"></div>
       <h3> <%= @activity.name %> </h3>
       <div class="display-flex">
 
