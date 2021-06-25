@@ -9,19 +9,21 @@
   <div class="map-container-flex">
     <div id="map"
        data-markers="<%= @markers.to_json %>"
-       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      <div id="geolocate">
+        <i class="fas fa-location-arrow"></i>
+      </div>   
+    </div>
 
-    <div class="map-controls">
+    <%# <div class="map-controls">
       <div class="my-container">
         <div class="map-address-container">
           <input type="text" class="input-field form-control" placeholder="Entre une adresse">
-          <div id="geolocate">
-            <i class="fas fa-location-arrow"></i>
-          </div>
+
         </div>
       </div>
       
-    </div>
+    </div> %>
   </div>
 
 
