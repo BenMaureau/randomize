@@ -1,52 +1,60 @@
 <div class="placholder-navbar" style="height:66px"></div>
 
 <div class="container" id='bookings-container'>
-  <h1>Mes réservations</h1>
+  <h1>Mes réservations (<%= @my_bookings.count %> dont <%= @my_bookings_to_review.count %> à noter) </h1>
   <% @my_bookings.each do |booking| %>
     <%= link_to my_booking_path(booking), class: "card-link" do %>
-      <div class="card-booking">
-        <div class="card-image" style="background-image: url('<%= cl_image_path booking.slot.activity.photos[0].key, height: 220, crop: :fill %>')"></div>
-        <div class="my-card-div-details">
-            <div class="d-flex justify-content-between">
-              <h3> <%= booking.slot.activity.name %> </h3>
-              <p> <%= booking.slot.activity.address %> </p>
-            </div>
-            <div class="d-flex justify-content-between">
-            <div class="display-flex mt-3">
-              <div class="display-flex-column mr-3">
-                <div class="card-detail">
-                  <i class="fas fa-euro-sign"></i>
-                  <p>10 (par personne)</p>
-                </div>
-                <div class="card-detail">
-                  <i class="fas fa-hourglass-start"></i>
-                  <p>environ 2h</p>
-                </div>
-              </div>
-              <div class="display-flex-column">
-                <div class="card-detail">
-                  <i class="fas fa-map-marker-alt"></i>
-                  <p>à 7km</p>
-                </div>
-                <div class="card-detail">
-                  <i class="fas fa-clock"></i>
-                  <p>rdv à 19h30</p>
-                </div>
-              </div>
-            </div>
-            <div id="map" class="map-non-sticky"
-              style="width: 200px; height: 100px"
-              data-markers="<%= [{
-        lat: booking.slot.activity.latitude,
-        lng: booking.slot.activity.longitude,
-        icon: @icon
-      }].to_json %>"
-              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-            </div>
+      <div class="my-card my-activity-card box-shadow">
+    <div class="my-card-div-image">
+      <div class="div-image-overlay">
+        <% if booking.review %>
+          <div>
+            <% if [1, 2, 3, 4, 5].include?(booking.review.rating) %>
+              <% booking.review.rating.to_i.times do %>
+                <i class="fas fa-star"></i>
+              <% end %>
+            <% else %>
+              <% booking.review.rating.to_f.truncate.times do %>
+                <i class="fas fa-star"></i>
+              <% end %>
+              <i class="fas fa-star-half-alt"></i>
+            <% end %>
+          </div>
+          <% else %>
+            <p> Donne-nous ton avis ! </p>
+          <% end %>
+      </div>
+      <%= cl_image_tag booking.slot.activity.photos[0].key, crop: :fill %>
+      <div class="icon-info"></div>
+    </div>
+    <div class="my-card-div-details display-flex-column">
+      <h3> <%= booking.slot.activity.name %> </h3>
+      <div class="display-flex">
+
+        <div class="display-flex-column">
+          <div class="card-detail">
+            <i class="fas fa-euro-sign"></i>
+            <p> <%= booking.slot.activity.price_per_head %> (par personne)</p>
+          </div>
+          <div class="card-detail">
+            <i class="fas fa-hourglass-start"></i>
+            <p>environ 2h</p>
           </div>
         </div>
-        <div class="right-chevron">
-          <i class="fas fa-chevron-right"></i>
+
+        <div class="display-flex-column">
+          <div class="card-detail">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>à 7km</p>
+          </div>
+          <div class="card-detail">
+            <i class="fas fa-clock"></i>
+            <p>rdv à 19h30</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
         </div>
       </div>
     <% end %>
