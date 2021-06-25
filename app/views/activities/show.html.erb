@@ -6,13 +6,6 @@
     <%= image_tag "dice.gif", class: "dice-gif" %>
 </div>
 
-<script>
-    setTimeout(function(){
-        document.getElementById('loader').style.display = 'none';
-        document.getElementById('activity-revealed').style.display = 'block';
-    }, 5000); // 10000ms = 10s
-</script>
-
 <div class="container" id="activity-revealed">
   <div class="my-card my-activity-card box-shadow activity-secret">
     <div class="my-card-div-image">
