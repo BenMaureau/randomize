@@ -29,6 +29,10 @@ fieldset, label { margin: 0; padding: 0; }
  float: right;
 }
 
+.star-div :hover {
+  cursor: pointer;
+}
+
 .fas {
   color: $yellow;
 }

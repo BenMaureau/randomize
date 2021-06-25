@@ -9,5 +9,4 @@ const initReveal = () => {
   }
 }
 
-
 export { initReveal };
