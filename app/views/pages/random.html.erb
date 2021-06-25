@@ -6,7 +6,7 @@
        data-markers="<%= @markers.to_json %>"
        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
-  <form action="random">
+
     <div class="form-group map-filters">
       <h2><label for="formControlRange">Jusqu'où irais-tu pour randomize?</label></h2>
       <input type="text" class = "hiddenAddress">
@@ -16,6 +16,7 @@
         <p> 1 km</p>
       </div>
     </div>
+
     <div class="number-participants">
       <div class="one-participant">
         <input type="radio" id="person" name="participants" value="person" class= "one-participant"
@@ -28,20 +29,25 @@
       </div>
     </div>
     <input value="Suivant" class="my-btn-primary btn-extend" id="next-scroll">
-  </form>
 
 </div>
 
 <div class="mood-form d-none" id="scrolling-action">
   <h1>ON SE LA JOUE COMMENT ?</h1>
   <div class="mood-images">
-    <div class="img-adventure active-mood-card" id="adventure">
+    <div class="mood-card img-adventure active-mood-card" id="adventure">
       <%= image_tag "moodadventure.jpg" %>
       <h3>Aventurier</h3>
+      <div class="check" id="mood-aventurier">
+        <i class="fas fa-check"></i>
+      </div>
     </div>
-    <div class="img-shy">
+    <div class="mood-card img-shy">
       <%= image_tag "moodshy.jpg" %>
       <h3>Prudent!</h3>
+      <div class="check" id="mood-shy">
+        <i class="fas fa-check"></i>
+      </div>
     </div>
   </div>
 
@@ -73,10 +79,8 @@
   <form action="#" method="post">
     <div class="my-form-budget">
       <input type="number" id="max-price" class="input-field" name="max-price" min="0" max="100">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Euro_symbol_black.svg/430px-Euro_symbol_black.svg.png" alt="">
+      <i class="fas fa-euro-sign"></i>
     </div>
-
-
 
     <h2>Plutôt intérieur, extérieur ou les deux ?</h2>
     <div class="mood-images">
