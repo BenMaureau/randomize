@@ -20,8 +20,17 @@ const initMoodSelector = () => {
   const divRandom = document.querySelector(".completely-random");
   const divCustom = document.querySelector(".choose-a-little");
   const divSentence = document.getElementById("mood-sentence");
-  const btnRandomize = document.querySelector(".button-randomize");
-  const btnSuivant = document.querySelector(".button-suivant");
+  const rdmBtn = document.querySelector('#rdm-btn');
+  const nextBtn = document.querySelector("#next-btn");
+
+  // if (divSentence) {
+  //   const imageShy = document.querySelector(".img-shy");
+  //   const imageAdv = document.querySelector(".img-adventure");
+  //   if (imageAdv.classList.contains('active-mood-card')) {
+  //     rdmBtn.classList.remove('display-none');
+  //     nextBtn.classList.add('display-none');
+  //   }
+  // }
 
   if(divSentence){
     const imageShy = document.querySelector(".img-shy");
@@ -31,6 +40,9 @@ const initMoodSelector = () => {
       divCustom.style.display = "none";
       imageAdv.classList.add('active-mood-card');
       imageShy.classList.remove('active-mood-card');
+
+      rdmBtn.classList.toggle('display-none');
+      nextBtn.classList.toggle('display-none');
       // btnRandomize.style.display = "block";
       // btnSuivant.style.display = "none";
     });
@@ -40,6 +52,8 @@ const initMoodSelector = () => {
       divCustom.style.display = "block";
       imageShy.classList.add('active-mood-card');
       imageAdv.classList.remove('active-mood-card');
+      rdmBtn.classList.toggle('display-none');
+      nextBtn.classList.toggle('display-none');
       // btnRandomize.style.display = "none";
       // btnSuivant.style.display = "block";
     });
