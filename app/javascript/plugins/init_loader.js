@@ -1,8 +1,8 @@
 const initLoader = () => {
-  const loader = document.getElementById('loader')
+  const loader = document.getElementById('loader');
   if (loader) {
     setTimeout(function(){
-      loader.style.display = 'none';
+      loader.classList.add('display-none');
       document.getElementById('activity-revealed').style.display = 'block';
     }, 3000); // 10000ms = 10s
   }

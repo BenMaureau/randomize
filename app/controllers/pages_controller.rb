@@ -2,6 +2,9 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
 
   def home
+    @activities = Activity.all
+    @activities_names = ""
+    @activities.each { |activity| @activities_names += "#{activity.name}," }
   end
 
   def random
