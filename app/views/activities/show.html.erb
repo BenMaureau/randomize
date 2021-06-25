@@ -1,5 +1,6 @@
 <div class="placholder-navbar" style="height:66px"></div>
 
+<div class="container">
 <div class="mood-form loader" id="loader">
   <h1>RANDOMIZE TE FAIT DÉCOUVRIR ...</h1>
     <%= image_tag "dice.gif", class: "dice-gif" %>
@@ -17,7 +18,7 @@
     <div class="my-card-div-image">
       <div class="div-image-overlay">
         <p>?</p>
-        <a href="#" class="my-btn my-btn-reveal">Révéler</a>
+        <a href="#" onclick="return confirm('Veux-tu vraiment savoir ?')" class="my-btn my-btn-reveal">Révéler</a>
       </div>
       <%= cl_image_tag @activity.photos[0].key, crop: :fill %>
       <div class="icon-info"></div>
