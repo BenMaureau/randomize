@@ -42,6 +42,7 @@
 }
 
 .my-card-div-details {
+  position: relative;
   flex: 1 0 0;
   padding: 8px;
   &>div {
@@ -55,6 +56,13 @@
         margin-right: 8px;
       }
     }
+  }
+  .hide-name {
+    height: 24px;
+    width: 330px;
+    position: absolute;
+    background-color: white;
+    display: none;
   }
 }
 
@@ -93,6 +101,9 @@
 
 .activity-secret {
   .div-image-overlay {
+    display: block;
+  }
+  .hide-name {
     display: block;
   }
 }
