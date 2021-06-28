@@ -24,7 +24,14 @@
 
 textarea {
   height: 50px;
+  overflow: auto;
+  display: block;
 }
+
+textarea:focus {
+  outline: none;
+}
+
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;

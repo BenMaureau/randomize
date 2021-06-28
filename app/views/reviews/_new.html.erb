@@ -3,7 +3,9 @@
 
   <form method = "POST" action = <%= create_review_path(booking) %> class="form-review">
     <div class="d-flex justify-content-center align-items-center">
-      <textarea id="content" name="review[content]" class = "ml-2 pt-2"> </textarea>
+      <div class="textarea-review">
+        <textarea id="content" name="review[content]" class = "ml-2 pt-2"> </textarea>
+        </div>
 
       <div>
         <fieldset class="star-div rating ml-4 mb-2">
@@ -39,7 +41,7 @@
             <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
         </fieldset>
         <div class='mt-4'>
-          <input type='submit' value="Ajouter mon commentaire" class = "my-btn-review-submit ml-2" />
+          <input type='submit' value="Ajouter mon commentaire" class = "my-btn-review-submit ml-2" disabled />
         </div>
       </div>
     </div>

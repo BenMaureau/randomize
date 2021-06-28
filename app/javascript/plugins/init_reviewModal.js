@@ -13,9 +13,11 @@ const initReviewModal = () => {
   for (let i = 0; i < btn.length; i++) {
    btn[i].onclick = function(e) {
       e.preventDefault();
-      console.log(e);
-      console.log(e.target.getAttribute("href"));
-      console.log(document.querySelector(e.target.getAttribute("href")));
+      const fieldset = document.querySelector("fieldset");
+      const btn_review = document.querySelector(".my-btn-review-submit");
+      fieldset.onclick = function() {
+        btn_review.disabled=false;
+      }
       const modal = document.querySelector(e.target.getAttribute("href"));
       modal.style.display = "block";
    }
