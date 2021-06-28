@@ -15,6 +15,33 @@
   color: $light-gray;
 }
 
+.navbar-ul {
+  display: flex;
+  flex-direction: row;
+}
+
+.drop-menu {
+  background-color: $black;
+  position: fixed;
+  right: 14px;
+  top: 80px;
+  padding: 8px 0;
+  border-radius: 5px;
+  a {
+    color: white;
+    opacity: 1;
+  }
+}
+
+.my-navbar {
+  position: relative;
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+  color: white !important;
+  text-decoration: none !important;
+}
+
 // .navbar {
 //   width: 100vw;
 //   height: 40px;
@@ -34,10 +61,11 @@
 // }
 
 
-.navbar .bell{
-  color: $light-gray;
-  font-size: 30px;
+.my-navbar .bell{
+  color: $yellow;
+  font-size: 28px;
   padding: 5px;
+  cursor: pointer;
 }
 
 .navbar .circle{
@@ -47,29 +75,36 @@
   color: $yellow;
 }
 
-.navbar .notifications{
-  position: relative;
+.notifications{
+  margin-right: 12px;
 }
 
 .navbar .notification-number{
   position: absolute;
-  bottom: 18px;
-  left: 25px;
-  color: $red;
+  top: 0px;
+  left: 20px;
+  color: white;
+  background: red;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 18px;
 }
-// .navbar .flex-icons{
-//   display: flex;
-// }
 
-// .navbar .stick-icons{
-//   justify-content: flex-end;
-// }
-
-// .navbar .avatar {
-//   height: 100%;
-// }
-
-.navbar-toggler {
-  font-size: 1.75rem !important;
-  color: $light-gray !important;
+.navbar-disabled {
+  background-color: $light-gray;
+  opacity: 0.5;
+  transition-duration: 300ms;
 }
+
+.navbar {
+  transition-duration: 300ms;
+}
+
+.avatar {
+  height: 100%;
+  cursor: pointer;
+}
+
