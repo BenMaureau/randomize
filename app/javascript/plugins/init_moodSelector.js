@@ -12,7 +12,7 @@ const initMoodSelector = () => {
   //       // }
   //       // if (moodSentence.innerText.strip === "Je choisis quand même un peu") {
   //       //   moodSentence.innerText = "J'y vais totalement au hasard";
-  //       // } 
+  //       // }
   //     })
   //   })
   // })
@@ -43,8 +43,6 @@ const initMoodSelector = () => {
 
       rdmBtn.classList.toggle('display-none');
       nextBtn.classList.toggle('display-none');
-      // btnRandomize.style.display = "block";
-      // btnSuivant.style.display = "none";
     });
 
     imageShy.addEventListener("click", (event) => {
@@ -54,8 +52,6 @@ const initMoodSelector = () => {
       imageAdv.classList.remove('active-mood-card');
       rdmBtn.classList.toggle('display-none');
       nextBtn.classList.toggle('display-none');
-      // btnRandomize.style.display = "none";
-      // btnSuivant.style.display = "block";
     });
   }
 }
