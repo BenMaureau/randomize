@@ -34,6 +34,7 @@ import { initLoader } from '../plugins/init_loader';
 import { initReviewModal} from '../plugins/init_reviewModal';
 import { loadDynamicBannerText } from '../plugins/banner';
 import { initIndoorSelector } from '../plugins/init_indoorSelector';
+import { initFilters } from '../plugins/init_filters';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -49,6 +50,7 @@ document.addEventListener('turbolinks:load', () => {
   initReviewModal();
   initIndoorSelector();
   loadDynamicBannerText();
+  initFilters();
 })
 
 

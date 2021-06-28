@@ -1,11 +1,15 @@
 const initIndoorSelector = () => {
-  const indoorOutdoorSelectors = document.querySelectorAll('.select-indoor-outdoor');
-  if (indoorOutdoorSelectors){
-    indoorOutdoorSelectors.forEach((selector) => {
-      selector.addEventListener("click", (event) => {
-        console.log(event.currentTarget);
-        event.currentTarget.classList.toggle('active-indoor-outdoor-card');
-      })
+  const indoorSelector = document.querySelector('#indoor-card');
+  const outdoorSelector = document.querySelector('#outdoor-card');
+
+  if (indoorSelector && outdoorSelector) {
+    indoorSelector.addEventListener("click", (event) => {
+      console.log(event.currentTarget);
+      event.currentTarget.classList.toggle('active-indoor-outdoor-card');
+    })
+    outdoorSelector.addEventListener("click", (event) => {
+      console.log(event.currentTarget);
+      event.currentTarget.classList.toggle('active-indoor-outdoor-card');
     })
   }
 }
