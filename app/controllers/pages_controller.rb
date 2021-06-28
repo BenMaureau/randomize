@@ -26,7 +26,6 @@ class PagesController < ApplicationController
 
   def custom_activity
     raise
-    @activities
 
   end
 end
