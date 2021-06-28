@@ -64,7 +64,7 @@ document.addEventListener('turbolinks:load', () => {
       const btnResa = document.getElementById('btn-booking-reservation');
       btnResa.href = btnResa.href.replace('false', 'true');
     }
-});
+  });
 })
 
 
