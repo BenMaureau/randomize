@@ -1,10 +1,9 @@
 <div class="placholder-navbar" style="height:66px"></div>
 
-<% if @reveal = true %>
+<% if @booking.reveal == true %>
   <%= render "bookings/reveal_show", booking: @booking %>
 <% else %>
   <%= render "bookings/mystery_show", booking: @booking %>
 <% end %>
-   
 <!-- secret: class="my-card my-activity-card box-shadow activity-secret"
 pas sercret: class="my-card my-activity-card box-shadow" -->
