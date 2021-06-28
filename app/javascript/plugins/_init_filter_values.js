@@ -1,5 +1,3 @@
-import axios from "axios";
-
 const filterValues = () => {
   const budgetField = document.getElementById('max-price');
   const budget = budgetField.value;

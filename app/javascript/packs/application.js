@@ -33,6 +33,7 @@ import { initLoader } from '../plugins/init_loader';
 import { initReviewModal} from '../plugins/init_reviewModal';
 import { loadDynamicBannerText } from '../plugins/banner';
 import { initIndoorSelector } from '../plugins/init_indoorSelector';
+import { initFilters } from '../plugins/init_filters';
 import { initSweetalert } from '../plugins/init_sweetalert';
 import { filterValues } from '../plugins/_init_filter_values';
 import { initNavbar, initUpdateNavbarOnScroll } from '../plugins/init_navbar';
@@ -51,6 +52,7 @@ document.addEventListener('turbolinks:load', () => {
   initReviewModal();
   initIndoorSelector();
   loadDynamicBannerText();
+  initFilters();
   filterValues();
   initNavbar();
   initUpdateNavbarOnScroll();

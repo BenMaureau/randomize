@@ -3,7 +3,7 @@ import Typed from 'typed.js';
 const bannerText = document.getElementById('banner-typed-text');
 
 const loadDynamicBannerText = () => {
-  if(bannerText) {
+  if (bannerText) {
     const activities = bannerText.dataset.activities;
     const dynamicWords = activities.split(',');
     console.log(dynamicWords);
