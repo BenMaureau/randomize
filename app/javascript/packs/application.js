@@ -58,13 +58,13 @@ document.addEventListener('turbolinks:load', () => {
     closeOnEsc: false,
     dangerMode: true,
     buttons: ["Je suis joueur", "Je veux voir"]
-    }, (value) => {
-      if (value) {
-        const card = document.querySelector('.my-activity-card');
-        card.classList.remove("activity-secret");
-        const btnResa = document.getElementById('btn-booking-reservation');
-        btnResa.href = btnResa.href.replace('false', 'true');
-      }
+  }, (value) => {
+    if (value) {
+      const card = document.querySelector('.my-activity-card');
+      card.classList.remove("activity-secret");
+      const btnResa = document.getElementById('btn-booking-reservation');
+      btnResa.href = btnResa.href.replace('false', 'true');
+    }
   });
 })
 

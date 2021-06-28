@@ -21,6 +21,7 @@ class PagesController < ApplicationController
   def select
     @activities = Activity.all
     @activity = @activities.sample
+    raise
     redirect_to activity_path(@activity)
   end
 end

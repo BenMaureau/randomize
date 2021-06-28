@@ -1,6 +1,19 @@
 <div class="button-randomize">
   <div class="my-tap-container" id="remove-fixed">
-  <%= link_to 'Randomize!', select_path, class: 'my-btn my-btn-primary display-none', id: 'rdm-btn' %>
+    <%= form_with url:select_url, local: true do |f| %>
+    <%= f.text_field :aventurier, id: 'aventurier-field', value: true %>
+    <%= f.text_field :prudent, id: 'prudent-field', value: false %>
+    <%= f.text_field :max_price, id: 'price-field' %>
+    <%= f.text_field :outdoor, id: 'outdoor-field', value: false %>
+    <%= f.text_field :indoor, id: 'indoor-field', value: false %>
+    <%= f.text_field :sport, id: 'sport-field', value: false %>
+    <%= f.text_field :social, id: 'social-field', value: false  %>
+    <%= f.text_field :culture, id: 'culture-field', value: false %>
+    <%= f.text_field :nature, id: 'nature-field', value: false %>
+    <%= f.text_field :bien_etre, id: 'bien_etre-field', value: false %>
+    <%= f.text_field :sensation, id: 'sensation-field', value: false %>
+    <%= f.submit 'Randomize!', class: 'my-btn my-btn-primary display-none', id: 'rdm-btn' %>
+    <% end %>
   <a href="" class="my-btn my-btn-primary", id="next-btn">SUIVANT</a>
   </div>
 </div>
@@ -64,7 +77,7 @@
         <i class="fas fa-check"></i>
       </div>
     </div>
-    <div class="mood-card img-shy">
+    <div class="mood-card img-shy" id="prudent-card">
       <%= image_tag "moodshy.jpg" %>
       <h3>Prudent</h3>
       <div class="check" id="mood-shy">
@@ -95,14 +108,14 @@
 
     <h2>Plutôt intérieur, extérieur ou les deux ?</h2>
     <div class="mood-images">
-      <div class="select-indoor-outdoor active-indoor-outdoor-card" id="indoor-card">
+      <div class="select-indoor-outdoor" id="outdoor-card">
         <%= image_tag "ext.png" %>
         <div class="check" id="select-indoor">
           <i class="fas fa-check"></i>
         </div>
         <h3>Extérieur</h3>
       </div>
-      <div class="select-indoor-outdoor" id="outdoor-card">
+      <div class="select-indoor-outdoor" id="indoor-card">
         <%= image_tag "int.png" %>
         <div class="check" id="select-outdoor">
           <i class="fas fa-check"></i>
@@ -124,7 +137,7 @@
 
       <div class="category-checkboxes">
         <div>
-          <div class="category-checkbox category-checkbox-checked">
+          <div class="category-checkbox" id="sport-card">
             <div class="sport-background">
               <div class="check" id="categ-sport">
                 <i class="fas fa-check"></i>
@@ -133,7 +146,7 @@
             <p>Sport</p>
           </div>
 
-          <div class="category-checkbox">
+          <div class="category-checkbox" id="social-card">
             <div class="social-background">
               <div class="check" id="categ-social">
                 <i class="fas fa-check"></i>
@@ -144,7 +157,7 @@
         </div>
 
         <div>
-          <div class="category-checkbox">
+          <div class="category-checkbox" id="culture-card">
             <div class="culture-background">
               <div class="check" id="categ-culture">
                 <i class="fas fa-check"></i>
@@ -153,7 +166,7 @@
             <p>Culture</p>
           </div>
 
-          <div class="category-checkbox category-checkbox-checked">
+          <div class="category-checkbox" id="nature-card">
             <div class="nature-background">
               <div class="check" id="categ-nature">
                 <i class="fas fa-check"></i>
@@ -165,7 +178,7 @@
 
 
         <div>
-          <div class="category-checkbox category-checkbox-checked">
+          <div class="category-checkbox" id="bien_etre-card">
             <div class="bien_etre-background">
               <div class="check" id="categ-bien_etre">
                 <i class="fas fa-check"></i>
@@ -174,7 +187,7 @@
             <p>Bien être</p>
           </div>
 
-          <div class="category-checkbox">
+          <div class="category-checkbox" id="sensation-card">
             <div class="sensation-background">
               <div class="check" id="categ-sensation">
                 <i class="fas fa-check"></i>
