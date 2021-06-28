@@ -13,38 +13,63 @@ const initMapbox = () => {
 
   if (mapElement) { // only build a map if there's a div#map to inject into
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
-    let lon = 3.066667;
-    let lat = 50.633333;
+    let coords =  [3.066667, 50.633333 ];
     const map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v10',
-      center: [lon ,lat], // center on Lille
+      center: coords, // center on Lille
       zoom: 12
     });
+    // map.dragPan.disable();
+    // map.dragRotate.disable();
+
 
     
     let marker = createPerimeterMarker();
 
-    setPerimeterMarker(map, marker, lon, lat);
+    setPerimeterMarker(map, marker, coords);
     const current = document.querySelector('#geolocate');
     current.addEventListener('click', (event) => {
       console.log(event);
       navigator.geolocation.getCurrentPosition((data) => {
-        const lat = data.coords.latitude;
-        const lon = data.coords.longitude;
-        console.log(lat);
-        const map = new mapboxgl.Map({
-          container: 'map',
-          style: 'mapbox://styles/mapbox/streets-v10',
-          center: [lon,lat],
-          zoom: 12
+        coords = [ data.coords.longitude, data.coords.latitude ];
+        // console.log(lat);
+        map.flyTo({
+          center: coords,
+          zoom: 12,
+          bearing: 0,
+          speed: 1, 
+          curve: 1,
+          essential: true
         });
+        // const map = new mapboxgl.Map({
+        //   container: 'map',
+        //   style: 'mapbox://styles/mapbox/streets-v10',
+        //   center: coords,
+        //   zoom: 12
+        // });
 
-        setPerimeterMarker(map, marker, lon, lat);
+        setPerimeterMarker(map, marker, coords);
       });
     });
-    map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
-                                      mapboxgl: mapboxgl }));
+    // Search geocoder
+    let geocoder = new MapboxGeocoder({ 
+      accessToken: mapboxgl.accessToken,
+      mapboxgl: mapboxgl,
+      placeholder: 'Entre une adresse',
+      zoom: 12,
+      flyTo: true,
+      marker: false,
+      getItemValue: e => {
+        // console.log(e.center);
+        setPerimeterMarker(map, marker, e.center);
+
+        }
+      // options: { zoom: 1 }
+    });
+    // geocoder.setPlaceholder('Lille');
+    map.addControl(geocoder);
+    map.addControl(new mapboxgl.NavigationControl());
     // map.setZoom(8);
     // const rangeInput = document.getElementById("formControlRange");
 
@@ -68,11 +93,11 @@ const createPerimeterMarker = () => {
   return element;
 };
 
-const setPerimeterMarker = (map, marker, lon, lat) => {
+const setPerimeterMarker = (map, marker, coords) => {
   if(marker) {
     marker.style.display = 'none';
     new mapboxgl.Marker(marker)
-      .setLngLat([lon, lat])
+      .setLngLat(coords)
       .addTo(map);
     marker.style.display = 'block';
   }
