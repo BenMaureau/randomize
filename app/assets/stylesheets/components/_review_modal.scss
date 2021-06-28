@@ -24,7 +24,10 @@
 
 textarea {
   height: 50px;
+  line-height: normal !important;
+  width: 100%;
 }
+
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;

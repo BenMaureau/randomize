@@ -25,7 +25,6 @@ require("channels")
 // External imports
 import "bootstrap";
 import { initMapbox } from '../plugins/init_mapbox';
-import { initReveal } from '../plugins/init_reveal';
 import { initMoodSelector } from '../plugins/init_moodSelector';
 import { searchMap } from '../plugins/search_map';
 import { initRandomScroll } from '../plugins/init_random_scroll';
@@ -35,13 +34,13 @@ import { initReviewModal} from '../plugins/init_reviewModal';
 import { loadDynamicBannerText } from '../plugins/banner';
 import { initIndoorSelector } from '../plugins/init_indoorSelector';
 import { initFilters } from '../plugins/init_filters';
+import { initSweetalert } from '../plugins/init_sweetalert';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
-  // initReveal();
   initMoodSelector();
   searchMap();
   initRandomScroll();
@@ -51,6 +50,24 @@ document.addEventListener('turbolinks:load', () => {
   initIndoorSelector();
   loadDynamicBannerText();
   initFilters();
+  initSweetalert('#btn-reveal-activity', {
+    title: "Tu es sûr?",
+    text: "Il est encore temps d'être un vrai aventurier",
+    icon: "warning",
+    closeOnClickOutside: false,
+    closeOnEsc: false,
+    dangerMode: true,
+    buttons: ["Je suis joueur", "Je veux voir"]
+    }, (value) => {
+      if (value) {
+        const card = document.querySelector('.my-activity-card');
+        card.classList.remove("activity-secret");
+        const btnResa = document.getElementById('btn-booking-reservation');
+        btnResa.href = btnResa.href.replace('false', 'true');
+      }
+  });
 })
+
+
 
 

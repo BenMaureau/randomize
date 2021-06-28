@@ -20,16 +20,17 @@ before_action :authenticate_user!, only: :new
   end
 
   def new
-    raise
   end
 
   def create
     @activity = Activity.find(params[:activity_id])
+    @reveal = params[:reveal]
     @booking = Booking.new
     @booking[:number_of_people] = 2
     @slot = @activity.slots.first
     @booking.user = current_user
     @booking.slot = @slot
+    @booking.reveal = @reveal
     @booking.save!
     redirect_to my_booking_path(@booking)
   end
@@ -37,6 +38,6 @@ before_action :authenticate_user!, only: :new
   private
 
   def booking_params
-    params.require(:booking).permit(:slot_id, :user_id)
+    params.require(:booking).permit(:slot_id, :user_id, :reveal)
   end
 end
