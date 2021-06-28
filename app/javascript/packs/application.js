@@ -39,7 +39,6 @@ import { initIndoorSelector } from '../plugins/init_indoorSelector';
 
 
 document.addEventListener('turbolinks:load', () => {
-  loadDynamicBannerText();
   initMapbox();
   initReveal();
   initMoodSelector();
@@ -49,6 +48,7 @@ document.addEventListener('turbolinks:load', () => {
   initLoader();
   initReviewModal();
   initIndoorSelector();
+  loadDynamicBannerText();
 })
 
 

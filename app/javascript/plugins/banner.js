@@ -4,9 +4,9 @@ const bannerText = document.getElementById('banner-typed-text');
 
 const loadDynamicBannerText = () => {
   if(bannerText) {
-    console.log('coucou');
     const activities = bannerText.dataset.activities;
     const dynamicWords = activities.split(',');
+    console.log(dynamicWords);
     new Typed('#banner-typed-text', {
       strings: dynamicWords,
       typeSpeed: 50,
