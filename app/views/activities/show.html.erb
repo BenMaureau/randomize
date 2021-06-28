@@ -12,19 +12,7 @@
     <div class="my-card-div-image">
       <div class="div-image-overlay">
         <p>?</p>
-
-         <a href="" onclick="if (confirm('Voulez-vous vraiment savoir?')){initReveal();}else{return false;};" class="my-btn my-btn-reveal" title="Révéler">Révéler</a>
-
-         <script>
-           const initReveal = () => {
-            const reveal = document.querySelector('.my-btn-reveal')
-            if (reveal) {
-                const card = document.querySelector('.my-activity-card')
-                event.preventDefault();
-                card.classList.remove("activity-secret");
-            }
-          }
-         </script>
+        <a class="my-btn my-btn-reveal" id="btn-reveal-activity" title="Révéler">Révéler</a>
 
       </div>
       <%= cl_image_tag @activity.photos[0].key, crop: :fill %>
@@ -65,4 +53,3 @@
     <%= link_to 'Réserver', bookings_path(activity_id: @activity, slot_id: @slot, reveal: @reveal), method: :post, class: "btn my-btn my-btn-primary", id: "btn-booking-reservation" %>
   </div>
 </div>
-<% console %>
