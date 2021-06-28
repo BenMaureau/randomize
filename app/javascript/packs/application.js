@@ -34,6 +34,7 @@ import { initReviewModal} from '../plugins/init_reviewModal';
 import { loadDynamicBannerText } from '../plugins/banner';
 import { initIndoorSelector } from '../plugins/init_indoorSelector';
 import { initSweetalert } from '../plugins/init_sweetalert';
+import { filterValues } from '../plugins/_init_filter_values';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -48,6 +49,7 @@ document.addEventListener('turbolinks:load', () => {
   initReviewModal();
   initIndoorSelector();
   loadDynamicBannerText();
+  filterValues();
 
   initSweetalert('#btn-reveal-activity', {
     title: "Tu es sûr?",
@@ -64,7 +66,7 @@ document.addEventListener('turbolinks:load', () => {
       const btnResa = document.getElementById('btn-booking-reservation');
       btnResa.href = btnResa.href.replace('false', 'true');
     }
-});
+  });
 })
 
 
