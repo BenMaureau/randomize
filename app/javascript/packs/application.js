@@ -66,7 +66,3 @@ document.addEventListener('turbolinks:load', () => {
     }
   });
 })
-
-
-
-
