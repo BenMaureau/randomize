@@ -5,11 +5,6 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
-  // const fitMapToMarkers = (map, markers) => {
-  //   const bounds = new mapboxgl.LngLatBounds();
-  //   markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-  //   map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
-  // };
 
   if (mapElement) { // only build a map if there's a div#map to inject into
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
@@ -42,12 +37,6 @@ const initMapbox = () => {
           curve: 1,
           essential: true
         });
-        // const map = new mapboxgl.Map({
-        //   container: 'map',
-        //   style: 'mapbox://styles/mapbox/streets-v10',
-        //   center: coords,
-        //   zoom: 12
-        // });
 
         setPerimeterMarker(map, marker, coords);
       });
@@ -58,24 +47,26 @@ const initMapbox = () => {
       mapboxgl: mapboxgl,
       placeholder: 'Entre une adresse',
       zoom: 12,
-      flyTo: true,
-      marker: false,
-      getItemValue: e => {
-        // console.log(e.center);
-        setPerimeterMarker(map, marker, e.center);
-
-        }
-      // options: { zoom: 1 }
+      marker: false
     });
-    // geocoder.setPlaceholder('Lille');
+
+    geocoder.on('result', e => {
+      setPerimeterMarker(map, marker, e.result.center);
+
+      map.flyTo({
+        center: e.result.center,
+        zoom: 12,
+        bearing: 0,
+        speed: 1, 
+        curve: 1,
+        essential: true
+      });
+    });
+
     map.addControl(geocoder);
     map.addControl(new mapboxgl.NavigationControl());
-    // map.setZoom(8);
-    // const rangeInput = document.getElementById("formControlRange");
 
-    // rangeInput.addEventListener("change", function() {
-    //   map.setZoom(parseInt(rangeInput.value,10)/6);
-    // }, false);
+    map.on('result', e => {console.log('toto')} );
   }
 };
 
@@ -84,10 +75,8 @@ const createPerimeterMarker = () => {
   element.id = 'markerPerimeter';
   element.style.backgroundColor = "#FFBF00";
   element.style.border = "solid 2px #FF7145";
-  // element.style.backgroundSize = 'contain';
   element.style.width = '50px';
   element.style.height = '50px';
-  // element.style.backgroundColor = "#ffc300";
   element.style.opacity = "50%";
   element.style.borderRadius = "50%";
   return element;
@@ -101,7 +90,6 @@ const setPerimeterMarker = (map, marker, coords) => {
       .addTo(map);
     marker.style.display = 'block';
   }
-  // element.style.border = "1px solid #003566"
 };
 
 
