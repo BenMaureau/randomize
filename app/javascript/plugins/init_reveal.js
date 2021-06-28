@@ -6,7 +6,6 @@ const initReveal = () => {
       event.preventDefault();
       card.classList.remove("activity-secret");
       const btnResa = document.getElementById('btn-booking-reservation');
-      console.log(btnResa);
     })
   }
 }
