@@ -24,12 +24,8 @@
 
 textarea {
   height: 50px;
-  overflow: auto;
-  display: block;
-}
-
-textarea:focus {
-  outline: none;
+  line-height: normal !important;
+  width: 100%;
 }
 
 /* Modal Content/Box */
