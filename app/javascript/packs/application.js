@@ -35,6 +35,9 @@ import { loadDynamicBannerText } from '../plugins/banner';
 import { initIndoorSelector } from '../plugins/init_indoorSelector';
 import { initFilters } from '../plugins/init_filters';
 import { initSweetalert } from '../plugins/init_sweetalert';
+import { filterValues } from '../plugins/_init_filter_values';
+import { initNavbar, initUpdateNavbarOnScroll } from '../plugins/init_navbar';
+
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -50,6 +53,9 @@ document.addEventListener('turbolinks:load', () => {
   initIndoorSelector();
   loadDynamicBannerText();
   initFilters();
+  filterValues();
+  initNavbar();
+  initUpdateNavbarOnScroll();
   initSweetalert('#btn-reveal-activity', {
     title: "Tu es sûr?",
     text: "Il est encore temps d'être un vrai aventurier",
@@ -67,7 +73,3 @@ document.addEventListener('turbolinks:load', () => {
     }
   });
 })
-
-
-
-

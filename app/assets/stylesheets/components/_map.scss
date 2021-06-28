@@ -25,15 +25,18 @@
 
 #geolocate {
   position: absolute;
-  right: 16px;
-  top: 16px;
-  height: 40px;
-  width: 40px;
+  right: 10px;
+  top: 170px;
+  height: 30px;
+  width: 30px;
   cursor: pointer;
-  padding-top: 6px;
+  padding-top: 4px;
   z-index: 3;
+  background: white;
+  border-radius: 5px;
   i {
-    font-size: 1.50rem;
+
+    font-size: 1.2rem;
   }
 }
 
@@ -45,6 +48,14 @@
     height: 100%;
   }
 }
+
+// .slide-container {
+//   background-color: white;
+//   width: 90%;
+//   z-index: 3;
+//   position: absolute;
+//   bottom: 70px;
+// }
 
 // .map-filters{
 //   padding: 10px;
