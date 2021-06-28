@@ -34,6 +34,7 @@ import { initReviewModal} from '../plugins/init_reviewModal';
 import { loadDynamicBannerText } from '../plugins/banner';
 import { initIndoorSelector } from '../plugins/init_indoorSelector';
 import { initSweetalert } from '../plugins/init_sweetalert';
+import { initNavbar, initUpdateNavbarOnScroll } from '../plugins/init_navbar';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -48,6 +49,8 @@ document.addEventListener('turbolinks:load', () => {
   initReviewModal();
   initIndoorSelector();
   loadDynamicBannerText();
+  initNavbar();
+  initUpdateNavbarOnScroll();
 
   initSweetalert('#btn-reveal-activity', {
     title: "Tu es sûr?",
