@@ -29,15 +29,14 @@ const initRandomScroll = () => {
         randomSectionCustom1.classList.remove('display-none');
       } else {
         randomSectionCustom2.classList.remove('display-none');
+        btnNext.classList.add('display-none');
+        btnRdm.classList.remove('display-none');
 
       }
       window.scrollTo({ left: 0, top: document.body.scrollHeight, behavior: "smooth" });
-      // randomSectionMood.classList.add('display-block');
-
-      // console.log(randomSectionMood.classList);
-      // mapDisplayed.classList.add('d-none');
-      // scrollAction.classList.remove('d-none');
     })
   }
 }
 export { initRandomScroll };
+
+
