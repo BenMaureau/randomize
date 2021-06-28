@@ -23,4 +23,11 @@ class PagesController < ApplicationController
     @activity = @activities.sample
     redirect_to activity_path(@activity)
   end
+
+  def custom_activity
+    raise
+    @activities
+
+  end
 end
+
