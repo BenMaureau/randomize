@@ -10,97 +10,97 @@ require 'json'
 require 'open-uri'
 require_relative 'scrapping/scrap_lechti'
 
-puts "=== Cleaning database... ==="
+# puts "=== Cleaning database... ==="
 
-Review.destroy_all
-puts "=== Review clean! ==="
-Notification.destroy_all
-puts "=== Notification clean! ==="
-Booking.destroy_all
-puts "=== Booking clean! ==="
-Slot.destroy_all
-puts "=== Slot clean! ==="
-Activity.destroy_all
-puts "=== Activity clean! ==="
-User.destroy_all
-puts "=== User clean! ==="
+# Review.destroy_all
+# puts "=== Review clean! ==="
+# Notification.destroy_all
+# puts "=== Notification clean! ==="
+# Booking.destroy_all
+# puts "=== Booking clean! ==="
+# Slot.destroy_all
+# puts "=== Slot clean! ==="
+# Activity.destroy_all
+# puts "=== Activity clean! ==="
+# User.destroy_all
+# puts "=== User clean! ==="
 
-puts "=== Database clean! ==="
+# puts "=== Database clean! ==="
 
-puts "=== Adding users... ==="
-user1 = User.create(first_name: 'Benjamin', last_name: 'Maureau', email: 'benjamin@com', password: 'azerty', phone_number: "0608450544", birth_date: "1997-11-15")
-user1.photo.attach(io: URI.open('https://avatars.githubusercontent.com/u/80259966?v=4'), filename: 'ben.jpeg', content_type: 'image/jpeg')
-user1.save
-user2 = User.create(first_name: 'Tania', last_name: 'Hajjar', email: 'tania@com', password: 'azerty', phone_number: "0675727589", birth_date: "1997-09-21")
-user2.photo.attach(io: URI.open('https://avatars.githubusercontent.com/u/81690176?v=4'), filename: 'tania.jpeg', content_type: 'image/png')
-user2.save
-user3 = User.create(first_name: 'Robin', last_name: 'Dahan', email: 'robin@com', password: 'azerty', phone_number: "0661681428", birth_date: "1997-10-17")
-user3.photo.attach(io: URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1619972134/kjwymhuj4vddmefrsxrx.jpg'), filename: 'robin.jpeg', content_type: 'image/jpeg')
-user3.save
-user4 = User.create(first_name: 'Louis', last_name: 'Hocquet', email: 'louis@com', password: 'azerty', phone_number: "0786423455", birth_date: "1996-06-04")
-user4.photo.attach(io: URI.open('https://avatars.githubusercontent.com/u/50288549?v=4'), filename: 'louis.jpeg', content_type: 'image/jpeg')
-user4.save
-puts "=== #{User.count} users added! ==="
+# puts "=== Adding users... ==="
+# user1 = User.create(first_name: 'Benjamin', last_name: 'Maureau', email: 'benjamin@com', password: 'azerty', phone_number: "0608450544", birth_date: "1997-11-15")
+# user1.photo.attach(io: URI.open('https://avatars.githubusercontent.com/u/80259966?v=4'), filename: 'ben.jpeg', content_type: 'image/jpeg')
+# user1.save
+# user2 = User.create(first_name: 'Tania', last_name: 'Hajjar', email: 'tania@com', password: 'azerty', phone_number: "0675727589", birth_date: "1997-09-21")
+# user2.photo.attach(io: URI.open('https://avatars.githubusercontent.com/u/81690176?v=4'), filename: 'tania.jpeg', content_type: 'image/png')
+# user2.save
+# user3 = User.create(first_name: 'Robin', last_name: 'Dahan', email: 'robin@com', password: 'azerty', phone_number: "0661681428", birth_date: "1997-10-17")
+# user3.photo.attach(io: URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1619972134/kjwymhuj4vddmefrsxrx.jpg'), filename: 'robin.jpeg', content_type: 'image/jpeg')
+# user3.save
+# user4 = User.create(first_name: 'Louis', last_name: 'Hocquet', email: 'louis@com', password: 'azerty', phone_number: "0786423455", birth_date: "1996-06-04")
+# user4.photo.attach(io: URI.open('https://avatars.githubusercontent.com/u/50288549?v=4'), filename: 'louis.jpeg', content_type: 'image/jpeg')
+# user4.save
+# puts "=== #{User.count} users added! ==="
 
 
 puts "=== Adding Activity... ==="
-scrap_lechti
+scrap_lechti_v2
 
-puts "=== #{Activity.count} activities added! ==="
+# puts "=== #{Activity.count} activities added! ==="
 
-puts "=== Adding slots... ==="
+# puts "=== Adding slots... ==="
 
-activities = Activity.all
-activities.each do |activity|
-  Slot.create!(
-    start_date: "2021-09-21",
-    end_date: "2022-09-21",
-    max_number_of_people: 4,
-    activity_id: activity.id
-  )
+# activities = Activity.all
+# activities.each do |activity|
+#   Slot.create!(
+#     start_date: "2021-09-21",
+#     end_date: "2022-09-21",
+#     max_number_of_people: 4,
+#     activity_id: activity.id
+#   )
 
-  Slot.create!(
-    start_date: "2021-09-21",
-    end_date: "2022-09-21",
-    max_number_of_people: 2,
-    activity_id: activity.id
-  )
+#   Slot.create!(
+#     start_date: "2021-09-21",
+#     end_date: "2022-09-21",
+#     max_number_of_people: 2,
+#     activity_id: activity.id
+#   )
 
-  Slot.create!(
-    start_date: "2021-09-21",
-    end_date: "2022-09-21",
-    max_number_of_people: 1,
-    activity_id: activity.id
-  )
-end
+#   Slot.create!(
+#     start_date: "2021-09-21",
+#     end_date: "2022-09-21",
+#     max_number_of_people: 1,
+#     activity_id: activity.id
+#   )
+# end
 
-puts "=== #{Slot.count} slots added! ==="
+# puts "=== #{Slot.count} slots added! ==="
 
 
-puts "=== Adding bookings... ==="
+# puts "=== Adding bookings... ==="
 
-# slots made on the first activity from categ social
-slots = Slot.first(3)
+# # slots made on the first activity from categ social
+# slots = Slot.first(3)
 
-booking1 = Booking.create!(
-  number_of_people: 2,
-  slot_id: slots[0].id,
-  user_id: User.last.id
-  )
+# booking1 = Booking.create!(
+#   number_of_people: 2,
+#   slot_id: slots[0].id,
+#   user_id: User.last.id
+#   )
 
-booking2 = Booking.create!(
-  number_of_people: 2,
-  slot_id: slots[1].id,
-  user_id: User.last.id
-  )
+# booking2 = Booking.create!(
+#   number_of_people: 2,
+#   slot_id: slots[1].id,
+#   user_id: User.last.id
+#   )
 
-booking3 = Booking.create!(
-  number_of_people: 1,
-  slot_id: slots[2].id,
-  user_id: User.last.id
-  )
+# booking3 = Booking.create!(
+#   number_of_people: 1,
+#   slot_id: slots[2].id,
+#   user_id: User.last.id
+#   )
 
-puts "=== #{Booking.count} bookings added! ==="
+# puts "=== #{Booking.count} bookings added! ==="
 
 # uncomment above only
 
