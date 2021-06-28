@@ -6,19 +6,26 @@
     <%= image_tag "dice.gif", class: "dice-gif" %>
 </div>
 
-<%# <script>
-    setTimeout(function(){
-        document.getElementById('loader').style.display = 'none';
-        document.getElementById('activity-revealed').style.display = 'block';
-    }, 3000); // 10000ms = 10s
-</script> %>
 
 <div class="my-container" id="activity-revealed">
   <div class="my-card my-activity-card box-shadow activity-secret">
     <div class="my-card-div-image">
       <div class="div-image-overlay">
         <p>?</p>
-        <a href="#" onclick="return confirm('Veux-tu vraiment savoir ?')" class="my-btn my-btn-reveal">Révéler</a>
+
+         <a href="" onclick="if (confirm('Voulez-vous vraiment savoir?')){initReveal();}else{return false;};" class="my-btn my-btn-reveal" title="Révéler">Révéler</a>
+
+         <script>
+           const initReveal = () => {
+            const reveal = document.querySelector('.my-btn-reveal')
+            if (reveal) {
+                const card = document.querySelector('.my-activity-card')
+                event.preventDefault();
+                card.classList.remove("activity-secret");
+            }
+          }
+         </script>
+
       </div>
       <%= cl_image_tag @activity.photos[0].key, crop: :fill %>
       <div class="icon-info"></div>
