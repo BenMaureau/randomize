@@ -82,4 +82,10 @@ document.addEventListener('turbolinks:load', () => {
       btnResa.href = btnResa.href.replace('false', 'true');
     }
   });
+  initSweetalert('#submit-btn', {
+    title: "Mail envoyé",
+    icon: "success",
+    closeOnClickOutside: true,
+    closeOnEsc: true,
+  });
 })

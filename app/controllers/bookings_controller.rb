@@ -22,6 +22,12 @@ before_action :authenticate_user!, only: :new
   def new
   end
 
+  def invitation
+    @booking = Booking.find(params[:guest][:booking])
+    GuestMailer.with(current_user).invitation(params[:email], @booking).deliver_now
+    redirect_to profile_my_bookings_path
+  end
+
   def create
     @activity = Activity.find(params[:activity_id])
     @reveal = params[:reveal]
