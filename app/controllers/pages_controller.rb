@@ -7,6 +7,11 @@ class PagesController < ApplicationController
     @activities.each { |activity| @activities_names += "#{activity.name}," }
   end
 
+  def search
+    parameters = { term: params[:term], limit: 16 }
+    render json: Yelp.client.search('San Francisco', parameters)
+  end
+
   def random
     @activities = Activity.all
     @markers = @activities.geocoded.map do |activity|

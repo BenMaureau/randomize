@@ -9,6 +9,7 @@
 require 'json'
 require 'open-uri'
 require_relative 'scrapping/scrap_lechti'
+require_relative 'scrapping/scrap_yelp'
 
 puts "=== Cleaning database... ==="
 
@@ -47,6 +48,8 @@ puts "=== Adding Activity... ==="
 puts ">>>>> ON SCRAP LE CHTI <<<<<"
 scrap_lechti_v2
 puts ">>>>> MERCI LE CHTI ! <<<<<"
+scrap_yelp
+puts ">>>>> MERCI YELP ! <<<<<"
 
 puts "=== #{Activity.count} activities added! ==="
 
