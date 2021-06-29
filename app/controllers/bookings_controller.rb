@@ -16,7 +16,7 @@ before_action :authenticate_user!, only: :new
 
   def show
     @booking = Booking.find(params[:id])
-    # @booking = Booking.slot.activity
+    @guests = "ta copine, ton partenaire, ton chien, ta mamie, ton amoureuse, Rémi Carette"
   end
 
   def new
