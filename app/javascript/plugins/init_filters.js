@@ -27,9 +27,7 @@ const initFilters = () => {
   const price_field = document.querySelector("#price-field");
   if (max_price && price_field) {
     max_price.addEventListener ('keyup', (event) => {
-      console.log(max_price.value);
       price_field.value = max_price.value;
-      console.log(price_field.value);
     })
   }
 

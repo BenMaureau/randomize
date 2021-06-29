@@ -9,13 +9,11 @@
   <div class="text-center">
     <%= image_tag "arrow.png", class: "arrow" %>
   </div>
-  <div class="text-center guest-email">
-    <input id="guest-email-input" type="text" placeholder = "email"/>
-  </div>
-  <div class="text-center pt-4">
-    <input class="my-btn-primary" type="submit" value = "Inviter !"/>
-  </div>
-
+  <%= simple_form_for :guest, url: invitation_path, class: "text-center guest-email", method: "get" do |f| %>
+    <%= f.hidden_field :booking, value: @booking.id %>
+    <%= f.text_field :guest_mail, id: "guest-email-input", name: "email", value: "email", required: true %>
+    <%= f.submit "Inviter ! ", class: "my-btn-primary mt-3" %>
+  <% end %>
 </div>
 
 
