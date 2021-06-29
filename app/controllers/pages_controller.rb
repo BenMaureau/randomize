@@ -42,7 +42,7 @@ class PagesController < ApplicationController
       cat << "Se divertir" if params[:se_divertir] == "true"
       @activities = []
       cat.each do |c|
-        @activities_filtered = Activity.where(indoor: params[:indoor]).where("price_per_head <= ?", params[:max_price].to_i).where(category: c)
+        @activities_filtered = Activity.where("price_per_head <= ?", params[:max_price].to_i).where(category: c).where(indoor: params[:indoor])
         @activities_filtered.each do |activity|
           @activities << activity
         end
