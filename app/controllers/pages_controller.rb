@@ -40,9 +40,6 @@ class PagesController < ApplicationController
       cat << "Nature" if params[:nature] == "true"
       cat << "Bien être" if params[:bien_etre] == "true"
       cat << "Se divertir" if params[:se_divertir] == "true"
-      # @activities = []
-      # cat.each do |c|
-
         if (params[:indoor] == "true" && params[:outdoor] == "true" || params[:indoor] == "false" && params[:outdoor] == "false")
           if (cat.empty?)
             if (params[:max_price].empty?)

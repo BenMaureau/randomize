@@ -89,11 +89,11 @@ const initFilters = () => {
     })
   }
 
-  const se_divertir = document.getElementById("se-divertir-card");
-  const se_divertir_field = document.getElementById("se-divertir-field");
-  if (se_divertir) {
-    se_divertir.addEventListener ('click', (event) => {
-      value(se_divertir_field);
+  const divertir = document.getElementById("divertir-card");
+  const divertir_field = document.getElementById("divertir-field");
+  if (divertir) {
+    divertir.addEventListener ('click', (event) => {
+      value(divertir_field);
     })
   }
 }
