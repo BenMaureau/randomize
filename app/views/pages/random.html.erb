@@ -1,20 +1,21 @@
 <div class="button-randomize">
   <div class="my-tap-container" id="remove-fixed">
     <%= form_with url: custom_activity_path, local: true do |f| %>
-    <%= f.text_field :aventurier, id: 'aventurier-field', value: true %>
-    <%= f.text_field :prudent, id: 'prudent-field', value: false %>
-    <%= f.text_field :max_price, id: 'price-field' %>
-    <%= f.text_field :outdoor, id: 'outdoor-field', value: false %>
-    <%= f.text_field :indoor, id: 'indoor-field', value: false %>
-    <%= f.text_field :sport, id: 'sport-field', value: false %>
-    <%= f.text_field :social, id: 'social-field', value: false  %>
-    <%= f.text_field :culture, id: 'culture-field', value: false %>
-    <%= f.text_field :nature, id: 'nature-field', value: false %>
-    <%= f.text_field :bien_etre, id: 'bien_etre-field', value: false %>
-    <%= f.text_field :sensation, id: 'sensation-field', value: false %>
+    <%= f.text_field :aventurier, id: 'aventurier-field', value: true, type: 'hidden' %>
+    <%= f.text_field :prudent, id: 'prudent-field', value: false, type: 'hidden'%>
+    <%= f.text_field :max_price, id: 'price-field', type: 'hidden'%>
+    <%= f.text_field :outdoor, id: 'outdoor-field', value: false, type: 'hidden' %>
+    <%= f.text_field :indoor, id: 'indoor-field', value: false, type: 'hidden' %>
+    <%= f.text_field :sport, id: 'sport-field', value: false, type: 'hidden' %>
+    <%= f.text_field :social, id: 'social-field', value: false, type: 'hidden'  %>
+    <%= f.text_field :culture, id: 'culture-field', value: false, type: 'hidden' %>
+    <%= f.text_field :nature, id: 'nature-field', value: false, type: 'hidden' %>
+    <%= f.text_field :bien_etre, id: 'bien_etre-field', value: false, type: 'hidden' %>
+    <%= f.text_field :sensation, id: 'sensation-field', value: false, type: 'hidden' %>
     <%= f.submit 'Randomize!', class: 'my-btn my-btn-primary display-none', id: 'rdm-btn' %>
     <% end %>
   <a href="" class="my-btn my-btn-primary", id="next-btn">SUIVANT</a>
+
   </div>
 </div>
 

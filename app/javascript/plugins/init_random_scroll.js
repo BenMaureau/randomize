@@ -25,7 +25,7 @@ const initRandomScroll = () => {
       if (randomSectionMood.classList.contains('display-none')) {
         randomSectionMood.classList.remove('display-none');
 
-      } else if (randomSectionCustom1.clacssList.contains('display-none')) {
+      } else if (randomSectionCustom1.classList.contains('display-none')) {
         randomSectionCustom1.classList.remove('display-none');
       } else {
         randomSectionCustom2.classList.remove('display-none');
