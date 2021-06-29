@@ -7,7 +7,7 @@ def scrap_yelp
     "théâtre"             => "Se divertir",
     "massage"             => "Bien être",
     "Salles de sport"     => "Sport",
-    "Vie nocturne"        => "Sortir",
+    # "Vie nocturne"        => "Sortir",
     "Parcs d'attraction"  => "Se divertir",
     "parcs & jardins"     => "Nature",
     "Promenade"           => "Nature",
