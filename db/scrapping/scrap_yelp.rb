@@ -19,11 +19,12 @@ def scrap_yelp
   }
 
 
-  categories.keys.each do |path|
+  categories.keys.each do |key|
+    puts key
+    YelpService.search("Lille",key)["businesses"].each do |result|
 
-    YelpService.search("Lille","#{path}")["businesses"].each do |result|
-
-      category = categories[path]
+      category = categories[key]
+      # category = "Bien être"
 
       params = {
         name: result["name"],
@@ -50,6 +51,10 @@ def scrap_yelp
       }
       activity = Activity.new(params)
       photo_url = result["image_url"]
+      puts "=== photo_url ==="
+      p photo_url
+      puts "================="
+      photo_url = "https://images.unsplash.com/photo-1484069560501-87d72b0c3669?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1650&q=80" if photo_url.size.zero?
       activity.photos.attach(io: URI.open(photo_url), filename: 'X.jpg', content_type: 'image/jpg')
       puts activity.valid?
       activity.save!

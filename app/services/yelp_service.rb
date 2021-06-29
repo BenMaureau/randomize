@@ -7,7 +7,7 @@ class YelpService
   BUSINESS_PATH = "/v3/businesses/"
   DEFAULT_BUSINESS_ID = "yelp-lille"
   DEFAULT_TERM = "Burger"
-  SEARCH_LIMIT = 25
+  SEARCH_LIMIT = 50
 
   API_KEY = ENV["YELP_API_KEY"]
   def self.search(location, term)
