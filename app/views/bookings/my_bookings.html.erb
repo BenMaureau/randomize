@@ -4,7 +4,11 @@
   <h2>Mes réservations </h2>
   <p class="text-center">(<%= @my_bookings.count %> dont <%= @my_bookings_to_review.count %> à noter)</p> 
   <% @my_bookings.each do |booking| %>
+    <% if booking.reveal %>
       <div class="my-card my-activity-card box-shadow">
+    <% else %>
+      <div class="my-card my-activity-card box-shadow activity-secret">
+    <% end %>
         <div class="my-card-div-image">
           <div class="display-over d-flex justify-content-between">
             <% if booking.review %>
@@ -28,7 +32,8 @@
               <div class="modal" id='myModal<%=booking.id%>'>
                 <!-- Modal content -->
                 <div class="modal-content">
-                  <div class = "d-flex justify-content-between">
+                  <div class = "my-card-div-details d-flex justify-content-between">
+                    <div class="hide-name"></div>
                     <h4> <%= booking.slot.activity.name %> </h4>
                     <span class="close">&times;</span>
                     </div>
@@ -38,9 +43,13 @@
             <% end %>
               <div class="icon-info popover-test" title="Popover title" data-content="Popover body content is set in this attribute."></div>
           </div>
+          <div class="div-image-overlay">
+            <p>?</p>
+          </div>
           <%= cl_image_tag booking.slot.activity.photos[0].key, crop: :fill %>
         </div>
         <div class="my-card-div-details display-flex-column">
+          <div class="hide-name"></div>
           <h3> <%= booking.slot.activity.name %> </h3>
           <div class="display-flex">
 

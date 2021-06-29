@@ -44,7 +44,9 @@ puts "=== #{User.count} users added! ==="
 
 
 puts "=== Adding Activity... ==="
-scrap_lechti
+puts ">>>>> ON SCRAP LE CHTI <<<<<"
+scrap_lechti_v2
+puts ">>>>> MERCI LE CHTI ! <<<<<"
 
 puts "=== #{Activity.count} activities added! ==="
 

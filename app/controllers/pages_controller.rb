@@ -21,14 +21,11 @@ class PagesController < ApplicationController
   def select
     @activities = Activity.all
     @activity = @activities.sample
-    raise
     redirect_to activity_path(@activity)
   end
 
   def custom_activity
-    raise
-    @activities
-
+    @activities = Activity.all
   end
 end
 
