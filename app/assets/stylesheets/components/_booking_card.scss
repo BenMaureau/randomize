@@ -144,7 +144,7 @@
     margin: 60px 0px 34px 0px;
   }
   p {
-    margin-top: 40px;
+    margin: 40px 0px;
   }
 }
 
@@ -164,20 +164,17 @@
   height: 100%;
 }
 
-.booking-unreveal {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  background: $blue;
-  opacity: 1;
-  z-index: 1;
+#guest-line {
+  margin-left: 10vw;
+  padding-top: 40px;
+}
+.guest-sentence {
+  margin: 0 auto;
   text-align: center;
-  line-height: 45% ;
-  padding: 15px 15px 0px 15px;
-  border-radius: 4px 4px 0 0;
-  p {
-    color: $light-gray;
-    font-size: 64px !important;
-    margin-top: 35% !important;
+}
+.guest-email {
+  padding-top: 60px;
+  #guest-email-input {
+    width: 300px;
   }
 }
