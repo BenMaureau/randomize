@@ -144,7 +144,7 @@
     margin: 60px 0px 34px 0px;
   }
   p {
-    margin-top: 40px;
+    margin: 40px 0px;
   }
 }
 
@@ -164,3 +164,17 @@
   height: 100%;
 }
 
+#guest-line {
+  margin-left: 10vw;
+  padding-top: 40px;
+}
+.guest-sentence {
+  margin: 0 auto;
+  text-align: center;
+}
+.guest-email {
+  padding-top: 60px;
+  #guest-email-input {
+    width: 300px;
+  }
+}
