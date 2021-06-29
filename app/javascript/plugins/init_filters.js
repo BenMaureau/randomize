@@ -57,19 +57,19 @@ const initFilters = () => {
     })
   }
 
-  const social = document.getElementById("social-card");
-  const social_field = document.getElementById("social-field");
-  if (social) {
-    social.addEventListener ('click', (event) => {
-      value(social_field);
+  const manger = document.getElementById("manger-card");
+  const manger_field = document.getElementById("manger-field");
+  if (manger) {
+    manger.addEventListener ('click', (event) => {
+      value(manger_field);
     })
   }
 
-  const culture = document.getElementById("culture-card");
-  const culture_field = document.getElementById("culture-field");
-  if (culture) {
-    culture.addEventListener ('click', (event) => {
-      value(culture_field);
+  const sortir = document.getElementById("sortir-card");
+  const sortir_field = document.getElementById("sortir-field");
+  if (sortir) {
+    sortir.addEventListener ('click', (event) => {
+      value(sortir_field);
     })
   }
 
@@ -89,11 +89,11 @@ const initFilters = () => {
     })
   }
 
-  const sensation = document.getElementById("sensation-card");
-  const sensation_field = document.getElementById("sensation-field");
-  if (sensation) {
-    sensation.addEventListener ('click', (event) => {
-      value(sensation_field);
+  const se_divertir = document.getElementById("se-divertir-card");
+  const se_divertir_field = document.getElementById("se-divertir-field");
+  if (se_divertir) {
+    se_divertir.addEventListener ('click', (event) => {
+      value(se_divertir_field);
     })
   }
 }

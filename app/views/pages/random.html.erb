@@ -1,16 +1,16 @@
 <div class="button-randomize">
-    <%= form_with url: select_url, method: :get, local: true do |f| %>
+    <%= form_with url: custom_activity_path, method: :get, local: true do |f| %>
     <%= f.hidden_field :aventurier, id: 'aventurier-field', value: true %>
     <%= f.hidden_field :prudent, id: 'prudent-field', value: false %>
     <%= f.hidden_field :max_price, id: 'price-field' %>
     <%= f.hidden_field :outdoor, id: 'outdoor-field', value: false %>
     <%= f.hidden_field :indoor, id: 'indoor-field', value: false %>
     <%= f.hidden_field :sport, id: 'sport-field', value: false %>
-    <%= f.hidden_field :social, id: 'social-field', value: false  %>
-    <%= f.hidden_field :culture, id: 'culture-field', value: false %>
+    <%= f.hidden_field :manger, id: 'manger-field', value: false  %>
+    <%= f.hidden_field :sortir, id: 'sortir-field', value: false %>
     <%= f.hidden_field :nature, id: 'nature-field', value: false %>
     <%= f.hidden_field :bien_etre, id: 'bien_etre-field', value: false %>
-    <%= f.hidden_field :sensation, id: 'sensation-field', value: false %>
+    <%= f.hidden_field :se_divertir, id: 'se-divertir-field', value: false %>
   <div class="my-tap-container" id="remove-fixed">
     <%= f.submit 'Randomize!', class: 'my-btn my-btn-primary display-none', id: 'rdm-btn' %>
     <% end %>
@@ -148,24 +148,24 @@
             <p>Sport</p>
           </div>
 
-          <div class="category-checkbox" id="social-card">
+          <div class="category-checkbox" id="manger-card">
             <div class="social-background">
               <div class="check" id="categ-social">
                 <i class="fas fa-check"></i>
               </div>
             </div>
-            <p>Social</p>
+            <p>Manger</p>
           </div>
         </div>
 
         <div>
-          <div class="category-checkbox" id="culture-card">
+          <div class="category-checkbox" id="sortir-card">
             <div class="culture-background">
               <div class="check" id="categ-culture">
                 <i class="fas fa-check"></i>
               </div>
             </div>
-            <p>Culture</p>
+            <p>Sortir</p>
           </div>
 
           <div class="category-checkbox" id="nature-card">
@@ -189,13 +189,13 @@
             <p>Bien être</p>
           </div>
 
-          <div class="category-checkbox" id="sensation-card">
+          <div class="category-checkbox" id="se-divertir-card">
             <div class="sensation-background">
               <div class="check" id="categ-sensation">
                 <i class="fas fa-check"></i>
               </div>
             </div>
-            <p>Sensation</p>
+            <p>Se divertir</p>
           </div>
         </div>
 

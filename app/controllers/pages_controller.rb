@@ -30,7 +30,25 @@ class PagesController < ApplicationController
   end
 
   def custom_activity
-    @activities = Activity.all
+    if params[:aventurier] == "true"
+      select
+    else
+      cat = []
+      cat << "Sport" if params[:sport] == "true"
+      cat << "Manger" if params[:manger] == "true"
+      cat << "Sortir" if params[:sortir] == "true"
+      cat << "Nature" if params[:nature] == "true"
+      cat << "Bien être" if params[:bien_etre] == "true"
+      cat << "Se divertir" if params[:se_divertir] == "true"
+      @activities = []
+      cat.each do |c|
+        @activities_filtered = Activity.where(indoor: params[:indoor]).where("price_per_head <= ?", params[:max_price].to_i).where(category: c)
+        @activities_filtered.each do |activity|
+          @activities << activity
+        end
+      end
+      @activity = @activities.sample
+      redirect_to activity_path(@activity) if @activities.size > 0
+    end
   end
 end
-
