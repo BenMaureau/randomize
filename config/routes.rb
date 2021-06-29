@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   post'/profile/my_bookings/:booking_id/reviews/', to: 'reviews#create', as: :create_review
   delete '/profile/reviews/:id', to: 'reviews#destroy', as: :destroy_review
 
+  post '/custom_activity', to: 'pages#custom_activity', as: :custom_activity
   get '/random', to: 'pages#random'
   get '/select', to: 'pages#select'
 

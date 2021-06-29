@@ -3,30 +3,27 @@
     <%= image_tag "Logo.png" %>
     <% end %>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <%# <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <i class="fas fa-bars"></i>
-  </button>
+  </button> %>
 
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+  <div class="my-navbar" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto navbar-ul">
       <% if user_signed_in? %>
         <div class="notifications">
-          <li class="nav-item active">
-            <i class="fas fa-bell bell"></i>
-          </li>
           <li class="nav-item">
-            <i class="fas fa-circle circle"></i>
+            <i class="fas fa-bell bell"></i>
+            <div class="notification-number">1</div>
           </li>
-          <li class="nav-item notification-number">1</li>
         </div>
         <li class="nav-item dropdown">
           <% if current_user.photo.present? %>
-            <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= cl_image_tag current_user.photo.key, class: "avatar", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% else %>
             <%= image_tag "Profile.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% end %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <div class="drop-menu display-none" aria-labelledby="">
             <%= link_to "Mes réservations", profile_my_bookings_path, class: "dropdown-item" %>
             <%= link_to "Me déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
@@ -36,5 +33,6 @@
           <%= link_to "Me connecter", new_user_session_path, class: "nav-link", id: "navbar-light" %>
         </li>
       <% end %>
+    </ul>
   </div>
 </div>

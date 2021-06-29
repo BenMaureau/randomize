@@ -33,7 +33,10 @@ import { initLoader } from '../plugins/init_loader';
 import { initReviewModal} from '../plugins/init_reviewModal';
 import { loadDynamicBannerText } from '../plugins/banner';
 import { initIndoorSelector } from '../plugins/init_indoorSelector';
+import { initFilters } from '../plugins/init_filters';
 import { initSweetalert } from '../plugins/init_sweetalert';
+import { initNavbar, initUpdateNavbarOnScroll } from '../plugins/init_navbar';
+
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -48,7 +51,9 @@ document.addEventListener('turbolinks:load', () => {
   initReviewModal();
   initIndoorSelector();
   loadDynamicBannerText();
-
+  initFilters();
+  initNavbar();
+  initUpdateNavbarOnScroll();
   initSweetalert('#btn-reveal-activity', {
     title: "Tu es sûr?",
     text: "Il est encore temps d'être un vrai aventurier",
@@ -64,9 +69,5 @@ document.addEventListener('turbolinks:load', () => {
       const btnResa = document.getElementById('btn-booking-reservation');
       btnResa.href = btnResa.href.replace('false', 'true');
     }
-});
+  });
 })
-
-
-
-
