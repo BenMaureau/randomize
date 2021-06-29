@@ -80,7 +80,7 @@ def scrap_lechti_v2
         params = {
           name: html_doc.search('h1').text,
           address: html_doc.search('.info-place__address-text').text,
-          price_per_head: [10,12,15,18,20,24, 30].sample,
+          price_per_head: (1..40).to_a.sample,
           activity_url: activity_url,
           category: category,
           indoor: path != "se-divertir",
