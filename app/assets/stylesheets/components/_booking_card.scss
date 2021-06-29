@@ -141,7 +141,7 @@
   margin-bottom: 100px;
   h1 {
     border-bottom: 1px solid $black;
-    margin: 60px 0px 34px 0px;
+    margin: 30px 0px 34px 0px;
   }
   p {
     margin: 40px 0px;
@@ -166,15 +166,22 @@
 
 #guest-line {
   margin-left: 10vw;
-  padding-top: 40px;
+  padding-top: 20px;
 }
 .guest-sentence {
   margin: 0 auto;
   text-align: center;
 }
 .guest-email {
-  padding-top: 60px;
-  #guest-email-input {
-    width: 300px;
-  }
+  padding-top: 40px;
+}
+
+#guest-email-input {
+    width: 250px;
+}
+
+#submit-btn {
+  width: 120px;
+  height: auto;
+  font-size: 20px;
 }

@@ -6,16 +6,18 @@
   <div class="guest-sentence">
     <p id="guest-line">Envoie une invitation mystère à <span id="guest-text" data-guests="<%= @guests %>" ></span> ?</p>
   </div>
-  <div class="text-center">
+  <div class="text-center mb-5">
     <%= image_tag "arrow.png", class: "arrow" %>
   </div>
-  <div class="text-center guest-email">
-    <input id="guest-email-input" type="text" placeholder = "email"/>
+  <% if (@booking.number_of_people == 2) %>
+  <div class="text-center mt-5">
+  <%= simple_form_for :guest, url: invitation_path, class: "text-center guest-email", method: "get" do |f| %>
+    <%= f.hidden_field :booking, value: @booking.id %>
+    <%= f.text_field :guest_mail, id: "guest-email-input", name: "email", value: "", placeholder: "email", required: true %>
+    <%= f.submit "Inviter ! ", class: "my-btn-primary mt-3", id:"submit-btn" %>
+  <% end %>
   </div>
-  <div class="text-center pt-4">
-    <input class="my-btn-primary" type="submit" value = "Inviter !"/>
-  </div>
-
+  <% end %>
 </div>
 
 
