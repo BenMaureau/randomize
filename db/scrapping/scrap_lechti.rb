@@ -4,8 +4,7 @@ require 'nokogiri'
 require 'rest-client'
 
 def scrap_lechti
-  # categories = ["Sport", "Social", "Culture", "Nature", "Bien-être", "Sensation"]
-  categories = ["Manger", "Sortir", "Se divertir", "Culture", "Sport", "Bien être"]
+  categories = ["Manger", "Sortir", "Se divertir", "Nature", "Sport", "Bien être"]
 
   base_url = "https://lechti.com/"
   paths = ["manger", "sortir", "se-divertir"]
@@ -47,7 +46,7 @@ def scrap_lechti
 end
 
 def scrap_lechti_v2 
-  categories = ["Manger", "Sortir", "Se divertir", "Culture", "Sport", "Bien être"]
+  categories = ["Manger", "Sortir", "Se divertir", "Nature", "Sport", "Bien être"]
   base_url = "https://lechti.com/wp-json/facetwp/v1/refresh"
   paths = ["manger", "sortir", "se-divertir"]
 
