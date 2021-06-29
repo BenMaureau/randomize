@@ -4,8 +4,8 @@
 <div class="my-container home-section">
   <h2>Les activités les plus populaires</h2>
 
-  <div class="scroller">
-    <% @activities.each do |activity| %>
+  <div class="my-carousel">
+    <% @activities.first(10).each do |activity| %>
 
       <div class="my-card my-activity-card box-shadow">
         <div class="my-card-div-image">
@@ -21,7 +21,7 @@
             <div class="display-flex-column">
               <div class="card-detail">
                 <i class="fas fa-euro-sign"></i>
-                <p><%= activity.price_per_head %>(par personne)</p>
+                <p><%= activity.price_per_head %> (par personne)</p>
               </div>
               <div class="card-detail">
                 <i class="fas fa-hourglass-start"></i>

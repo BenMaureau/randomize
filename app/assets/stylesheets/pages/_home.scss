@@ -1,1 +1,15 @@
 // Specific CSS for your home-page
+.home-section {
+  height: 100vh;
+  padding-top: 70px;
+  h2 {
+    margin-bottom: 30px;
+  }
+  &>div {
+    margin: 0 8px;
+  }
+}
+
+.my-carousel {
+
+}
