@@ -126,7 +126,7 @@
   position: absolute;
   background: transparent;
   opacity: 0.95;
-  z-index: 2;
+  z-index: 3;
   text-align: center;
   line-height: 45% ;
   padding: 15px 15px 0px 15px;
@@ -164,3 +164,20 @@
   height: 100%;
 }
 
+.booking-unreveal {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: $blue;
+  opacity: 1;
+  z-index: 1;
+  text-align: center;
+  line-height: 45% ;
+  padding: 15px 15px 0px 15px;
+  border-radius: 4px 4px 0 0;
+  p {
+    color: $light-gray;
+    font-size: 64px !important;
+    margin-top: 35% !important;
+  }
+}
