@@ -1,5 +1,5 @@
 <div class="button-randomize">
-    <%= form_with url: select_url, method: :get, local: true do |f| %>
+    <%= form_with url: custom_activity_path, method: :get, local: true do |f| %>
     <%= f.hidden_field :aventurier, id: 'aventurier-field', value: true %>
     <%= f.hidden_field :prudent, id: 'prudent-field', value: false %>
     <%= f.hidden_field :max_price, id: 'price-field' %>
