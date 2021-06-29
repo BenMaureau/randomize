@@ -83,7 +83,7 @@ def scrap_lechti_v2
           price_per_head: [10,12,15,18,20,24, 30].sample,
           activity_url: activity_url,
           category: category,
-          indoor: path != "se-divertir",
+          indoor: 0.75 > rand(),
           instructions: html_doc.search('.redac-chti__content-text').text.strip
         }
 

@@ -40,13 +40,41 @@ class PagesController < ApplicationController
       cat << "Nature" if params[:nature] == "true"
       cat << "Bien être" if params[:bien_etre] == "true"
       cat << "Se divertir" if params[:se_divertir] == "true"
-      @activities = []
-      cat.each do |c|
-        @activities_filtered = Activity.where("price_per_head <= ?", params[:max_price].to_i).where(category: c).where(indoor: params[:indoor])
-        @activities_filtered.each do |activity|
-          @activities << activity
+        if (params[:indoor] == "true" && params[:outdoor] == "true" || params[:indoor] == "false" && params[:outdoor] == "false")
+          if (cat.empty?)
+            if (params[:max_price].empty?)
+              @activities = Activity.all
+            else
+              @activities = Activity.where("price_per_head <= ?", params[:max_price].to_i)
+            end
+          else
+            if (params[:max_price].empty?)
+              @activities = Activity.where(category: cat)
+            else
+              @activities = Activity.where(category: cat).where("price_per_head <= ?", params[:max_price].to_i)
+            end
+          end
+
+        else
+          if (cat.empty?)
+            if (params[:max_price].empty?)
+              @activities = Activity.where(indoor: params[:indoor])
+            else
+              @activities = Activity.where("price_per_head <= ?", params[:max_price].to_i).where(indoor: params[:indoor])
+            end
+          else
+            if (params[:max_price].empty?)
+              @activities = Activity.where(category: cat).where(indoor: params[:indoor])
+            else
+              @activities = Activity.where(category: cat).where("price_per_head <= ?", params[:max_price].to_i).where(indoor: params[:indoor])
+            end
+          end
         end
-      end
+
+        # @activities_filtered.each do |activity|
+        #   @activities << activity
+        # end
+      # end
       @activity = @activities.sample
       redirect_to activity_path(@activity) if @activities.size > 0
     end
