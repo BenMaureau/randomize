@@ -30,9 +30,6 @@ class PagesController < ApplicationController
   end
 
   def custom_activity
-    # if params([:indoor]) == true
-
-    # end
     cat = []
     cat << "Sport" if params[:sport] == "true"
     cat << "Manger" if params[:manger] == "true"
@@ -47,7 +44,8 @@ class PagesController < ApplicationController
         @activities << activity
       end
     end
-    @activities.sample
+    @activity = @activities.sample
+    redirect_to activity_path(@activity) if Dir.exist?('activity_path') == true
   end
 end
 

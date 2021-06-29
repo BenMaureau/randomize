@@ -1,5 +1,5 @@
 <div class="button-randomize">
-    <%= form_with url: custom_activity_path, method: :post, local: true do |f| %>
+    <%= form_with url: custom_activity_path, method: :get, local: true do |f| %>
     <%= f.hidden_field :aventurier, id: 'aventurier-field', value: true %>
     <%= f.hidden_field :prudent, id: 'prudent-field', value: false %>
     <%= f.hidden_field :max_price, id: 'price-field' %>
@@ -154,7 +154,7 @@
                 <i class="fas fa-check"></i>
               </div>
             </div>
-            <p>Social</p>
+            <p>Manger</p>
           </div>
         </div>
 
@@ -165,7 +165,7 @@
                 <i class="fas fa-check"></i>
               </div>
             </div>
-            <p>Culture</p>
+            <p>Sortir</p>
           </div>
 
           <div class="category-checkbox" id="nature-card">
@@ -195,7 +195,7 @@
                 <i class="fas fa-check"></i>
               </div>
             </div>
-            <p>Sensation</p>
+            <p>Se divertir</p>
           </div>
         </div>
 
