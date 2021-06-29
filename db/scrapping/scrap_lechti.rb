@@ -64,7 +64,6 @@ def scrap_lechti
 end
 
 
-
 # validates :name, :address, :price_per_head, :activity_url, :longitude, :latitude, presence: true
 # name = first.search('h3').text
 # address = first.search()
