@@ -30,11 +30,11 @@ class PagesController < ApplicationController
     # end
     cat = []
     cat << "Sport" if params[:sport] == "true"
-    cat << "Manger" if params[:social] == "true"
-    cat << "Sortir" if params[:culture] == "true"
+    cat << "Manger" if params[:manger] == "true"
+    cat << "Sortir" if params[:sortir] == "true"
     cat << "Nature" if params[:nature] == "true"
     cat << "Bien être" if params[:bien_etre] == "true"
-    cat << "Se divertir" if params[:sensation] == "true"
+    cat << "Se divertir" if params[:se_divertir] == "true"
     @activities = []
     cat.each do |c|
       @activities_filtered = Activity.where(indoor: params[:indoor]).where("price_per_head <= ?", params[:max_price].to_i).where(category: c)
