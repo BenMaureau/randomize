@@ -10,11 +10,10 @@ class YelpService
   SEARCH_LIMIT = 25
 
   API_KEY = ENV["YELP_API_KEY"]
-
-  def self.search(location)
+  def self.search(location, term)
     url = "#{API_HOST}#{SEARCH_PATH}"
     params = {
-      # term: term,
+      term: term,
       location: location,
       limit: SEARCH_LIMIT
     }
