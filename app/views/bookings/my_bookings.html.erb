@@ -5,9 +5,9 @@
   <p class="text-center">(<%= @my_bookings.count %> dont <%= @my_bookings_to_review.count %> à noter)</p> 
   <% @my_bookings.each do |booking| %>
     <% if booking.reveal %>
-      <div class="my-card my-activity-card box-shadow">
+      <div class="my-card my-activity-card box-shadow" id='<%=booking.created_at%>'>
     <% else %>
-      <div class="my-card my-activity-card box-shadow activity-secret">
+      <div class="my-card my-activity-card box-shadow activity-secret" id='<%=booking.created_at.to_s.first(10)%>'>
     <% end %>
         <div class="my-card-div-image">
           <div class="display-over d-flex justify-content-between">
@@ -17,11 +17,17 @@
                   <% booking.review.rating.to_i.times do %>
                     <i class="fas fa-star"></i>
                   <% end %>
+                  <% (5 - booking.review.rating.to_i).times do %>
+                    <i class="far fa-star"></i>
+                  <% end %>
                 <% else %>
                   <% booking.review.rating.to_f.truncate.times do %>
                     <i class="fas fa-star"></i>
                   <% end %>
                   <i class="fas fa-star-half-alt"></i>
+                  <% (4 - booking.review.rating.to_f.truncate).times do %>
+                    <i class="far fa-star"></i>
+                  <% end %>
                 <% end %>
               </div>
             <% else %>
