@@ -91,8 +91,13 @@ def scrap_lechti_v2
 
         photo_url = html_doc.search('.header-place__photos-large img').attribute('data-src')
         activity.photos.attach(io: URI.open(photo_url), filename: 'X.jpg', content_type: 'image/jpg')
-        activity.save!
-        puts "#{activity.valid?} > Added : #{params[:name]}"
+        if activity.valid?
+          activity.save!
+          puts "#{activity.valid?} > Added : #{params[:name]}"
+        else
+          puts "#{activity.valid?} > Error : #{params[:name]}"
+        end
+
       end
       current_page += 1
     end
