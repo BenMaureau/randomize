@@ -9,10 +9,12 @@
 //   color: #000;
 // }
 
-// .slick-next {
-//   right: -5px;
-// }
+.slick-next {
+  right: -5px;
+  display: none !important;
+}
 
-// .slick-prev {
-//   left: -5px;
-// }
+.slick-prev {
+  left: -5px;
+  display: none !important;
+}

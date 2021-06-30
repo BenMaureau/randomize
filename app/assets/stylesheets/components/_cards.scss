@@ -1,11 +1,12 @@
 .my-activity-card {
   background: white;
-  display: flex;
+  display: flex !important;
   flex-direction: column;
-  width: 344px;
+  width: 344px !important;
   height: 380px;
   border-radius: 4px;
   margin: 20px auto;
+  flex: 0 1 auto;
 }
 
 .icon-info {

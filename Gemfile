@@ -5,8 +5,8 @@ ruby '2.6.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 # gem 'httparty'
-# gem "jquery-rails"
-# gem "jquery-slick-rails"
+gem "jquery-rails"
+gem "jquery-slick-rails"
 
 gem 'rails', '~> 6.0.4'
 # Use postgresql as the database for Active Record
