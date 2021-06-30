@@ -57,18 +57,26 @@
       <%= cl_image_tag current_user.photo.key, class: "avatar" %>
       <hr>
 
-      <div class="my-review-card-rating">
-        <% if [1, 2, 3, 4, 5].include?(review.rating) %>
-          <% review.rating.to_i.times do %>
-            <i class="fas fa-star"></i>
+        <div class="my-review-card-rating">
+          <% if [1, 2, 3, 4, 5].include?(review.rating) %>
+            <% review.rating.to_i.times do %>
+              <i class="fas fa-star"></i>
+            <% end %>
+            <% (5 - review.rating.to_i).times do %>
+              <i class="far fa-star"></i>
+            <% end %>
+          <% else %>
+            <% review.rating.to_f.truncate.times do %>
+              <i class="fas fa-star"></i>
+            <% end %>
+            <i class="fas fa-star-half-alt"></i>
+            <% (4 - review.rating.to_f.truncate).times do %>
+              <i class="far fa-star"></i>
+            <% end %>
           <% end %>
-        <% else %>
-          <% review.rating.to_f.truncate.times do %>
-            <i class="fas fa-star"></i>
-          <% end %>
-          <i class="fas fa-star-half-alt"></i>
-        <% end %>
-      </div>
+        </div>
+
+
 
       <div class="my-review-card-content">
         <p><%= review.content %></p>
