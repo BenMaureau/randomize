@@ -54,7 +54,7 @@
   <% @best_reviews.each do |review| %>
     <div class="my-review-card">
 
-      <%= cl_image_tag current_user.photo.key, class: "avatar" %>
+      <%= cl_image_tag Booking.find(review.booking_id).user.photo.key, class: "avatar" %>
       <hr>
 
         <div class="my-review-card-rating">
