@@ -26,4 +26,8 @@ class ApplicationController < ActionController::Base
     @counter = current_user.notifications.where(read: false).count
     end
   end
+
+  def default_url_options
+    { host: ENV["DOMAIN"] || "localhost:3000" }
+  end
 end

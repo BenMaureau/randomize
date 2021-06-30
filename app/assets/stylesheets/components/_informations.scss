@@ -1,0 +1,19 @@
+.activity-informations {
+  top: 50px;
+  left: 52px;
+  position: absolute;
+  height: auto;
+  min-height: 40px;
+  width: 240px;
+  z-index: 4;
+  border-radius: 5px;
+  color: white;
+  background-color: rgba(10,10,10,0.7);
+  padding: 10px;
+  line-height: 15px;
+  hr {
+    background-color: white;
+    width: 50%;
+  }
+}
+

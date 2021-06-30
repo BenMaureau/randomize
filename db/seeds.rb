@@ -9,7 +9,7 @@
 require 'json'
 require 'open-uri'
 require_relative 'scrapping/scrap_lechti'
-# require_relative 'scrapping/scrap_yelp'
+require_relative 'scrapping/scrap_yelp'
 
 puts "=== Cleaning database... ==="
 
@@ -47,13 +47,13 @@ puts "=== #{User.count} users added! ==="
 puts "=== Adding Activity... ==="
 puts ">>>>> ON SCRAP LE CHTI <<<<<"
 scrap_lechti_v2
-# puts ">>>>> MERCI LE CHTI ! <<<<<"
-# scrap_yelp
+puts ">>>>> MERCI LE CHTI ! <<<<<"
+scrap_yelp
 puts ">>>>> MERCI YELP ! <<<<<"
 
 puts "=== #{Activity.count} activities added! ==="
 
-puts "=== Adding slots... ==="
+# puts "=== Adding slots... ==="
 
 activities = Activity.all
 activities.each do |activity|
@@ -168,6 +168,7 @@ puts "=== #{Booking.count} bookings added! ==="
 #   indoor: true,
 #   category:"sport",
 #   price_per_head:"30",
+#   instructions: "Loulou est le meilleur product owner de France",
 #   contact_email:25,
 #   contact_phone_number:200,
 #   activity_url:"http://le-padel-club.com/",
@@ -218,7 +219,8 @@ puts "=== #{Booking.count} bookings added! ==="
 #   activity_url:"http://le-padel-club.com/",
 #   longitude: 2.3646578788757324,
 #   latitude: 48.86328125)
-# #activity5.save
+# activity5.photos.attach(io: URI.open('https://www.sportweek.fr/wp-content/uploads/2018/01/padel-1.jpg'), filename: 'X.jpg', content_type: 'image/jpg')
+# activity5.save
 # puts "=== #{Activity.count} activities added! ==="
 
 

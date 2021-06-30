@@ -28,7 +28,7 @@ def scrap_lechti
       params = {
         name: html_doc.search('h1').text,
         address: html_doc.search('.info-place__address-text').text,
-        price_per_head: [10,12,15,18,20,24, 30].sample,
+        price_per_head: (1..40).to_a.sample,
         activity_url: activity_url,
         category: category,
         indoor: path != "se-divertir",
@@ -58,8 +58,12 @@ def scrap_lechti_v2
     category = "Se divertir" if path == "se-divertir"
 
     current_page = 1
+<<<<<<< HEAD
     # while current_page <= 3 do
     while current_page <= 1 do
+=======
+    while current_page <= 10 do
+>>>>>>> master
       r = RestClient.post(base_url, {
         :action => 'facetwp_refresh',
         "data[facets]".to_sym => "{\"place-type\":[],\"eat\":[],\"average-price\":[],\"specific-criteria\":[],\"localisation\":[],\"chti-criteria\":[],\"chti-label\":[],\"paged\":#{current_page}}",
@@ -93,8 +97,13 @@ def scrap_lechti_v2
 
         photo_url = html_doc.search('.header-place__photos-large img').attribute('data-src')
         activity.photos.attach(io: URI.open(photo_url), filename: 'X.jpg', content_type: 'image/jpg')
-        activity.save!
-        puts "#{activity.valid?} > Added : #{params[:name]}"
+        if activity.valid?
+          activity.save!
+          puts "#{activity.valid?} > Added : #{params[:name]}"
+        else
+          puts "#{activity.valid?} > Error : #{params[:name]}"
+        end
+
       end
       current_page += 1
     end
