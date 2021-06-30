@@ -41,7 +41,16 @@
                 </div>
               </div>
             <% end %>
-              <div class="icon-info popover-test" title="Popover title" data-content="Popover body content is set in this attribute."></div>
+            <% if booking.slot.activity.instructions %>
+              <div class="icon-info"></div>
+              <div class = "activity-informations display-none" id="info-<%=booking.id%>">
+                <% if booking.review %>
+                Ton avis: <%= booking.review.content %>
+                <hr>
+                <% end %>
+                <%= booking.slot.activity.instructions %>
+              </div>
+            <% end %>
           </div>
           <div class="div-image-overlay">
             <p>?</p>

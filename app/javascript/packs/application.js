@@ -37,7 +37,7 @@ import { initFilters } from '../plugins/init_filters';
 import { initSweetalert } from '../plugins/init_sweetalert';
 import { initNavbar, initUpdateNavbarOnScroll } from '../plugins/init_navbar';
 import { initGuest } from '../plugins/init_guest';
-
+import { initInformations } from '../plugins/init_informations';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -78,4 +78,5 @@ document.addEventListener('turbolinks:load', () => {
     closeOnClickOutside: true,
     closeOnEsc: true,
   });
+  initInformations();
 })

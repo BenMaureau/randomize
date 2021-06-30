@@ -10,13 +10,18 @@
 <div id="activity-revealed">
   <div class="my-card my-activity-card box-shadow activity-secret">
     <div class="my-card-div-image">
+      <% if @activity.instructions %>
+        <div class="icon-info"></div>
+        <div class = "activity-informations display-none">
+          <%= @activity.instructions %>
+        </div>
+      <% end %>
       <div class="div-image-overlay">
         <p>?</p>
         <a class="my-btn my-btn-reveal" id="btn-reveal-activity" title="Révéler">Révéler</a>
 
       </div>
       <%= cl_image_tag @activity.photos[0].key, crop: :fill %>
-      <div class="icon-info"></div>
     </div>
     <div class="my-card-div-details display-flex-column">
       <div class="hide-name"></div>
