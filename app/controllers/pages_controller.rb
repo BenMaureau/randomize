@@ -24,6 +24,12 @@ class PagesController < ApplicationController
     end
   end
 
+  def select
+    @activities = Activity.all
+    @activity = @activities.sample
+    redirect_to activity_path(@activity)
+  end
+
   def custom_activity
     if params[:aventurier] == "true"
       select
