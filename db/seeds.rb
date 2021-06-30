@@ -9,7 +9,7 @@
 require 'json'
 require 'open-uri'
 require_relative 'scrapping/scrap_lechti'
-require_relative 'scrapping/scrap_yelp'
+# require_relative 'scrapping/scrap_yelp'
 
 puts "=== Cleaning database... ==="
 
@@ -47,8 +47,8 @@ puts "=== #{User.count} users added! ==="
 puts "=== Adding Activity... ==="
 puts ">>>>> ON SCRAP LE CHTI <<<<<"
 scrap_lechti_v2
-puts ">>>>> MERCI LE CHTI ! <<<<<"
-scrap_yelp
+# puts ">>>>> MERCI LE CHTI ! <<<<<"
+# scrap_yelp
 puts ">>>>> MERCI YELP ! <<<<<"
 
 puts "=== #{Activity.count} activities added! ==="
@@ -58,15 +58,15 @@ puts "=== Adding slots... ==="
 activities = Activity.all
 activities.each do |activity|
   Slot.create!(
-    start_date: "2021-09-21",
-    end_date: "2022-09-21",
+    start_date: "2021-06-29",
+    end_date: "2021-06-29",
     max_number_of_people: 4,
     activity_id: activity.id
   )
 
   Slot.create!(
-    start_date: "2021-09-21",
-    end_date: "2022-09-21",
+    start_date: "2021-06-29",
+    end_date: "2021-06-29",
     max_number_of_people: 2,
     activity_id: activity.id
   )

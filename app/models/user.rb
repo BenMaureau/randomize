@@ -1,7 +1,6 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  after_create :create_notifications
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
@@ -15,16 +14,4 @@ class User < ApplicationRecord
 
   validates :first_name, :last_name, presence: true
 
-  private
-
-  def recipients
-    #1er event: quand ils se loggent in
-    User.all
-  end
-
-  def create_notifications
-    users.each do |user|
-      Notification.create(content: "Bienvenue sur Randomize ! On se la joue comment ?", type: "Welcome", read: false)
-    end
-  end
 end

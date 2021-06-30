@@ -48,7 +48,8 @@ end
 def scrap_lechti_v2
   categories = ["Manger", "Sortir", "Se divertir", "Nature", "Sport", "Bien être"]
   base_url = "https://lechti.com/wp-json/facetwp/v1/refresh"
-  paths = ["manger", "sortir", "se-divertir"]
+  # paths = ["manger", "sortir", "se-divertir"]
+  paths = ["manger"]
 
   paths.each do |path|
     puts "################# #{path} ##############"
@@ -57,7 +58,8 @@ def scrap_lechti_v2
     category = "Se divertir" if path == "se-divertir"
 
     current_page = 1
-    while current_page <= 3 do
+    # while current_page <= 3 do
+    while current_page <= 1 do
       r = RestClient.post(base_url, {
         :action => 'facetwp_refresh',
         "data[facets]".to_sym => "{\"place-type\":[],\"eat\":[],\"average-price\":[],\"specific-criteria\":[],\"localisation\":[],\"chti-criteria\":[],\"chti-label\":[],\"paged\":#{current_page}}",

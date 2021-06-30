@@ -13,18 +13,17 @@ class ApplicationController < ActionController::Base
 
   def set_notifications
     #Cas 1: notifications quand l'utilisateur a fait l'activité
-    # @notifications = Notification.where(recipient: current_user).unread
+    @notifications = Notification.where(user: current_user)
     if current_user
       current_user.slots.each do |slot|
-        if slot.end_date > Date.today
+        if slot.end_date < Date.today
           @booking = Booking.find_by(slot: slot, user: current_user)
-          unless Notification.find_by(slot: slot, booking: @booking, category: "feedback")
+          unless Notification.find_by(booking: @booking, category: "feedback")
             Notification.create!(content: "On espère que tu t'es éclaté à #{slot.activity.name}! Laisse un avis", booking: @booking, category: "feedback")
-          # Notification.create!(content: "On espère que tu t'es éclaté à #{slot.activity.name}! Laisse un avis", booking: @booking, category: "feedback", user: current_user)
           end
         end
       end
+    @counter = current_user.notifications.where(read: false).count
     end
-    # @counter = current_user.notifications.count
   end
 end
