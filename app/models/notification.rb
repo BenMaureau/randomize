@@ -1,5 +1,5 @@
 class Notification < ApplicationRecord
   belongs_to :booking
 
-  validates :content, :type, presence: true
+  validates :content, :category, presence: true
 end
