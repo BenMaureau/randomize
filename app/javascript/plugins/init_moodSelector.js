@@ -41,8 +41,8 @@ const initMoodSelector = () => {
       imageAdv.classList.add('active-mood-card');
       imageShy.classList.remove('active-mood-card');
 
-      rdmBtn.classList.toggle('display-none');
-      nextBtn.classList.toggle('display-none');
+      rdmBtn.classList.remove('display-none');
+      nextBtn.classList.add('display-none');
     });
 
     imageShy.addEventListener("click", (event) => {
@@ -50,8 +50,8 @@ const initMoodSelector = () => {
       divCustom.style.display = "block";
       imageShy.classList.add('active-mood-card');
       imageAdv.classList.remove('active-mood-card');
-      rdmBtn.classList.toggle('display-none');
-      nextBtn.classList.toggle('display-none');
+      rdmBtn.classList.add('display-none');
+      nextBtn.classList.remove('display-none');
     });
   }
 }
