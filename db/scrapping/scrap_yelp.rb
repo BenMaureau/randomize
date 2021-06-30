@@ -53,9 +53,13 @@ def scrap_yelp
       photo_url = result["image_url"]
       photo_url = "https://images.unsplash.com/photo-1443916568596-df5a58c445e9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2089&q=80" if photo_url.size.zero?
       activity.photos.attach(io: URI.open(photo_url), filename: 'X.jpg', content_type: 'image/jpg')
-      puts activity.valid?
-      activity.save!
-      puts "========Activity added========="
+      
+      if activity.valid?
+        activity.save!
+        puts "#{activity.valid?} > Added : #{params[:name]}"
+      else
+        puts "#{activity.valid?} > Error : #{params[:name]}"
+      end
     end
   end
 end
