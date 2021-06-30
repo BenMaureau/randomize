@@ -8,6 +8,13 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
+var $ = require( "jquery" )
+require("slick-carousel")
+
+import "slick-carousel/slick/slick.scss"
+import "slick-carousel/slick/slick-theme.scss"
+import "../styles/application.scss"
+
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -37,12 +44,14 @@ import { initFilters } from '../plugins/init_filters';
 import { initSweetalert } from '../plugins/init_sweetalert';
 import { initNavbar, initUpdateNavbarOnScroll } from '../plugins/init_navbar';
 import { initGuest } from '../plugins/init_guest';
+import { initCarousel } from '../plugins/init_carousel';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
 
 document.addEventListener('turbolinks:load', () => {
+  initCarousel();
   initMapbox();
   initMoodSelector();
   searchMap();

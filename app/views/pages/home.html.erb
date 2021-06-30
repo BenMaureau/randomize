@@ -1,1 +1,48 @@
 <%= render 'shared/banner', activities: @activities_names %>
+
+<div class="home-section">
+  <h2>Les activités les plus populaires</h2>
+
+  <div class="my-carousel">
+    <% @activities.first(10).each do |activity| %>
+
+      <div class="my-card my-activity-card box-shadow">
+        <div class="my-card-div-image">
+          <div class="div-image-overlay">
+          </div>
+          <%= cl_image_tag activity.photos[0].key, crop: :fill %>
+          <div class="icon-info"><p>i</p></div>
+        </div>
+        <div class="my-card-div-details display-flex-column">
+          <h3><%= activity.name %></h3>
+          <div class="display-flex">
+
+            <div class="display-flex-column">
+              <div class="card-detail">
+                <i class="fas fa-euro-sign"></i>
+                <p><%= activity.price_per_head %> (par personne)</p>
+              </div>
+              <div class="card-detail">
+                <i class="fas fa-hourglass-start"></i>
+                <p>environ 2h</p>
+              </div>
+            </div>
+
+            <div class="display-flex-column">
+              <div class="card-detail">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>Lille</p>
+              </div>
+              <div class="card-detail">
+                <%# <i class="fas fa-clock"></i> %>
+                <%# <p>rdv à 19h30</p> %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <% end %>
+
+  </div>
+</div>

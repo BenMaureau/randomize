@@ -46,7 +46,7 @@ def scrap_yelp
         category: category,
   #FORMAT result["categories"]
   #[{"alias"=>"french", "title"=>"French"}]
-        indoor: true,
+        indoor: category == "Nature" ? true : 0.75 > rand(),
         instructions: "Description indisponible"
       }
       activity = Activity.new(params)
