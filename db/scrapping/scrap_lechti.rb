@@ -50,6 +50,7 @@ def scrap_lechti_v2
   base_url = "https://lechti.com/wp-json/facetwp/v1/refresh"
   paths = ["manger", "sortir", "se-divertir"]
 
+
   paths.each do |path|
     puts "################# #{path} ##############"
     category = "Manger" if path == "manger"
