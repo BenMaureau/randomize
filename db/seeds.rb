@@ -53,7 +53,7 @@ puts ">>>>> MERCI YELP ! <<<<<"
 
 puts "=== #{Activity.count} activities added! ==="
 
-puts "=== Adding slots... ==="
+# puts "=== Adding slots... ==="
 
 activities = Activity.all
 activities.each do |activity|
