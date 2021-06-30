@@ -22,7 +22,7 @@
               <% categories.each do |cat| %>
                 <% unless current_user.notifications.where(category: cat).empty? %>
                   <div class = "dropdown-item" >
-                    <%= current_user.notifications.where(category: cat, read: false).last.content %>
+                    <%= link_to current_user.notifications.where(category: cat, read: false).last.content, profile_my_bookings_path %>
                   </div>
                 <% end %>
               <% end %>
