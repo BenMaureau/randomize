@@ -5,7 +5,9 @@ const initInformations = () => {
   for (let i = 0; i < infoBtns.length; i++) {
     infoBtns[i].onclick = function(e) {
       e.preventDefault();
-      const informations = document.querySelector(e.target.getAttribute("id"));
+      const btnId = e.target.getAttribute("id");
+      console.log(btnId);
+      const informations = document.querySelector(`${btnId}`);
       console.log(informations);
       informations.classList.toggle('display-none')
    }

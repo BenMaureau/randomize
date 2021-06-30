@@ -42,8 +42,8 @@
               </div>
             <% end %>
             <% if booking.slot.activity.instructions %>
-              <div class="icon-info"></div>
-              <div class = "activity-informations display-none" id="info-<%=booking.id%>">
+              <div class="icon-info" id="#info<%=booking.id%>"></div>
+              <div class = "activity-informations display-none" id="info<%=booking.id%>">
                 <% if booking.review %>
                 Ton avis: <%= booking.review.content %>
                 <hr>
