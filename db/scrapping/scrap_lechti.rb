@@ -48,8 +48,8 @@ end
 def scrap_lechti_v2
   categories = ["Manger", "Sortir", "Se divertir", "Nature", "Sport", "Bien être"]
   base_url = "https://lechti.com/wp-json/facetwp/v1/refresh"
-  # paths = ["manger", "sortir", "se-divertir"]
-  paths = ["manger"]
+  paths = ["manger", "sortir", "se-divertir"]
+
 
   paths.each do |path|
     puts "################# #{path} ##############"
