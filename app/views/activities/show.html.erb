@@ -11,8 +11,8 @@
   <div class="my-card my-activity-card box-shadow activity-secret">
     <div class="my-card-div-image">
       <% if @activity.instructions %>
-        <div class="icon-info"></div>
-        <div class = "activity-informations display-none">
+        <div class="icon-info" id="#info<%=@activity.id%>"></div>
+        <div class = "activity-informations display-none" id="info<%=@activity.id%>">
           <%= @activity.instructions %>
         </div>
       <% end %>
