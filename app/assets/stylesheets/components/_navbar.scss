@@ -37,6 +37,10 @@
   position: relative;
 }
 
+.dropdown-item {
+  background-color: transparent !important;
+}
+
 .dropdown-item:hover, .dropdown-item:focus {
   color: white !important;
   text-decoration: none !important;
