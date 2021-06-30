@@ -33,6 +33,21 @@
   }
 }
 
+.drop-menu2 {
+  background-color: $black;
+  position: fixed;
+  right: 175px;
+  width: 200px;
+  top: 80px;
+  padding: 8px 0;
+  border-radius: 5px;
+  div {
+    color: white;
+    opacity: 1;
+    white-space: inherit !important;
+  }
+}
+
 .my-navbar {
   position: relative;
 }

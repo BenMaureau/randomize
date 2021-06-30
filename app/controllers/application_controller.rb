@@ -19,11 +19,12 @@ class ApplicationController < ActionController::Base
         if slot.end_date < Date.today
           @booking = Booking.find_by(slot: slot, user: current_user)
           unless Notification.find_by(booking: @booking, category: "feedback")
-            Notification.create!(content: "On espère que tu t'es éclaté à #{slot.activity.name}! Laisse un avis", booking: @booking, category: "feedback")
+            Notification.create!(content: "Tu t'es éclaté? Note #{slot.activity.name}!", booking: @booking, category: "feedback")
           end
         end
       end
-    @counter = current_user.notifications.where(read: false).count
+      @counter = current_user.notifications.where(read: false).count
+
     end
   end
 
