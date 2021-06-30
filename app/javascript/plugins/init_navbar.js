@@ -11,6 +11,10 @@ const initNavbar = () => {
     notif.addEventListener('click', (event) => {
       const dropMenu2 = document.querySelector('.drop-menu2')
       dropMenu2.classList.toggle("display-none");
+      // dropMenu2.addEventListener("click", (event) => {
+      //   const clickedEvent = document.getElementById('clicked-event')
+      //   clickedEvent.classList.add("display-none");
+      // })
     })
   }
 }

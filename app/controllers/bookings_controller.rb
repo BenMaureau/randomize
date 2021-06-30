@@ -2,6 +2,12 @@ class BookingsController < ApplicationController
 before_action :authenticate_user!, only: :new
 
   def my_bookings
+    if params[:notification]
+      @notification = Notification.find(params[:notification])
+      @notification.read = true
+      @notification.save!
+      # @counter = params[:counter] - 1
+    end
     @my_bookings = Booking.where(user_id: current_user.id).order(created_at: :desc)
     @my_bookings_reviewed = []
     @my_bookings_to_review = []
