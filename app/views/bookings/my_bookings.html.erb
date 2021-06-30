@@ -17,11 +17,17 @@
                   <% booking.review.rating.to_i.times do %>
                     <i class="fas fa-star"></i>
                   <% end %>
+                  <% (5 - booking.review.rating.to_i).times do %>
+                    <i class="far fa-star"></i>
+                  <% end %>
                 <% else %>
                   <% booking.review.rating.to_f.truncate.times do %>
                     <i class="fas fa-star"></i>
                   <% end %>
                   <i class="fas fa-star-half-alt"></i>
+                  <% (4 - booking.review.rating.to_f.truncate).times do %>
+                    <i class="far fa-star"></i>
+                  <% end %>
                 <% end %>
               </div>
             <% else %>
