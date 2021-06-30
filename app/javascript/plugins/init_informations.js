@@ -10,7 +10,7 @@ const initInformations = () => {
       const informations = document.querySelector(`${btnId}`);
       console.log(informations);
       informations.classList.toggle('display-none')
-   }
+    }
   }
 }
 }

@@ -46,6 +46,8 @@ import { initNavbar, initUpdateNavbarOnScroll } from '../plugins/init_navbar';
 import { initGuest } from '../plugins/init_guest';
 import { initInformations } from '../plugins/init_informations';
 import { initCarousel } from '../plugins/init_carousel';
+import { initRevealTomorrow } from '../plugins/init_revealTomorrow';
+
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -88,4 +90,5 @@ document.addEventListener('turbolinks:load', () => {
     closeOnEsc: true,
   });
   initInformations();
+  initRevealTomorrow();
 })
