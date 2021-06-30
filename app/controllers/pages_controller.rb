@@ -2,10 +2,13 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
 
   def home
-    @activities = Activity.all
-    @activities = @activities.sample(15)
+    @activities = Activity.all.sample(50)
+    @activities_banner = @activities.first(25)
+    @activities_carousel = @activities.last(25)
     @activities_names = ""
-    @activities.each { |activity| @activities_names += "#{activity.name}," }
+    @activities_banner.each { |activity| @activities_names += "#{activity.name}," }
+
+    @best_reviews = Review.all.order(:rating).reverse.first(5)
   end
 
   def search

@@ -48,7 +48,7 @@ puts "=== Adding Activity... ==="
 puts ">>>>> ON SCRAP LE CHTI <<<<<"
 scrap_lechti_v2
 puts ">>>>> MERCI LE CHTI ! <<<<<"
-scrap_yelp
+# scrap_yelp
 puts ">>>>> MERCI YELP ! <<<<<"
 
 puts "=== #{Activity.count} activities added! ==="
@@ -106,6 +106,10 @@ booking3 = Booking.create!(
   )
 
 puts "=== #{Booking.count} bookings added! ==="
+
+puts "=== Adding reviews... ==="
+
+puts "=== #{Review.count} reviews added! ==="
 
 # uncomment above only
 

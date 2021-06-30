@@ -3,13 +3,17 @@
   height: 100vh;
   padding-top: 70px;
   h2 {
-    margin-bottom: 30px;
+    margin-bottom: 60px;
   }
-  &>div {
-    margin: 0 8px;
-  }
+  // &>div {
+  //   // margin: 0 8px;
+  // }
 }
 
-.my-carousel {
-
-} 
+.small-home-section {
+  height: 70vh;
+  padding-top: 70px;
+  h2 {
+    margin-bottom: 60px;
+  }
+}
