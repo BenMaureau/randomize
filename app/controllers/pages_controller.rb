@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @activities = Activity.all
+    @activities = @activities.sample(15)
     @activities_names = ""
     @activities.each { |activity| @activities_names += "#{activity.name}," }
   end

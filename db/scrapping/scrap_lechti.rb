@@ -28,7 +28,7 @@ def scrap_lechti
       params = {
         name: html_doc.search('h1').text,
         address: html_doc.search('.info-place__address-text').text,
-        price_per_head: [10,12,15,18,20,24, 30].sample,
+        price_per_head: (1..40).to_a.sample,
         activity_url: activity_url,
         category: category,
         indoor: path != "se-divertir",
@@ -57,7 +57,7 @@ def scrap_lechti_v2
     category = "Se divertir" if path == "se-divertir"
 
     current_page = 1
-    while current_page <= 3 do
+    while current_page <= 10 do
       r = RestClient.post(base_url, {
         :action => 'facetwp_refresh',
         "data[facets]".to_sym => "{\"place-type\":[],\"eat\":[],\"average-price\":[],\"specific-criteria\":[],\"localisation\":[],\"chti-criteria\":[],\"chti-label\":[],\"paged\":#{current_page}}",
