@@ -4,7 +4,7 @@
   <h2>Les activités les plus populaires</h2>
 
   <div class="my-carousel">
-    <% @activities.first(10).each do |activity| %>
+    <% @activities_carousel.first(10).each do |activity| %>
 
       <div class="my-card my-activity-card box-shadow">
         <div class="my-card-div-image">
@@ -44,5 +44,36 @@
 
     <% end %>
 
+  </div>
+</div>
+
+<div class="home-section">
+  <h2>Les meilleurs avis</h2>
+  <div class="my-container">
+  
+  <% @best_reviews.each do |review| %>
+    <div class="my-review-card">
+
+      <%= cl_image_tag current_user.photo.key, class: "avatar" %>
+      <hr>
+
+      <div class="my-review-card-rating">
+        <% if [1, 2, 3, 4, 5].include?(review.rating) %>
+          <% review.rating.to_i.times do %>
+            <i class="fas fa-star"></i>
+          <% end %>
+        <% else %>
+          <% review.rating.to_f.truncate.times do %>
+            <i class="fas fa-star"></i>
+          <% end %>
+          <i class="fas fa-star-half-alt"></i>
+        <% end %>
+      </div>
+
+      <div class="my-review-card-content">
+        <p><%= review.content %></p>
+      </div>
+    </div>
+  <% end %>
   </div>
 </div>
