@@ -8,18 +8,9 @@
   flex-direction: column;
   .map-controls {
     background-color: $blue;
-    height: 246px;
+    height: 130px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    .map-address-container {
-      margin-top: 8px;
-      // display: flex;
-      position: relative;
-      &>div {
-
-      }
-    }
+    justify-content: space-around;
   }
 }
 
@@ -70,33 +61,39 @@
 //   }
 // }
 
-// .number-participants{
-//   display: flex;
-//   justify-content: space-between;
-//   height: 10vh;
-// }
+.number-participants {
+  display: flex;
+  justify-content: center;
+  height: 20vh;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 0px;
+}
 
-// .one-participant{
-//   position: absolute;
-//   left: 45%;
-//   #person{
-//     position: absolute;
-//     left: -12px;
-//     top: -10px;
-//     z-index: 7;
-//   }
-// }
+#one-person, #two-people {
+  position: relative;
+  font-size: 25px;
+  padding: 0px 10px;
+  margin: 0px 20px 35px 20px;
+  .check {
+    display: none;
+    top: -8px;
+    right: -8px;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #f4f4f4;
+    text-align: center;
+  }
+  .fa-check {
+    font-size: 15px;
+    position: absolute;
+    right: -1px;
+  }
+}
 
-// .two-participants{
-//   position: absolute;
-//   left: 55%;
-//   #people{
-//     position: absolute;
-//     left: -10px;
-//     top: -10px;
-//     z-index: 7;
-//   }
-// }
+
 
 // input[name='participants']{
 //     -webkit-appearance: none;

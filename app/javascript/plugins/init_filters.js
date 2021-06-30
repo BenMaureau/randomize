@@ -7,6 +7,28 @@ const initFilters = () => {
         field.value = false; }
   }
 
+  const one_person = document.querySelector("#one-person");
+  const one_person_field = document.querySelector("#one-person-field");
+  const two_people = document.querySelector("#two-people");
+  const two_people_field = document.querySelector("#two-people-field");
+  if (one_person && two_people) {
+    one_person.addEventListener ('click', (event) => {
+      console.log(one_person);
+      one_person_field.value = true;
+      two_people_field.value = false;
+      one_person.classList.add('active-mood-card', 'check')
+      two_people.classList.remove('active-mood-card', "check")
+    })
+
+    two_people.addEventListener ('click', (event) => {
+      console.log(one_person);
+      one_person_field.value = false;
+      two_people_field.value = true;
+      one_person.classList.remove('active-mood-card', 'check');
+      two_people.classList.add('active-mood-card', 'check');
+    })
+  }
+
   const aventurier = document.querySelector(".img-adventure");
   const aventurier_field = document.querySelector("#aventurier-field");
   const prudent = document.querySelector(".img-shy");

@@ -1,3 +1,32 @@
+.my-review-card {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  border-radius: 4px;
+  width: 344px !important;
+  padding: 24px 16px;
+  margin-bottom: 16px;
+  margin: 8px auto;
+  .avatar {
+    // position: absolute;
+    height: 50px;
+    width: 50px;
+  }
+  .my-review-card-rating{
+    margin: 8px 0;
+  }
+  hr {
+    background-color: $light-gray;
+    width: 80%;
+  }
+  .my-review-card-content{
+    width: 100%;
+    text-align: center;
+    margin-top: 8px 0;
+  }
+}
+
 .my-activity-card {
   background: white;
   display: flex !important;
