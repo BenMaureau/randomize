@@ -17,6 +17,16 @@
             <div class="notification-number">
               <%= @counter %>
             </div>
+            <div class="drop-menu2 display-none" aria-labelledby="">
+              <% categories =  ["feedback", "welcome", "reminder"] %>
+              <% categories.each do |cat| %>
+                <% unless current_user.notifications.where(category: cat).empty? %>
+                  <div class = "dropdown-item" >
+                    <%= current_user.notifications.where(category: cat, read: false).last.content %>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
           </li>
         </div>
         <li class="nav-item dropdown">

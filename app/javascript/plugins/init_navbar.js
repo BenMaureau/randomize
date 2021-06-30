@@ -6,6 +6,13 @@ const initNavbar = () => {
       dropMenu.classList.toggle("display-none");
     })
   }
+  const notif = document.querySelector('.bell')
+  if (notif) {
+    notif.addEventListener('click', (event) => {
+      const dropMenu2 = document.querySelector('.drop-menu2')
+      dropMenu2.classList.toggle("display-none");
+    })
+  }
 }
 
 // app/javascript/components/navbar.js
