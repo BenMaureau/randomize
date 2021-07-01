@@ -155,9 +155,13 @@
 }
 
 .cover {
-  height: 215px;
-  width: 375px;
+  height: 180px;
+  width: 300px;
   border-radius: 10px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  background-position: center;
+  background-size: cover;
 }
 
 .card-activity {
