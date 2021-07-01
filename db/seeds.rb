@@ -58,8 +58,8 @@ puts "=== #{Activity.count} activities added! ==="
 activities = Activity.all
 activities.each do |activity|
   Slot.create!(
-    start_date: "2021-06-29",
-    end_date: "2021-06-29",
+    start_date: "2021-06-30",
+    end_date: "2021-06-30",
     max_number_of_people: 4,
     activity_id: activity.id
   )
