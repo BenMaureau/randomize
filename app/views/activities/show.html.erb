@@ -54,7 +54,7 @@
   </div>
 
   <div class="form-actions my-tap-container">
-    <%= link_to 'Rerandomize', random_path, class: "btn my-btn my-btn-secondary" %>
-    <%= link_to 'Réserver', bookings_path(activity_id: @activity, slot_id: @slot, reveal: @reveal, nb_people: params[:nb_people]), method: :post, class: "btn my-btn my-btn-primary", id: "btn-booking-reservation" %>
+    <%= link_to 'Rerandomize', random_path, class: "btn my-btn my-btn-secondary my-btn-top-left-radius" %>
+    <%= link_to 'Réserver', bookings_path(activity_id: @activity, slot_id: @slot, reveal: @reveal, nb_people: params[:nb_people]), method: :post, class: "btn my-btn my-btn-primary my-btn-top-right-radius", id: "btn-booking-reservation" %>
   </div>
 </div>

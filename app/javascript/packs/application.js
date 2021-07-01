@@ -38,7 +38,7 @@ import { initRandomScroll } from '../plugins/init_random_scroll';
 import { initCategoryCheckbox } from '../plugins/init_category_checkbox';
 import { initLoader } from '../plugins/init_loader';
 import { initReviewModal} from '../plugins/init_reviewModal';
-import { loadDynamicBannerText } from '../plugins/banner';
+import { loadDynamicBannerText, tapBannerButton } from '../plugins/banner';
 import { initIndoorSelector } from '../plugins/init_indoorSelector';
 import { initFilters } from '../plugins/init_filters';
 import { initSweetalert } from '../plugins/init_sweetalert';
@@ -64,6 +64,7 @@ document.addEventListener('turbolinks:load', () => {
   initReviewModal();
   initIndoorSelector();
   loadDynamicBannerText();
+  tapBannerButton();
   initFilters();
   initNavbar();
   initGuest ();

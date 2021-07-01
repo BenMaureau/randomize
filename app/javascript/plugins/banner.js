@@ -13,4 +13,20 @@ const loadDynamicBannerText = () => {
   }
 }
 
-export { loadDynamicBannerText };
+const tapBannerButton = () => {
+  const bannerButton = document.getElementById('banner-button');
+  if (bannerButton) {
+    window.onscroll = () => {
+      if (window.scrollY > window.outerHeight * 0.6) {
+        console.log('tap');
+        bannerButton.classList.add('my-tap-container');
+      } else {
+        console.log('pas tap');
+        bannerButton.classList.remove('my-tap-container');
+      }
+    }
+
+  }
+}
+
+export { loadDynamicBannerText, tapBannerButton };
