@@ -22,7 +22,7 @@ class PagesController < ApplicationController
       {
         lat: activity.latitude,
         lng: activity.longitude,
-        image_url: helpers.asset_url('Ellipse.png')
+        image_url: helpers.asset_url('Logo.png')
       }
     end
   end
