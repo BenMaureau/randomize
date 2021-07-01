@@ -29,11 +29,22 @@ class PagesController < ApplicationController
 
   def select
     @activities = Activity.all
+    if params[:two_people] == "true"
+      @activities = @activities.filter do |activity|
+        answer = false
+        activity.slots.each do |slot|
+          answer = true if slot.max_number_of_people >= 2
+        end
+        answer
+      end
+    end
+
     @activity = @activities.sample
-    redirect_to activity_path(@activity)
+    redirect_to activity_path(@activity, nb_people: @nb_people)
   end
 
   def custom_activity
+    @nb_people = params[:two_people] == "true" ? 2 : 1
     if params[:aventurier] == "true"
       select
     else
@@ -79,8 +90,19 @@ class PagesController < ApplicationController
         #   @activities << activity
         # end
       # end
+
+      if params[:two_people] == "true"
+        @activities = @activities.filter do |activity|
+          answer = false
+          activity.slots.each do |slot|
+            answer = true if slot.max_number_of_people >= 2
+          end
+          answer
+        end
+      end
+
       @activity = @activities.sample
-      redirect_to activity_path(@activity) if @activities.size > 0
+      redirect_to activity_path(@activity, nb_people: @nb_people) if @activities.size > 0
     end
   end
 end

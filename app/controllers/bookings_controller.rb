@@ -32,12 +32,12 @@ before_action :authenticate_user!, only: :new
     @activity = Activity.find(params[:activity_id])
     @reveal = params[:reveal]
     @booking = Booking.new
-    @booking[:number_of_people] = 2
+    @booking[:number_of_people] = params[:nb_people]
     @slot = @activity.slots.first
     @booking.user = current_user
     @booking.slot = @slot
     @booking.reveal = @reveal
-    @booking.save!
+    @booking.save
     redirect_to my_booking_path(@booking)
   end
 
