@@ -18,6 +18,11 @@
   }
 }
 
+.invite-guest {
+  padding: 16px 8px;
+  margin-top: 16px;
+}
+
 .card-booking {
   width: 80%;
   display: flex;
@@ -149,11 +154,11 @@
 }
 
 .arrow {
-  height: 75px;
-  width: 75px;
+  height: 36px;
+  width: 36px;
   position: absolute;
-  margin-left: 52px;
-  margin-top: -15px;
+  top: 66px;
+  right: 36px;
 }
 
 .my-container {
@@ -165,12 +170,13 @@
 }
 
 #guest-line {
-  margin-left: 10vw;
-  padding-top: 20px;
+  // margin-left: 10vw;
+  // padding-top: 20px;
 }
 .guest-sentence {
   margin: 0 auto;
   text-align: center;
+  height: 60px;
 }
 .guest-email {
   padding-top: 40px;
@@ -184,4 +190,5 @@
   width: 120px;
   height: auto;
   font-size: 20px;
+  margin: 0 auto;
 }

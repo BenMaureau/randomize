@@ -1,28 +1,35 @@
 <div class="written-activity-booked mood-form" id="resa-faite">
   <div class="text-center">
-    <h1>Ta réservation est faite !</h1>
-    <p>Tu recevras une confirmation par email sous peu !</p>
+    <h2 class="mt-3">Ta réservation est faite !</h2>
+    <p>Tu recevras un email de confirmation sous peu !</p>
   </div>
-  <div class="guest-sentence">
-    <p id="guest-line">Envoie une invitation mystère à <span id="guest-text" data-guests="<%= @guests %>" ></span> ?</p>
+
+  <div class="invite-guest card box-shadow">
+  
+    <div class="guest-sentence">
+      <p id="guest-line">Envoie une invitation mystère à 
+      <span id="guest-text" data-guests="<%= @guests %>" ></span> ?</p>
+    </div>
+    <%# <div class="text-center mb-5"> %>
+      <%# <%= image_tag "arrow.png", class: "arrow" %>
+      <% if (@booking.number_of_people == 2) %>
+        <div class="text-center">
+          <%= simple_form_for :guest, url: invitation_path, class: "text-center guest-email", method: "get" do |f| %>
+            <%= f.hidden_field :booking, value: @booking.id %>
+            <%= f.text_field :guest_mail, id: "guest-email-input", name: "email", value: "", placeholder: "email", required: true %>
+            <%= f.submit "Inviter ! ", class: "my-btn my-btn-primary mt-3", id:"submit-btn" %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
   </div>
-  <div class="text-center mb-5">
-    <%= image_tag "arrow.png", class: "arrow" %>
-  </div>
-  <% if (@booking.number_of_people == 2) %>
-  <div class="text-center mt-5">
-  <%= simple_form_for :guest, url: invitation_path, class: "text-center guest-email", method: "get" do |f| %>
-    <%= f.hidden_field :booking, value: @booking.id %>
-    <%= f.text_field :guest_mail, id: "guest-email-input", name: "email", value: "", placeholder: "email", required: true %>
-    <%= f.submit "Inviter ! ", class: "my-btn-primary mt-3", id:"submit-btn" %>
-  <% end %>
-  </div>
-  <% end %>
+
 </div>
 
 
 <div class="my-button-invitation">
   <div class="form-actions my-tap-container" id="margin-top">
-    <%= link_to 'Mes réservations', profile_my_bookings_path, class: "btn my-btn my-btn-primary", id: "arrow-issue" %>
+    <%= link_to 'Mes réservations', profile_my_bookings_path, class: "my-btn my-btn-primary", id: "arrow-issue" %>
   </div>
 </div>
