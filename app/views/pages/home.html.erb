@@ -56,6 +56,7 @@
         <div class="my-review-card box-shadow">
 
           <%= cl_image_tag Booking.find(review.booking_id).user.photo.key, class: "avatar" %>
+          <%= Booking.find(review.booking_id).user.first_name %>
 
             <div class="my-review-card-rating">
               <% if [1, 2, 3, 4, 5].include?(review.rating) %>

@@ -4,7 +4,7 @@ const initLoader = () => {
     setTimeout(function(){
       loader.classList.add('display-none');
       document.getElementById('activity-revealed').style.display = 'block';
-    }, 3000); // 10000ms = 10s
+    }, 5000); // 10000ms = 10s
   }
 }
 

@@ -9,6 +9,17 @@ const initRandomScroll = () => {
   const imageShy = document.querySelector(".img-shy");
   const imageAdv = document.querySelector(".img-adventure");
 
+  const markers = document.querySelectorAll('.marker');
+
+  if (markers) {
+    markers.forEach(marker => {
+      marker.addEventListener('click', (event) => {
+        randomSectionMood.classList.remove('display-none');
+        randomSectionMood.scrollIntoView({behavior: "smooth"})
+      });
+    });
+  }
+
   if (btnNext) {
     btnNext.addEventListener("click", (event) => {
       event.preventDefault();
