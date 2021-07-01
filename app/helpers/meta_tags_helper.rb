@@ -1,10 +1,10 @@
 module MetaTagsHelper
   def meta_title
-    content_for?(:meta_title) ? content_for(:meta_title) : DEFAULT_META["Randomize - Ouvre ton esprit, Randomize ta vie !"]
+    content_for?(:meta_title) ? content_for(:meta_title) : DEFAULT_META["meta_title"]
   end
 
   def meta_description
-    content_for?(:meta_description) ? content_for(:meta_description) : DEFAULT_META["Découvre des activités auxquelles tu n'aurais jamais pensé près de chez toi. C'est facile, appuie sur Randomize !"]
+    content_for?(:meta_description) ? content_for(:meta_description) : DEFAULT_META["meta_description"]
   end
 
   def meta_image
