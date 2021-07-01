@@ -50,6 +50,9 @@
   .check {
     display: block !important;
   }
+  i {
+    color: #ffc300 !important;
+  }
 }
 
 .mood-card {
@@ -92,4 +95,17 @@
   .check {
     display: block !important;
   }
+}
+
+
+.arrow-top-left {
+  width: 60px;
+  position: absolute;
+  margin: -43px -158px;
+}
+
+.arrow-top-right {
+  width: 60px;
+  position: absolute;
+  margin: -43px 104px;
 }

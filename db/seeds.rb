@@ -8,6 +8,7 @@
 
 require 'json'
 require 'open-uri'
+require 'date'
 require_relative 'scrapping/scrap_lechti'
 require_relative 'scrapping/scrap_yelp'
 
@@ -48,32 +49,156 @@ puts "=== Adding Activity... ==="
 puts ">>>>> ON SCRAP LE CHTI <<<<<"
 scrap_lechti_v2
 puts ">>>>> MERCI LE CHTI ! <<<<<"
-# scrap_yelp
+puts ">>>>> ON TAPE DANS L'API YELP ! <<<<<"
+scrap_yelp
 puts ">>>>> MERCI YELP ! <<<<<"
 
 puts "=== #{Activity.count} activities added! ==="
 
-# puts "=== Adding slots... ==="
+puts "=== Adding bookings to review... ==="
 
-activities = Activity.all
+######### Demo Activity to review // Notifs #########################
+# Change this line to the yesterday date so that we have review for notifs
+dayOfToday = Date.today
+dayOfYesterday = dayOfToday - 1
+
+# dayOfYesterday = "2021-06-30"
+# dayOfToday = "2021-07-01"
+# Louis
+demoActivityToReviewLouis = Activity.first
+demoSlotLouis = Slot.create!(
+  start_date: dayOfYesterday,
+  end_date: dayOfYesterday,
+  max_number_of_people: 4,
+  activity_id: demoActivityToReviewLouis.id
+)
+
+demoBookingToReviewLouis = Booking.create!(
+  number_of_people: 2,
+  slot_id: demoSlotLouis.id,
+  user_id: user4.id
+)
+demoActivityToReviewLouis2 = Activity.first(5).last
+demoSlotLouis2 = Slot.create!(
+  start_date: dayOfYesterday,
+  end_date: dayOfYesterday,
+  max_number_of_people: 4,
+  activity_id: demoActivityToReviewLouis2.id
+)
+
+demoBookingToReviewLouis2 = Booking.create!(
+  number_of_people: 2,
+  slot_id: demoSlotLouis2.id,
+  user_id: user4.id
+)
+# Benjamin
+demoActivityToReviewBenjamin = Activity.first(2).last
+demoSlotBenjamin = Slot.create!(
+  start_date: dayOfYesterday,
+  end_date: dayOfYesterday,
+  max_number_of_people: 4,
+  activity_id: demoActivityToReviewBenjamin.id
+)
+
+demoBookingToReviewBenjamin = Booking.create!(
+  number_of_people: 2,
+  slot_id: demoSlotBenjamin.id,
+  user_id: user1.id
+)
+demoActivityToReviewBenjamin2 = Activity.first(6).last
+demoSlotBenjamin2 = Slot.create!(
+  start_date: dayOfYesterday,
+  end_date: dayOfYesterday,
+  max_number_of_people: 4,
+  activity_id: demoActivityToReviewBenjamin2.id
+)
+
+demoBookingToReviewBenjamin2 = Booking.create!(
+  number_of_people: 2,
+  slot_id: demoSlotBenjamin2.id,
+  user_id: user1.id
+)
+# Robin
+demoActivityToReviewRobin = Activity.first(3).last
+demoSlotRobin = Slot.create!(
+  start_date: dayOfYesterday,
+  end_date: dayOfYesterday,
+  max_number_of_people: 4,
+  activity_id: demoActivityToReviewRobin.id
+)
+
+demoBookingToReviewRobin = Booking.create!(
+  number_of_people: 2,
+  slot_id: demoSlotRobin.id,
+  user_id: user3.id
+)
+demoActivityToReviewRobin2 = Activity.first(7).last
+demoSlotRobin2 = Slot.create!(
+  start_date: dayOfYesterday,
+  end_date: dayOfYesterday,
+  max_number_of_people: 4,
+  activity_id: demoActivityToReviewRobin2.id
+)
+
+demoBookingToReviewRobin2 = Booking.create!(
+  number_of_people: 2,
+  slot_id: demoSlotRobin2.id,
+  user_id: user3.id
+)
+
+# Tania
+demoActivityToReviewTania = Activity.first(4).last
+demoSlotTania = Slot.create!(
+  start_date: dayOfYesterday,
+  end_date: dayOfYesterday,
+  max_number_of_people: 4,
+  activity_id: demoActivityToReviewTania.id
+)
+
+demoBookingToReviewTania = Booking.create!(
+  number_of_people: 2,
+  slot_id: demoSlotTania.id,
+  user_id: user2.id
+)
+demoActivityToReviewTania2 = Activity.first(8).last
+demoSlotTania2 = Slot.create!(
+  start_date: dayOfYesterday,
+  end_date: dayOfYesterday,
+  max_number_of_people: 4,
+  activity_id: demoActivityToReviewTania2.id
+)
+
+demoBookingToReviewTania2 = Booking.create!(
+  number_of_people: 2,
+  slot_id: demoSlotTania2.id,
+  user_id: user2.id
+)
+
+puts "=== #{Booking.count} bookings to review added! ==="
+
+######### Demo Activity to review // Notifs #########################
+
+puts "=== Adding 3 slots to each activity... ==="
+
+activities = Activity.all[11..-1]
 activities.each do |activity|
   Slot.create!(
-    start_date: "2021-06-30",
-    end_date: "2021-06-30",
+    start_date: dayOfToday,
+    end_date: dayOfToday,
     max_number_of_people: 4,
     activity_id: activity.id
   )
 
   Slot.create!(
-    start_date: "2021-06-29",
-    end_date: "2021-06-29",
+    start_date: dayOfToday,
+    end_date: dayOfToday,
     max_number_of_people: 2,
     activity_id: activity.id
   )
 
   Slot.create!(
-    start_date: "2021-09-21",
-    end_date: "2022-09-21",
+    start_date: dayOfToday,
+    end_date: dayOfToday,
     max_number_of_people: 1,
     activity_id: activity.id
   )
@@ -85,27 +210,51 @@ puts "=== #{Slot.count} slots added! ==="
 puts "=== Adding bookings... ==="
 
 # slots made on the first activity from categ social
-slots = Slot.first(3)
+# slots = Slot.first(15).last(3)
+
+demoActivityBenjamin3 = Activity.first(9).last
+demoActivityRobin3 = Activity.first(10).last
+demoActivityTania3 = Activity.first(11).last
+
+demoSlotBenjamin3 = Slot.create!(
+  start_date: dayOfYesterday,
+  end_date: dayOfYesterday,
+  max_number_of_people: 4,
+  activity_id: demoActivityBenjamin3.id
+)
+demoSlotRobin3 = Slot.create!(
+  start_date: dayOfYesterday,
+  end_date: dayOfYesterday,
+  max_number_of_people: 4,
+  activity_id: demoActivityRobin3.id
+)
+demoSlotTania3 = Slot.create!(
+  start_date: dayOfYesterday,
+  end_date: dayOfYesterday,
+  max_number_of_people: 4,
+  activity_id: demoActivityTania3.id
+)
+
 
 booking1 = Booking.create!(
   number_of_people: 2,
-  slot_id: slots[0].id,
+  slot_id: demoSlotTania3.id,
   user_id: user2.id
   )
 
 booking2 = Booking.create!(
   number_of_people: 2,
-  slot_id: slots[1].id,
-  user_id: User.last.id
+  slot_id: demoSlotBenjamin3.id,
+  user_id: user1.id
   )
 
 booking3 = Booking.create!(
   number_of_people: 1,
-  slot_id: slots[2].id,
+  slot_id: demoSlotRobin3.id,
   user_id: user3.id
   )
 
-puts "=== #{Booking.count} bookings added! ==="
+puts "=== #{Booking.count - 11} bookings added! ==="
 
 puts "=== Adding reviews... ==="
 
