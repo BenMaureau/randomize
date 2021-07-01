@@ -12,23 +12,32 @@
     <ul class="navbar-nav mr-auto navbar-ul">
       <% if user_signed_in? %>
         <div class="notifications">
+
+
+
           <li class="nav-item">
             <i class="fas fa-bell bell"></i>
-            <div class="notification-number">
-              <%= @counter %>
-            </div>
-            <div class="drop-menu2 display-none" aria-labelledby="">
-              <% categories =  ["feedback", "welcome", "reminder"] %>
-              <% categories.each do |cat| %>
-                <% unless current_user.notifications.where(category: cat).empty? %>
-                  <div class = "dropdown-item" id= "clicked-event" >
-                    <% @read_notification = current_user.notifications.where(category: cat, read: false).last %>
-                    <%= link_to @read_notification.content, profile_my_bookings_path(:notification => @read_notification) %>
-                    <!-- link_to @read_notification.content, profile_my_bookings_path(:notification => @read_notification, counter: @counter) -->
-                  </div>
-                <% end %>
+              <% if @counter.to_i > 0 %>
+                <div class="notification-number">
+                  <%= @counter %>
+                </div>
               <% end %>
-            </div>
+            <% if @counter.to_i > 0 %>
+              <div id="my-menu-notifications" class="drop-menu display-none" aria-labelledby="">
+                <% categories =  ["feedback", "welcome", "reminder"] %>
+                <% categories.each do |cat| %>
+                  <% unless current_user.notifications.where(category: cat).empty? %>
+                    <div id= "clicked-event" >
+                      <% @read_notification = current_user.notifications.where(category: cat, read: false).order(:created_at) %>
+                      <% @read_notification.each do |notification| %>
+                        <%= link_to notification.content, profile_my_bookings_path(notification: notification, counter: @counter) %>
+                      <% end %>
+                      <!-- link_to @read_notification.content, profile_my_bookings_path(:notification => @read_notification, counter: @counter) -->
+                    </div>
+                  <% end %>
+                <% end %>
+              </div>
+            <% end %>
           </li>
         </div>
         <li class="nav-item dropdown">
@@ -37,7 +46,7 @@
           <% else %>
             <%= image_tag "Profile.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% end %>
-          <div class="drop-menu display-none" aria-labelledby="">
+          <div id="my-menu-profile" class="drop-menu display-none" aria-labelledby="">
             <%= link_to "Mes réservations", profile_my_bookings_path, class: "dropdown-item" %>
             <%= link_to "Me déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>

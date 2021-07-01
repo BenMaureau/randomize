@@ -2,15 +2,19 @@ const initNavbar = () => {
   const avatar = document.querySelector('.avatar')
   if (avatar) {
     avatar.addEventListener('click', (event) => {
-      const dropMenu = document.querySelector('.drop-menu')
-      dropMenu.classList.toggle("display-none");
+      const dropMenuProfile = document.querySelector('#my-menu-profile')
+      const dropMenuNotifications = document.querySelector('#my-menu-notifications')
+      dropMenuProfile.classList.toggle("display-none");
+      dropMenuNotifications.classList.add("display-none");
     })
   }
   const notif = document.querySelector('.bell')
   if (notif) {
     notif.addEventListener('click', (event) => {
-      const dropMenu2 = document.querySelector('.drop-menu2')
-      dropMenu2.classList.toggle("display-none");
+      const dropMenuProfile = document.querySelector('#my-menu-profile')
+      const dropMenuNotifications = document.querySelector('#my-menu-notifications')
+      dropMenuNotifications.classList.toggle("display-none");
+      dropMenuProfile.classList.add("display-none");
       // dropMenu2.addEventListener("click", (event) => {
       //   const clickedEvent = document.getElementById('clicked-event')
       //   clickedEvent.classList.add("display-none");
