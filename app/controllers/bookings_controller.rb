@@ -6,7 +6,9 @@ before_action :authenticate_user!, only: :new
       @notification = Notification.find(params[:notification])
       @notification.read = true
       @notification.save!
-      # @counter = params[:counter] - 1
+      # @counter = params[:counter].to_i - 1
+      @counter = current_user.notifications.where(read: false).count
+
     end
     @my_bookings = Booking.where(user_id: current_user.id).order(created_at: :desc)
     @my_bookings_reviewed = []

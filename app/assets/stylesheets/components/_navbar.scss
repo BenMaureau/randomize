@@ -25,12 +25,20 @@
   position: fixed;
   right: 14px;
   top: 80px;
-  padding: 8px 0;
+  padding: 8px;
   border-radius: 5px;
   a {
     color: white;
     opacity: 1;
   }
+}
+
+#my-menu-profile {
+
+}
+
+#my-menu-notifications {
+
 }
 
 .drop-menu2 {
@@ -81,6 +89,18 @@
 //   margin-left: 5px;
 // }
 
+#clicked-event {
+  max-width: 250px;
+  a {
+    display: block;
+    border-bottom: 1px solid $light-gray;
+    padding: 8px;
+    &:last-of-type {
+      border-bottom: none;
+      // margin-bottom: 0;
+    }
+  }
+}
 
 .my-navbar .bell{
   color: $yellow;
