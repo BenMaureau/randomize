@@ -90,7 +90,7 @@ slots = Slot.first(3)
 booking1 = Booking.create!(
   number_of_people: 2,
   slot_id: slots[0].id,
-  user_id: User.last.id
+  user_id: user2.id
   )
 
 booking2 = Booking.create!(
@@ -102,12 +102,30 @@ booking2 = Booking.create!(
 booking3 = Booking.create!(
   number_of_people: 1,
   slot_id: slots[2].id,
-  user_id: User.last.id
+  user_id: user3.id
   )
 
 puts "=== #{Booking.count} bookings added! ==="
 
 puts "=== Adding reviews... ==="
+
+review1 = Review.create!(
+  rating: 4.5,
+  content: "Je ne connaissais pas et j'ai adoré !!",
+  booking_id: booking3.id
+)
+
+review2 = Review.create!(
+  rating: 4,
+  content: "Merci Randomize pour ce concept génial !",
+  booking_id: booking2.id
+)
+
+review3 = Review.create!(
+  rating: 5,
+  content: "4ème soirée Randomize et toujours aussi agréablement surprise !",
+  booking_id: booking1.id
+)
 
 puts "=== #{Review.count} reviews added! ==="
 
