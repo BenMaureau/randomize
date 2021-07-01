@@ -109,10 +109,11 @@ const initMapbox = () => {
 const createPerimeterMarker = () => {
   const element = document.createElement('div');
   element.id = 'markerPerimeter';
+  element.classList.add('box-shadow');
   element.style.backgroundColor = "#003566";
-  element.style.border = "solid 2px #003566";
-  element.style.width = '20px';
-  element.style.height = '20px';
+  element.style.border = "solid 4px white";
+  element.style.width = '24px';
+  element.style.height = '24px';
   element.style.opacity = "80%";
   element.style.borderRadius = "50%";
   return element;
