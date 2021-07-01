@@ -15,11 +15,36 @@ const initMapbox = () => {
       center: coords, // center on Lille
       zoom: 12
     });
-    // map.dragPan.disable();
-    // map.dragRotate.disable();
 
+    const markers = JSON.parse(mapElement.dataset.markers);
 
-    
+    markers.forEach((marker) => {
+      new mapboxgl.Marker()
+        .setLngLat([ marker.lng, marker.lat ])
+        .addTo(map);
+    });
+
+    if (markers) {
+      const mapMarkers = document.querySelectorAll('.mapboxgl-marker');
+      const displayMarkers = (markers) => {
+        const array = []
+        markers.forEach((marker) => {
+          array.push(marker);
+          marker.style.display = 'none';
+        });
+
+        const someMarkers = array.slice(0, 5).map(function () {
+          return this.splice(Math.floor(Math.random() * this.length), 1)[0];
+        }, array.slice());
+
+        someMarkers.forEach((marker) => {
+          marker.style.display = 'block';
+        });
+      }
+      setInterval(function(){ displayMarkers(mapMarkers); }, 3000);
+      displayMarkers(mapMarkers);
+    };
+
     let marker = createPerimeterMarker();
 
     setPerimeterMarker(map, marker, coords);
@@ -33,7 +58,7 @@ const initMapbox = () => {
           center: coords,
           zoom: 12,
           bearing: 0,
-          speed: 1, 
+          speed: 1,
           curve: 1,
           essential: true
         });
@@ -42,7 +67,7 @@ const initMapbox = () => {
       });
     });
     // Search geocoder
-    let geocoder = new MapboxGeocoder({ 
+    let geocoder = new MapboxGeocoder({
       accessToken: mapboxgl.accessToken,
       mapboxgl: mapboxgl,
       placeholder: 'Entre une adresse',
@@ -57,7 +82,7 @@ const initMapbox = () => {
         center: e.result.center,
         zoom: 12,
         bearing: 0,
-        speed: 1, 
+        speed: 1,
         curve: 1,
         essential: true
       });
