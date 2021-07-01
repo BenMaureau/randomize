@@ -1,13 +1,13 @@
 <div class="placholder-navbar" style="height:66px"></div>
 
-<div class="container" id='bookings-container'>
+<div class="my-container" id='bookings-container'>
   <h2>Mes réservations </h2>
   <p class="text-center">(<%= @my_bookings.count %> dont <%= @my_bookings_to_review.count %> à noter)</p> 
   <% @my_bookings.each do |booking| %>
     <% if booking.reveal %>
-      <div class="my-card my-activity-card box-shadow" id='<%=booking.created_at%>'>
+      <div class="my-card my-activity-card box-shadow" id='<%= booking.slot.end_date %>'>
     <% else %>
-      <div class="my-card my-activity-card box-shadow activity-secret" id='<%=booking.created_at.to_s.first(10)%>'>
+      <div class="my-card my-activity-card box-shadow activity-secret" id='<%= booking.slot.end_date %>'>
     <% end %>
         <div class="my-card-div-image">
           <div class="display-over d-flex justify-content-between">

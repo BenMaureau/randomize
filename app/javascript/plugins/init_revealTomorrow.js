@@ -9,7 +9,11 @@ const initRevealTomorrow = () => {
       const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
       const yyyy = today.getFullYear();
 
+
+
       today = yyyy + '-' + mm + '-' + dd;
+      console.log(dateBooking);
+      console.log(today);
       if (dateBooking < today) {
         cards[i].classList.remove("activity-secret");
       }

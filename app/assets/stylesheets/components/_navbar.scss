@@ -33,13 +33,21 @@
   }
 }
 
-#my-menu-profile {
+// .navbar {
+//   .notifications {
+//     .nav-item {
 
-}
+//       #my-menu-profile {
+//         opacity: 1 !important;
+//       }
+      
+//       #my-menu-notifications {
+//         opacity: 1 !important;
+//       }
+//     }
+//   }
+// }
 
-#my-menu-notifications {
-
-}
 
 .drop-menu2 {
   background-color: $black;
@@ -70,24 +78,6 @@
   color: white !important;
   text-decoration: none !important;
 }
-
-// .navbar {
-//   width: 100vw;
-//   height: 40px;
-//   padding: 8px;
-//   display: flex;
-//   justify-content: space-between;
-//   background: $blue;
-// }
-
-// .navbar .navbar-collapse {
-//   flex-grow: 0;
-// }
-
-// .navbar .navbar-logo img {
-//   height: 100% ;
-//   margin-left: 5px;
-// }
 
 #clicked-event {
   max-width: 250px;
@@ -136,7 +126,7 @@
 
 .navbar-disabled {
   background-color: $light-gray;
-  opacity: 0.5;
+  opacity: 0.8;
   transition-duration: 300ms;
 }
 
