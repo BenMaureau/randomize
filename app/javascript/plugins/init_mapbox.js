@@ -22,8 +22,9 @@ const initMapbox = () => {
       const popup = new mapboxgl.Popup().setHTML(marker.info_window);
 
       // Create a HTML element for your custom marker
-      const element = document.createElement('div');
+      const element = document.createElement('a');
       element.className = 'marker';
+      element.style.cursor = 'pointer';
       element.style.backgroundImage = `url('${marker.image_url}')`;
       element.style.backgroundSize = 'contain';
       element.style.width = '50px';
@@ -108,11 +109,11 @@ const initMapbox = () => {
 const createPerimeterMarker = () => {
   const element = document.createElement('div');
   element.id = 'markerPerimeter';
-  element.style.backgroundColor = "#FFBF00";
-  element.style.border = "solid 2px #FF7145";
-  element.style.width = '50px';
-  element.style.height = '50px';
-  element.style.opacity = "50%";
+  element.style.backgroundColor = "#003566";
+  element.style.border = "solid 2px #003566";
+  element.style.width = '20px';
+  element.style.height = '20px';
+  element.style.opacity = "80%";
   element.style.borderRadius = "50%";
   return element;
 };
