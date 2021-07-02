@@ -119,32 +119,32 @@ demoBookingToReviewBenjamin2 = Booking.create!(
   user_id: user1.id
 )
 # Robin
-demoActivityToReviewRobin = Activity.first(3).last
-demoSlotRobin = Slot.create!(
-  start_date: dayOfYesterday,
-  end_date: dayOfYesterday,
-  max_number_of_people: 4,
-  activity_id: demoActivityToReviewRobin.id
-)
+# demoActivityToReviewRobin = Activity.first(3).last
+# demoSlotRobin = Slot.create!(
+#   start_date: dayOfYesterday,
+#   end_date: dayOfYesterday,
+#   max_number_of_people: 4,
+#   activity_id: demoActivityToReviewRobin.id
+# )
 
-demoBookingToReviewRobin = Booking.create!(
-  number_of_people: 2,
-  slot_id: demoSlotRobin.id,
-  user_id: user3.id
-)
-demoActivityToReviewRobin2 = Activity.first(7).last
-demoSlotRobin2 = Slot.create!(
-  start_date: dayOfYesterday,
-  end_date: dayOfYesterday,
-  max_number_of_people: 4,
-  activity_id: demoActivityToReviewRobin2.id
-)
+# demoBookingToReviewRobin = Booking.create!(
+#   number_of_people: 2,
+#   slot_id: demoSlotRobin.id,
+#   user_id: user3.id
+# )
+# demoActivityToReviewRobin2 = Activity.first(7).last
+# demoSlotRobin2 = Slot.create!(
+#   start_date: dayOfYesterday,
+#   end_date: dayOfYesterday,
+#   max_number_of_people: 4,
+#   activity_id: demoActivityToReviewRobin2.id
+# )
 
-demoBookingToReviewRobin2 = Booking.create!(
-  number_of_people: 2,
-  slot_id: demoSlotRobin2.id,
-  user_id: user3.id
-)
+# demoBookingToReviewRobin2 = Booking.create!(
+#   number_of_people: 2,
+#   slot_id: demoSlotRobin2.id,
+#   user_id: user3.id
+# )
 
 # Tania
 demoActivityToReviewTania = Activity.first(4).last
@@ -213,7 +213,7 @@ puts "=== Adding bookings... ==="
 # slots = Slot.first(15).last(3)
 
 demoActivityBenjamin3 = Activity.first(9).last
-demoActivityRobin3 = Activity.first(10).last
+demoActivityLouis3 = Activity.first(10).last
 demoActivityTania3 = Activity.first(11).last
 
 demoSlotBenjamin3 = Slot.create!(
@@ -222,11 +222,11 @@ demoSlotBenjamin3 = Slot.create!(
   max_number_of_people: 4,
   activity_id: demoActivityBenjamin3.id
 )
-demoSlotRobin3 = Slot.create!(
+demoSlotLouis3 = Slot.create!(
   start_date: dayOfYesterday,
   end_date: dayOfYesterday,
   max_number_of_people: 4,
-  activity_id: demoActivityRobin3.id
+  activity_id: demoActivityLouis3.id
 )
 demoSlotTania3 = Slot.create!(
   start_date: dayOfYesterday,
@@ -250,8 +250,8 @@ booking2 = Booking.create!(
 
 booking3 = Booking.create!(
   number_of_people: 1,
-  slot_id: demoSlotRobin3.id,
-  user_id: user3.id
+  slot_id: demoSlotLouis3.id,
+  user_id: user4.id
   )
 
 puts "=== #{Booking.count - 11} bookings added! ==="
