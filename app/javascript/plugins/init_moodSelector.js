@@ -22,6 +22,8 @@ const initMoodSelector = () => {
   const divSentence = document.getElementById("mood-sentence");
   const rdmBtn = document.querySelector('#rdm-btn');
   const nextBtn = document.querySelector("#next-btn");
+  const randomSectionCustom1 = document.getElementById('section-custom-1');
+  const randomSectionCustom2 = document.getElementById('section-custom-2');
 
   // if (divSentence) {
   //   const imageShy = document.querySelector(".img-shy");
@@ -43,6 +45,9 @@ const initMoodSelector = () => {
 
       rdmBtn.classList.remove('display-none');
       nextBtn.classList.add('display-none');
+
+      randomSectionCustom1.classList.add('display-none');
+      randomSectionCustom2.classList.add('display-none');
     });
 
     imageShy.addEventListener("click", (event) => {
