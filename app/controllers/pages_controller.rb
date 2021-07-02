@@ -8,7 +8,7 @@ class PagesController < ApplicationController
     @activities_names = ""
     @activities_banner.each { |activity| @activities_names += "#{activity.name}," }
 
-    @best_reviews = Review.where("rating > ?", 4).order(created_at: :desc).first(15)
+    @best_reviews = Review.where("rating >= ?", 4).order(created_at: :desc).first(15)
   end
 
   def search
